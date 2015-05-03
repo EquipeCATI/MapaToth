@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Civilization>
+    
+	<name>Grega</name>
+    <originYear>50</originYear>
+    <endingYear>90</endingYear>
+	<mapMarker>
+        <top>60%</top>
+        <left>40%</left>
+    </mapMarker>
+    
+</Civilization>

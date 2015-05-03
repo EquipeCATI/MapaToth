@@ -1,0 +1,77 @@
+html {
+    margin: 0 auto;
+    background-color: #c6c6c6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    font-weight: 600;
+    line-height: 1.3em;
+}
+
+#mainDiv{
+    background-image: url("http://1-background.com/images/nature/images/wood-walnut-background-tile.jpg");
+    width: 98vw;
+    height: 98vh;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    display: table-cell;
+}
+
+#mapDiv{
+    display: inline-block;
+    max-width: 90vw;
+    
+    vertical-align: middle;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.civilizationDiv{
+    display: inline-block;
+    max-height: 90vh;
+    vertical-align: middle;
+    margin: 0 auto;
+    position: relative;
+}
+
+.map{
+    resize: both;
+    max-height: 90vh;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.mapMarker{
+    display: inline-block;
+    position: absolute;
+    resize: both;
+    width: auto;
+    height: auto;
+    max-width: 15%;
+    max-height: 15%;
+    top: 0%;
+    left: 0%;
+}
+
+#slider{
+    display: inline-block;
+    position: absolute;
+    resize: both;
+    margin: auto;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    
+}
+
+#sliderDiv{
+ text-align: left;
+ width: 80%;
+ margin: auto;
+}
