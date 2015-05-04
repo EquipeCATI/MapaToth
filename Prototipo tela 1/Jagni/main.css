@@ -53,8 +53,8 @@ h1, h2, h3, h4, h5, h6 {
     resize: both;
     width: auto;
     height: auto;
-    max-width: 15%;
-    max-height: 15%;
+    max-width: 5%;
+    max-height: 5%;
     top: 0%;
     left: 0%;
 }

@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Civilization>
+<Civilizations>
     
-	<name>Grega</name>
-    <originYear>50</originYear>
-    <endingYear>90</endingYear>
-	<mapMarker>
-        <top>60%</top>
-        <left>40%</left>
-    </mapMarker>
+    <Civilization>
+        <name>Grega</name>
+        <originYear>50</originYear>
+        <endingYear>90</endingYear>
+        <mapMarker>
+            <top>50%</top>
+            <left>50%</left>
+        </mapMarker>
+    </Civilization>
     
-</Civilization>
+    <Civilization>
+        <name>Nordica</name>
+        <originYear>10</originYear>
+        <endingYear>60</endingYear>
+	    <mapMarker>
+            <top>30%</top>
+            <left>60%</left>
+        </mapMarker>
+    </Civilization>
+    
+    <Civilization>
+        <name>Egipcia</name>
+        <originYear>10</originYear>
+        <endingYear>60</endingYear>
+	    <mapMarker>
+            <top>20%</top>
+            <left>30%</left>
+        </mapMarker>
+    </Civilization>
+    
+</Civilizations>

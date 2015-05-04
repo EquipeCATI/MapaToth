@@ -73,7 +73,9 @@ $(document).on('click', '.mapMarker', function() {
     $('.map').transition({
         scale : '3'
     }, 1250);
-
+    
+    $('.mapMarker').not($(this)).fadeOut(100);
+    
     $(this).transition({
         scale : '3'
     }, 1250, function(){
