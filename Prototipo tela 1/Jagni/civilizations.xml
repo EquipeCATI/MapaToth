@@ -6,7 +6,7 @@
         <originYear>50</originYear>
         <endingYear>90</endingYear>
         <mapMarker>
-            <top>50%</top>
+            <top>42%</top>
             <left>50%</left>
         </mapMarker>
     </Civilization>
@@ -16,8 +16,8 @@
         <originYear>10</originYear>
         <endingYear>60</endingYear>
 	    <mapMarker>
-            <top>30%</top>
-            <left>60%</left>
+            <top>25%</top>
+            <left>55%</left>
         </mapMarker>
     </Civilization>
     
@@ -26,8 +26,8 @@
         <originYear>10</originYear>
         <endingYear>60</endingYear>
 	    <mapMarker>
-            <top>20%</top>
-            <left>30%</left>
+            <top>48%</top>
+            <left>55%</left>
         </mapMarker>
     </Civilization>
     

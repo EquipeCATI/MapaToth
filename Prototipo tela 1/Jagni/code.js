@@ -22,7 +22,7 @@ function parseXML(xml){
                                      
     $.each(civilizations, function() {
         var DOMMarker = 
-        $("#mapDiv").append("<img src='grecia.jpg' alt='Cidade " + this.name + "' id='" + this.name + "' class='mapMarker'/>");
+        $("#mapDiv").append("<img src='MapMarker.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='mapMarker'/>");
         $("#"+this.name).css("top", this.mapMarker.topSpace);
         $("#"+this.name).css("left", this.mapMarker.leftSpace);
     });
