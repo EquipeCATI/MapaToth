@@ -61,17 +61,16 @@ h1, h2, h3, h4, h5, h6 {
 
 #slider{
     display: inline-block;
-    position: absolute;
-    resize: both;
     margin: auto;
     left: 10%;
     right: 10%;
     width: 80%;
-    
+    -webkit-backface-visibility: hidden;
 }
 
 #sliderDiv{
- text-align: left;
- width: 80%;
+    display: block;
+ text-align: center;
+ width: 100%;
  margin: auto;
 }

@@ -3,8 +3,8 @@ var civilizations = [];
 function Civilization(xmlNode){
     this.name = $(xmlNode).find("name").text();
     this.mapMarker = new MapMarker($(xmlNode).find("mapMarker"));
-    this.originYear = $(xmlNode).find("originYear").text();
-    this.endingYear = $(xmlNode).find("endingYear").text();
+    this.originYear = parseInt($(xmlNode).find("originYear").text());
+    this.endingYear = parseInt($(xmlNode).find("endingYear").text());
 }
 
 function MapMarker(xmlNode){
@@ -26,6 +26,73 @@ function parseXML(xml){
         $("#"+this.name).css("top", this.mapMarker.topSpace);
         $("#"+this.name).css("left", this.mapMarker.leftSpace);
     });
+    
+    updateMarkers();
+}
+
+function updateMarkers(){
+    var year = parseInt($("#slider").val());
+    $.each(civilizations, function() {
+        if(this.originYear <= year && this.endingYear > year){
+            $("#"+this.name).fadeIn();
+        }
+
+        else{
+            $("#"+this.name).fadeOut();
+        }
+    });
+}
+
+function snapToClosest(){
+    var sliderValue = parseInt($("#slider").val());
+    var closestDistance = 100000;
+    var distance;
+    var finalValue;
+    
+    $.each(civilizations, function() {
+        if (this.originYear <= sliderValue){
+            distance = sliderValue - this.originYear;
+        }
+        else{
+            distance = this.originYear - sliderValue;
+        }
+        
+        if(distance < closestDistance){
+            finalValue = this.originYear;
+            closestDistance = distance;
+        }
+        
+        if (this.endingYear <= sliderValue){
+            distance = sliderValue - this.endingYear;
+        }
+        else{
+            distance = this.endingYear - sliderValue;
+        }
+        
+        if(distance < closestDistance){
+            finalValue = this.endingYear;
+            closestDistance = distance;
+        }
+    });
+
+    
+    var interval = setInterval(function() {
+        if(finalValue > sliderValue){
+            var newVal = parseFloat($('#slider').val()) + 0.25;
+        }
+        else{
+            var newVal = parseFloat($('#slider').val()) - 0.25;
+        }
+        
+        $('#slider').val(newVal);
+        $('#slider').trigger("input");
+        
+        if(parseInt($('#slider').val()) == finalValue){
+            clearInterval(interval);
+        }
+    }, 1);
+    
+    
 }
 
 $(document).ready(function() {
@@ -38,55 +105,57 @@ $(document).ready(function() {
     });
     
     
-    
-    $(".mapMarker").click(function() {
-       
+    $("#slider").on('input', function(){
+        updateMarkers();
     });
     
-    $("#slider").change( function() {
-        $.each(civilizations, function() {
-            if(this.originYear < $("#slider").val() && this.endingYear > $("#slider").val()){
-                $("#"+this.name).fadeIn();
-            }
-            
-            else{
-                $("#"+this.name).fadeOut();
-            }
-        });
-    
+    $("#slider").on('change', function(){
+        snapToClosest();
     });
-    
 });
 
-$(document).on('click', '.mapMarker', function() { 
+function selectMarker(civilizationName){
+    
+    var marker = $('#' + civilizationName);
+    //Salvando o estado atual do mapa
     var originalDiv = $("#mapDiv").clone(true);
 
     //Leitura da posição do marcador
-    var origin = $(this).position();
+    var origin = marker.position();
 
-    var x = origin.left + $(this).width()/2;
-    var y = origin.top + $(this).height()/2;
+    var x = origin.left + marker.width()/2;
+    var y = origin.top + marker.height()/2;
 
     //Setando o ponto de origem de Scale, faz o zoom ir na direção do marcador
     $('.map').css({ transformOrigin: "" + x + "px " + y + "px"});
 
     $('.map').transition({
-        scale : '3'
+        scale : '4'
     }, 1250);
     
-    $('.mapMarker').not($(this)).fadeOut(100);
+    $('.mapMarker').not(marker).fadeOut(200);
     
-    $(this).transition({
-        scale : '3'
+    marker.transition({
+        scale : '4'
     }, 1250, function(){
 
         //Restaurando o mapa ao estado salvo, pode ficar hidden nas outras telas e ser restaurado quando o botao de voltar for clicado
+//        $("#mapDiv").empty();
+//        $("#mapDiv").replaceWith(originalDiv);
+        
+    });
+    
+    $("#mainDiv").fadeOut(1250, function (){
         $("#mapDiv").empty();
         $("#mapDiv").replaceWith(originalDiv);
+        $("#mainDiv").fadeIn(1250);
     });
+}
+
+$(document).on('click', '.mapMarker', function(){
+    selectMarker($(this).attr('id'));
 });
 
- //Salvando o estado atual do mapa
        
         
         
