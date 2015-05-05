@@ -22,7 +22,7 @@ function parseXML(xml){
                                      
     $.each(civilizations, function() {
         var DOMMarker = 
-        $("#mapDiv").append("<img src='MapMarker.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='mapMarker'/>");
+        $("#mapDiv").append("<img src='MapMarker.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
         $("#"+this.name).css("top", this.mapMarker.topSpace);
         $("#"+this.name).css("left", this.mapMarker.leftSpace);
     });
@@ -127,13 +127,13 @@ function selectMarker(civilizationName){
     var y = origin.top + marker.height()/2;
 
     //Setando o ponto de origem de Scale, faz o zoom ir na direção do marcador
-    $('.map').css({ transformOrigin: "" + x + "px " + y + "px"});
+    $('.Map').css({ transformOrigin: "" + x + "px " + y + "px"});
 
-    $('.map').transition({
+    $('.Map').transition({
         scale : '4'
     }, 1250);
     
-    $('.mapMarker').not(marker).fadeOut(200);
+    $('.MapMarker').not(marker).fadeOut(200);
     
     marker.transition({
         scale : '4'
@@ -147,12 +147,18 @@ function selectMarker(civilizationName){
     
     $("#mainDiv").fadeOut(1250, function (){
         $("#mapDiv").empty();
-        $("#mapDiv").replaceWith(originalDiv);
+//        $("#mapDiv").replaceWith(originalDiv);
+        $("#mainDiv").css("background-image", "url('')");
+        $("#mainDiv").css("background-color", "blue");
+        
+        $("#mainDiv").css("verticalAlign", "bottom");        
+        $("#mainDiv").append("<div id='civilizationMenu'></div>");
+        $("#civilizationMenu").append("<img src='Civilizações/" + civilizationName + "/menu.png' id='civilizationMenuImg'></img>")
         $("#mainDiv").fadeIn(1250);
     });
 }
 
-$(document).on('click', '.mapMarker', function(){
+$(document).on('click', '.MapMarker', function(){
     selectMarker($(this).attr('id'));
 });
 
