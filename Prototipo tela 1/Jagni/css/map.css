@@ -1,0 +1,44 @@
+#mapDiv{
+    display: inline-block;
+    max-width: 90vw;
+    vertical-align: middle;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.Map{
+    resize: both;
+    max-height: 90vh;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.MapMarker{
+    display: inline-block;
+    position: absolute;
+    resize: both;
+    width: auto;
+    height: auto;
+    max-width: 7.5%;
+    max-height: 7.5%;
+    top: 0%;
+    left: 0%;
+}
+
+#slider{
+    display: inline-block;
+    margin: auto;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    -webkit-backface-visibility: hidden;
+}
+
+#sliderDiv{
+    display: block;
+ text-align: center;
+ width: 100%;
+ margin: auto;
+}

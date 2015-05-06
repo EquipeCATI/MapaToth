@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-padding-start: 0px;
+}
+
+#mainDiv{
+    background-image: url("http://1-background.com/images/nature/images/wood-walnut-background-tile.jpg");
+    background-size: 25%;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}

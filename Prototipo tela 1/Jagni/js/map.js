@@ -5,40 +5,27 @@ function Civilization(xmlNode){
     this.mapMarker = new MapMarker($(xmlNode).find("mapMarker"));
     this.originYear = parseInt($(xmlNode).find("originYear").text());
     this.endingYear = parseInt($(xmlNode).find("endingYear").text());
+    
+    this.mapMarker.civilization = this;
 }
 
 function MapMarker(xmlNode){
     this.topSpace = $(xmlNode).find("top").text();
     this.leftSpace = $(xmlNode).find("left").text();
-}
-
-function parseXML(xml){
-    
-    $(xml).find("Civilization").each(function()
-    {        
-        var civilization = new Civilization($(this));
-        civilizations.push(civilization);
-    });
-                                     
-    $.each(civilizations, function() {
-        var DOMMarker = 
-        $("#mapDiv").append("<img src='MapMarker.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
-        $("#"+this.name).css("top", this.mapMarker.topSpace);
-        $("#"+this.name).css("left", this.mapMarker.leftSpace);
-    });
-    
-    updateMarkers();
+    this.civilization;
 }
 
 function updateMarkers(){
     var year = parseInt($("#slider").val());
     $.each(civilizations, function() {
+        var marker = $("#"+this.name);
+        marker.stop();
         if(this.originYear <= year && this.endingYear > year){
-            $("#"+this.name).fadeIn();
+            marker.fadeIn(125);
         }
 
         else{
-            $("#"+this.name).fadeOut();
+            marker.fadeOut(125);
         }
     });
 }
@@ -95,30 +82,11 @@ function snapToClosest(){
     
 }
 
-$(document).ready(function() {
-    
-    $.ajax({
-        type: "GET",
-        url: "civilizations.xml",
-        dataType: "xml",
-        success: parseXML
-    });
-    
-    
-    $("#slider").on('input', function(){
-        updateMarkers();
-    });
-    
-    $("#slider").on('change', function(){
-        snapToClosest();
-    });
-});
-
 function selectMarker(civilizationName){
     
     var marker = $('#' + civilizationName);
     //Salvando o estado atual do mapa
-    var originalDiv = $("#mapDiv").clone(true);
+    $("#mainDiv").data("map", $("#mainDiv").clone(true));
 
     //Leitura da posição do marcador
     var origin = marker.position();
@@ -137,29 +105,38 @@ function selectMarker(civilizationName){
     
     marker.transition({
         scale : '4'
-    }, 1250, function(){
-
-        //Restaurando o mapa ao estado salvo, pode ficar hidden nas outras telas e ser restaurado quando o botao de voltar for clicado
-//        $("#mapDiv").empty();
-//        $("#mapDiv").replaceWith(originalDiv);
-        
-    });
+    }, 1250);
     
+    transitionToCivilizationMenu(civilizationName);
+}
+
+function transitionToCivilizationMenu(civilizationName){
     $("#mainDiv").fadeOut(1250, function (){
         $("#mapDiv").empty();
-//        $("#mapDiv").replaceWith(originalDiv);
-        $("#mainDiv").css("background-image", "url('')");
-        $("#mainDiv").css("background-color", "blue");
+        $("#mainDiv").css("background-image", "url('../assets/Civilizações/" + civilizationName + "/menuBackground.png')");
         
         $("#mainDiv").css("verticalAlign", "bottom");        
-        $("#mainDiv").append("<div id='civilizationMenu'></div>");
-        $("#civilizationMenu").append("<img src='Civilizações/" + civilizationName + "/menu.png' id='civilizationMenuImg'></img>")
+        $("#mainDiv").append("<div id='civilizationMenuDiv'></div>");
+        
+        var menuBg = preload.getResult("menu" + civilizationName);
+        $(menuBg).attr("id", "civilizationMenuImg");
+        $("#civilizationMenuDiv").append(menuBg);
+        
+        $("#mainDiv").append("<img src='../assets/compass.jpg' class='MapButton'></img>");
         $("#mainDiv").fadeIn(1250);
     });
 }
 
 $(document).on('click', '.MapMarker', function(){
     selectMarker($(this).attr('id'));
+});
+
+$(document).on('input', '#slider', function(){
+        updateMarkers();
+});
+    
+$(document).on('change', '#slider', function(){
+        snapToClosest();
 });
 
        

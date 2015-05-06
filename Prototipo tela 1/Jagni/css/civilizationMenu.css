@@ -1,0 +1,25 @@
+#civilizationMenuDiv{
+    display: inline-block;
+    max-width: 90vw;
+    max-height: 98vh;
+    vertical-align: bottom;
+    position: relative;
+    overflow: hidden;
+}
+
+#civilizationMenuImg{
+    display: block;
+    margin-bottom: 0px;
+    resize: both;
+    max-width: 100%;
+    height: 98vh;
+}
+
+.MapButton{
+    position: fixed;
+    left: -20px;
+    top: 5%;
+    max-width: 15vw;
+    max-height: 15vh;
+    resize: both;
+}

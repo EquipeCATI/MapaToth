@@ -12,7 +12,7 @@
     </Civilization>
     
     <Civilization>
-        <name>Nordica</name>
+        <name>Nórdica</name>
         <originYear>70</originYear>
         <endingYear>90</endingYear>
 	    <mapMarker>
@@ -22,7 +22,7 @@
     </Civilization>
     
     <Civilization>
-        <name>Egipcia</name>
+        <name>Egípcia</name>
         <originYear>0</originYear>
         <endingYear>30</endingYear>
 	    <mapMarker>
