@@ -1,8 +1,9 @@
 var preload = new createjs.LoadQueue(true);
 var line;
+var civilizations = [];
+
 function loadAssets(){
     var imgManifest = [];
-	preload.on("complete", handleComplete);
     preload.on("error", handleError);
     preload.on("progress", handleProgress);
     
@@ -21,6 +22,7 @@ function handleComplete(){
     $("#progress").fadeOut();
     $("#mainDiv").fadeIn();
     $("#mainDiv *").fadeIn();
+    updateMarkers();
 }
 
 function handleError(){
@@ -28,7 +30,11 @@ function handleError(){
 }
 
 function handleProgress(event){
-    line.animate(event.progress);
+    line.animate(event.progress, function(){
+        if(event.progress == 1)
+        handleComplete();
+    });
+    
 }
 
 

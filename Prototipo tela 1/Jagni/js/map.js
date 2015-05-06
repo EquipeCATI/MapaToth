@@ -1,20 +1,3 @@
-var civilizations = [];
-
-function Civilization(xmlNode){
-    this.name = $(xmlNode).find("name").text();
-    this.mapMarker = new MapMarker($(xmlNode).find("mapMarker"));
-    this.originYear = parseInt($(xmlNode).find("originYear").text());
-    this.endingYear = parseInt($(xmlNode).find("endingYear").text());
-    
-    this.mapMarker.civilization = this;
-}
-
-function MapMarker(xmlNode){
-    this.topSpace = $(xmlNode).find("top").text();
-    this.leftSpace = $(xmlNode).find("left").text();
-    this.civilization;
-}
-
 function updateMarkers(){
     var year = parseInt($("#slider").val());
     $.each(civilizations, function() {
@@ -113,7 +96,7 @@ function selectMarker(civilizationName){
 function transitionToCivilizationMenu(civilizationName){
     $("#mainDiv").fadeOut(1250, function (){
         $("#mapDiv").empty();
-        $("#mainDiv").css("background-image", "url('../assets/Civilizações/" + civilizationName + "/menuBackground.png')");
+        $("#mainDiv").css("background-image", "url('"+$(preload.getResult('menuBackground' + civilizationName)).attr('src')+"')");
         
         $("#mainDiv").css("verticalAlign", "bottom");        
         $("#mainDiv").append("<div id='civilizationMenuDiv'></div>");

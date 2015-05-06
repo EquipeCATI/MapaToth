@@ -24,8 +24,19 @@ $(document).on('click', '.MapButton', function(){
         scale : '0.25'
     }, 1250);
     
-    transitionToMap();
-    
+    transitionToMap();  
+});
+
+$(document).on('click', '.CultureButton', function(){
+      
+});
+
+$(document).on('click', '.CosmogonyButton', function(){
+     
+});
+
+$(document).on('click', '.TeogonyButton', function(){
+      
 });
 
 function transitionToMap(){

@@ -11,8 +11,10 @@
     display: block;
     margin-bottom: 0px;
     resize: both;
+    max-height: 98vh;
     max-width: 100%;
-    height: 98vh;
+    width: auto;
+    
 }
 
 .MapButton{

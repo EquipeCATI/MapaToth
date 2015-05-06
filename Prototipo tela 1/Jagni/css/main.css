@@ -15,3 +15,18 @@
     vertical-align: middle;
     display: table-cell;
 }
+
+.progress {
+                vertical-align: middle;
+                background-color: grey;
+            }
+            .progress > svg {
+                background-color: grey;
+                position: absolute;
+                top: 50%;
+                left: 10%;
+                width: 80%;
+                margin: 0 auto;
+                height: 5%;
+                display: block;
+            }
