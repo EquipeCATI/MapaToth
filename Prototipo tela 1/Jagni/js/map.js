@@ -87,7 +87,7 @@ function selectMarker(marker){
         scale : '4'
     }, 1250);
     
-    $('.MapMarker').not(marker).fadeOut(200);
+    $('.MapMarker').not(marker).fadeOut(10);
     
     marker.transition({
         scale : '4'
@@ -117,7 +117,6 @@ function transitionToCivilizationMenu(marker){
 }
 
 $(document).on('click', '.MapMarker', function(){
-    $(".MapMarker").not(this).fadeOut(10);
     selectMarker($(this));
 });
 
