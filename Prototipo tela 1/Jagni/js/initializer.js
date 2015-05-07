@@ -15,6 +15,8 @@ function loadAssets(){
         imgManifest.push(img);
     });
     
+    
+    
 	preload.loadManifest(imgManifest, true, "../assets/Civilizações/");
 }
 
@@ -34,7 +36,6 @@ function handleProgress(event){
         if(event.progress == 1)
         handleComplete();
     });
-    
 }
 
 
@@ -70,9 +71,14 @@ function parseXML(xml){
                                      
     $.each(civilizations, function() {
         $("#mapDiv").append("<img src='../assets/MapMarker.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
-        $("#"+this.name).css("top", this.mapMarker.topSpace);
-        $("#"+this.name).css("left", this.mapMarker.leftSpace);
+        
+        var marker = $("#"+this.name);
+        marker.css("top", this.mapMarker.topSpace);
+        marker.css("left", this.mapMarker.leftSpace);
+        marker.data("civilization", this);
     });
+    
+    //civilizations = [];
     
     updateMarkers();
 }

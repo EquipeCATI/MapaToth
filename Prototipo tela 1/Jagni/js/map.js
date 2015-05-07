@@ -1,16 +1,18 @@
 function updateMarkers(){
     var year = parseInt($("#slider").val());
-    $.each(civilizations, function() {
-        var marker = $("#"+this.name);
-        marker.stop();
-        if(this.originYear <= year && this.endingYear > year){
-            marker.fadeIn(125);
+    
+    $(".MapMarker").each(function() {
+        $(this).stop();
+        var civilization = $(this).data("civilization");
+        if(civilization.originYear <= year && civilization.endingYear > year){
+            $(this).fadeIn(125);
         }
 
         else{
-            marker.fadeOut(125);
+            $(this).fadeOut(125);
         }
     });
+    
 }
 
 function snapToClosest(){
@@ -19,28 +21,31 @@ function snapToClosest(){
     var distance;
     var finalValue;
     
-    $.each(civilizations, function() {
-        if (this.originYear <= sliderValue){
-            distance = sliderValue - this.originYear;
+    
+    $(".MapMarker").each(function() {
+        var civilization = $(this).data("civilization");
+        
+        if (civilization.originYear <= sliderValue){
+            distance = sliderValue - civilization.originYear;
         }
         else{
-            distance = this.originYear - sliderValue;
+            distance = civilization.originYear - sliderValue;
         }
         
         if(distance < closestDistance){
-            finalValue = this.originYear;
+            finalValue = civilization.originYear;
             closestDistance = distance;
         }
         
-        if (this.endingYear <= sliderValue){
-            distance = sliderValue - this.endingYear;
+        if (civilization.endingYear <= sliderValue){
+            distance = sliderValue - civilization.endingYear;
         }
         else{
-            distance = this.endingYear - sliderValue;
+            distance = civilization.endingYear - sliderValue;
         }
         
         if(distance < closestDistance){
-            finalValue = this.endingYear;
+            finalValue = civilization.endingYear;
             closestDistance = distance;
         }
     });
@@ -65,9 +70,7 @@ function snapToClosest(){
     
 }
 
-function selectMarker(civilizationName){
-    
-    var marker = $('#' + civilizationName);
+function selectMarker(marker){
     //Salvando o estado atual do mapa
     $("#mainDiv").data("map", $("#mainDiv").clone(true));
 
@@ -90,10 +93,12 @@ function selectMarker(civilizationName){
         scale : '4'
     }, 1250);
     
-    transitionToCivilizationMenu(civilizationName);
+    transitionToCivilizationMenu(marker);
 }
 
-function transitionToCivilizationMenu(civilizationName){
+function transitionToCivilizationMenu(marker){
+    currentCivilization = marker.data("civilization");
+    var civilizationName = currentCivilization.name;
     $("#mainDiv").fadeOut(1250, function (){
         $("#mapDiv").empty();
         $("#mainDiv").css("background-image", "url('"+$(preload.getResult('menuBackground' + civilizationName)).attr('src')+"')");
@@ -111,7 +116,7 @@ function transitionToCivilizationMenu(civilizationName){
 }
 
 $(document).on('click', '.MapMarker', function(){
-    selectMarker($(this).attr('id'));
+    selectMarker($(this));
 });
 
 $(document).on('input', '#slider', function(){
