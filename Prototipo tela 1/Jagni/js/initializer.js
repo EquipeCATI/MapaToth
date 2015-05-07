@@ -70,7 +70,7 @@ function parseXML(xml){
     loadAssets();
                                      
     $.each(civilizations, function() {
-        $("#mapDiv").append("<img src='../assets/MapMarker.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
+        $("#mapDiv").append("<img src='../assets/Civilizações/"+ this.name + "/MapMarker.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
         
         var marker = $("#"+this.name);
         marker.css("top", this.mapMarker.topSpace);
@@ -78,7 +78,7 @@ function parseXML(xml){
         marker.data("civilization", this);
     });
     
-    //civilizations = [];
+    civilizations = [];
     
     updateMarkers();
 }

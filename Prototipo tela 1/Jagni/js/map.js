@@ -99,6 +99,7 @@ function selectMarker(marker){
 function transitionToCivilizationMenu(marker){
     currentCivilization = marker.data("civilization");
     var civilizationName = currentCivilization.name;
+    
     $("#mainDiv").fadeOut(1250, function (){
         $("#mapDiv").empty();
         $("#mainDiv").css("background-image", "url('"+$(preload.getResult('menuBackground' + civilizationName)).attr('src')+"')");
@@ -116,6 +117,7 @@ function transitionToCivilizationMenu(marker){
 }
 
 $(document).on('click', '.MapMarker', function(){
+    $(".MapMarker").not(this).fadeOut(10);
     selectMarker($(this));
 });
 
