@@ -25,17 +25,17 @@ function loadAssets() {
 
         //Botões
         img = {
-            src: this.name + "/cosmogonyButton.png",
+            src: this.name + "/Cosmogonia/Botão.png",
             id: "cosmogonyButton" + this.name
         };
         imgManifest.push(img);
         img = {
-            src: this.name + "/teogonyButton.png",
+            src: this.name + "/Teogonia/Botão.png",
             id: "teogonyButton" + this.name
         };
         imgManifest.push(img);
         img = {
-            src: this.name + "/cultureButton.png",
+            src: this.name + "/Cultura/Botão.png",
             id: "cultureButton" + this.name
         };
         imgManifest.push(img);
@@ -43,7 +43,7 @@ function loadAssets() {
 
     });
 
-    preload.loadManifest(imgManifest, true, "../assets/Civilizações/");
+    preload.loadManifest(imgManifest, true, "../Conteúdo/Civilizações/");
 }
 
 function handleComplete() {
@@ -69,7 +69,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "GET",
-        url: "../assets/civilizations.xml",
+        url: "../Conteúdo/Civilizações.xml",
         dataType: "xml",
         success: parseXML
     });
@@ -93,7 +93,7 @@ function parseXML(xml) {
     loadAssets();
 
     $.each(civilizations, function () {
-        $("#mapDiv").append("<img src='../assets/Civilizações/" + this.name + "/MapMarker.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
+        $("#mapDiv").append("<img src='../Conteúdo/Civilizações/" + this.name + "/MarcadorMapa.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
 
         var marker = $("#" + this.name);
         marker.css("top", this.mapMarker.topSpace);

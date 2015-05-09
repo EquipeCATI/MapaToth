@@ -10,7 +10,6 @@ function updateMarkers() {
             $(this).fadeOut(125);
         }
     });
-
 }
 
 function snapToClosest() {
@@ -98,7 +97,7 @@ function transitionToCivilizationMenu(marker) {
     var civilizationName = currentCivilization.name;
 
     $("#mainDiv").fadeOut(1250, function () {
-        $("#mapDiv").empty();
+        $("#mainDiv").empty();
         $("#mainDiv").css("background-image", "url('" + $(preload.getResult('menuBackground' + civilizationName)).attr('src') + "')");
 
         $("#mainDiv").css("verticalAlign", "bottom");
@@ -110,7 +109,7 @@ function transitionToCivilizationMenu(marker) {
 
         addCivilizationButtons();
 
-        $("#mainDiv").append("<img src='../assets/compass.jpg' class='MapButton'></img>");
+        $("#mainDiv").append("<img src='../Conteúdo/compass.jpg' class='MapButton'></img>");
         $("#mainDiv").fadeIn(1250);
     });
 }

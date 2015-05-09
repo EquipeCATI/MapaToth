@@ -29,6 +29,7 @@ $(document).on('click', '.MapButton', function () {
     transitionToMap();
 });
 function transitionToMap() {
+    currentCivilization = undefined;
     $("#mainDiv").fadeOut(625, function () {
         $("#mainDiv").replaceWith($("#mainDiv").data('map'));
         $("#mainDiv").fadeOut(0);
