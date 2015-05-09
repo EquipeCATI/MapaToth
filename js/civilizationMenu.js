@@ -28,6 +28,7 @@ $(document).on('click', '.MapButton', function () {
 
     transitionToMap();
 });
+
 function transitionToMap() {
     currentCivilization = undefined;
     $("#mainDiv").fadeOut(625, function () {
@@ -37,25 +38,42 @@ function transitionToMap() {
     });
 }
 
-$(document).on('click', '.CultureButton', function () {
+$(document).on('click', '#cultureButton', function () {
 
 });
 
-$(document).on('click', '.CosmogonyButton', function () {
+$(document).on('click', '#cosmogonyButton', function () {
     transitionToCivilizationTeogony();
 });
+
 function transitionToCivilizationCosmogony() {
-    
+    $("#mainDiv").fadeOut(1250, function () {
+        
+        $("#mainDiv").empty();
+
+        $("#mainDiv").css("background-image", "url('" + $(preload.getResult('teogonyBackground' + currentCivilization.name)).attr('src') + "')");
+
+        $("#mainDiv").css("verticalAlign", "bottom");
+        $("#mainDiv").append("<div id='civilizationTeogonyDiv'></div>");
+
+        var teogonyBg = preload.getResult("teogony" + civilizationName);
+        $(teogonyBg).attr("id", "civilizationTeogonyImg");
+        $("#civilizationMenuDiv").append(menuBg);
+
+        $("#mainDiv").append("<img src='../assets/compass.jpg' class='MapButton'></img>");
+        $("#mainDiv").fadeIn(1250);
+    });
 }
 
 $(document).on('click', '#teogonyButton',  function () {
     transitionToCivilizationTeogony();
 });
+
 function transitionToCivilizationTeogony() {
     $("#mainDiv").fadeOut(1250, function () {
         $("#mainDiv").data("civilizationMenu", $("#mainDiv").clone(true));
 
-        $("#civilizationMenuDiv").empty();
+        $("#mainDiv").empty();
 
         $("#mainDiv").css("background-image", "url('" + $(preload.getResult('teogonyBackground' + currentCivilization.name)).attr('src') + "')");
 
