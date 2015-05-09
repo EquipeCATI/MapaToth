@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Civilizations>
+
+    <Civilization>
+        <name>Grega</name>
+        <originYear>20</originYear>
+        <endingYear>50</endingYear>
+
+        <mapMarker>
+            <top>42%</top>
+            <left>50%</left>
+        </mapMarker>
+
+        <menuButtons>
+            <height>45%</height>
+
+            <cosmogonyButton>
+                <top>54.5%</top>
+                <left>18%</left>
+            </cosmogonyButton>
+
+            <teogonyButton>
+                <top>54.5%</top>
+                <left>37%</left>
+            </teogonyButton>
+
+            <cultureButton>
+                <top>54.5%</top>
+                <left>74%</left>
+            </cultureButton>
+
+        </menuButtons>
+
+
+    </Civilization>
+
+    <Civilization>
+        <name>Nórdica</name>
+        <originYear>70</originYear>
+        <endingYear>90</endingYear>
+        <mapMarker>
+            <top>25%</top>
+            <left>50%</left>
+        </mapMarker>
+    </Civilization>
+
+    <Civilization>
+        <name>Egípcia</name>
+        <originYear>0</originYear>
+        <endingYear>30</endingYear>
+        <mapMarker>
+            <top>48%</top>
+            <left>55%</left>
+        </mapMarker>
+    </Civilization>
+
+</Civilizations>
