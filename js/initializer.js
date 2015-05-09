@@ -43,7 +43,7 @@ function loadAssets() {
 
     });
 
-    preload.loadManifest(imgManifest, true, "../Conteúdo/Civilizações/");
+    preload.loadManifest(imgManifest, true, "Conteúdo/Civilizações/");
 }
 
 function handleComplete() {
@@ -69,7 +69,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "GET",
-        url: "../Conteúdo/Civilizações.xml",
+        url: "Conteúdo/Civilizações.xml",
         dataType: "xml",
         success: parseXML
     });
@@ -93,7 +93,7 @@ function parseXML(xml) {
     loadAssets();
 
     $.each(civilizations, function () {
-        $("#mapDiv").append("<img src='../Conteúdo/Civilizações/" + this.name + "/MarcadorMapa.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
+        $("#mapDiv").append("<img src='Conteúdo/Civilizações/" + this.name + "/MarcadorMapa.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
 
         var marker = $("#" + this.name);
         marker.css("top", this.mapMarker.topSpace);

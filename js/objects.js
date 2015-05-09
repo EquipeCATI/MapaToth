@@ -8,6 +8,7 @@ function Civilization(xmlNode) {
     this.teogonyButton = new CivilizationButton($(xmlNode).find("menuButtons"), "teogonyButton");
     this.cultureButton = new CivilizationButton($(xmlNode).find("menuButtons"), "cultureButton");
 
+    this.gods = [];
     this.mapMarker.civilization = this;
 }
 
