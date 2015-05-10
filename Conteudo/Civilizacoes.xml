@@ -30,7 +30,35 @@
             </cultureButton>
 
         </menuButtons>
-
+        
+        <gods>
+            <god>
+                <godName>Zeus</godName>
+                <description>
+                
+                Zeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
+                Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
+                
+                Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
+                
+                Zeus é o bichão, rei dos deuses
+                Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
+                
+                Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
+                
+                </description>
+            </god>
+            
+            <god>
+                <godName>Hades</godName>
+                <description>El capiroto</description>
+            </god>
+            
+            <god>
+                <godName>Hera</godName>
+                <description>Rainha do Olimpo</description>
+            </god>
+        </gods>
 
     </Civilization>
 

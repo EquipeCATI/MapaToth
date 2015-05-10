@@ -15,14 +15,23 @@ function loadAssets() {
         };
         imgManifest.push(img);
 
-        //Textura de background da pagina
+        //Textura de background da pagina inicial da civilização
         img = {
             src: this.name + "/menuBackground.png",
             id: "menuBackground" + this.name
         };
 
         imgManifest.push(img);
+        
+        //Textura de background da teogonia da civilização
+        img = {
+            src: this.name + "/Teogonia/teogonyBackground.png",
+            id: "teogonyBackground" + this.name
+        };
 
+        imgManifest.push(img);
+
+        
         //Botões
         img = {
             src: this.name + "/Cosmogonia/Botao.png",
@@ -40,7 +49,13 @@ function loadAssets() {
         };
         imgManifest.push(img);
 
-
+        $.each(this.gods, function () {
+            img = {
+                src: this.civilization.name + "/Teogonia/" + this.name + ".png",
+                id: this.name
+            };
+            imgManifest.push(img);
+        });
     });
 
     preload.loadManifest(imgManifest, true, "Conteudo/Civilizacoes/");

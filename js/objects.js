@@ -7,9 +7,23 @@ function Civilization(xmlNode) {
     this.cosmogonyButton = new CivilizationButton($(xmlNode).find("menuButtons"), "cosmogonyButton");
     this.teogonyButton = new CivilizationButton($(xmlNode).find("menuButtons"), "teogonyButton");
     this.cultureButton = new CivilizationButton($(xmlNode).find("menuButtons"), "cultureButton");
-
-    this.gods = [];
+    
     this.mapMarker.civilization = this;
+    
+    var nodes = $(xmlNode).find("god");
+    var gods = [];
+    for(var i = 0; i < nodes.length; i++){
+        gods.push(new God(nodes[i], this));
+    }
+    
+    this.gods = gods;
+}
+
+function God(xmlNode, civilization){
+    this.name = $(xmlNode).find("godName").text();
+    this.description = $(xmlNode).find("description").text();
+    this.civilization = civilization;
+    this.source = undefined;
 }
 
 function CivilizationButton(xmlNode, buttonName) {

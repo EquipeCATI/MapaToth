@@ -109,7 +109,7 @@ function transitionToCivilizationMenu(marker) {
 
         addCivilizationButtons();
 
-        $("#mainDiv").append("<img src='../Conteúdo/compass.jpg' class='MapButton'></img>");
+        $("#mainDiv").append("<img src='Conteudo/compass.jpg' class='MapButton'></img>");
         $("#mainDiv").fadeIn(1250);
     });
 }
@@ -138,7 +138,7 @@ function addCivilizationButtons (){
     $(cultureButton).attr("id", "teogonyButton");
     $(cultureButton).attr("class", "CivilizationButton");
 
-    $("#civilizationMenuDiv").append(cultureButton);
+    //$("#civilizationMenuDiv").append(cultureButton);
     $("#civilizationMenuDiv").append(teogonyButton);
     $("#civilizationMenuDiv").append(cosmogonyButton);
     

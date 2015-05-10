@@ -1,0 +1,59 @@
+.God {}
+
+#civilizationTeogony {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    max-height: 100vh;
+    vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+}
+
+#nextButton {
+    position: absolute;
+    resize: both;
+    max-height: 10%;
+    max-width: 10%;
+    width: auto;
+    height: auto;
+    right: 0%;
+    top: 50%;
+}
+
+#previousButton {
+    position: absolute;
+    resize: both;
+    max-height: 10%;
+    max-width: 10%;
+    width: auto;
+    height: auto;
+    left: 0%;
+    top: 50%;
+}
+
+#descriptionDiv {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    display: block;
+    text-align: left;
+    padding: 20px;
+    background-color: gray;
+    margin: 0 auto;
+    max-width: 400px;
+    width: 80vw;
+    height: 100px;
+    left: 0;
+    right: 0;
+    bottom: 2.5%;
+    overflow: scroll;
+}
+
+#godImage {
+    resize: both;
+    max-height: 75vh;
+    max-width: 75vw;
+    width: auto;
+    height: auto;
+}
