@@ -7,8 +7,8 @@
         <endingYear>50</endingYear>
 
         <mapMarker>
-            <top>42%</top>
-            <left>50%</left>
+            <top>28%</top>
+            <left>47%</left>
         </mapMarker>
 
         <menuButtons>
@@ -30,30 +30,22 @@
             </cultureButton>
 
         </menuButtons>
-        
+
         <gods>
             <god>
                 <godName>Zeus</godName>
                 <description>
-                
-                Zeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
-                Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
-                
-                Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
-                
-                Zeus é o bichão, rei dos deuses
-                Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
-                
-                Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
-                
+
+                    Zeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
+
                 </description>
             </god>
-            
+
             <god>
                 <godName>Hades</godName>
                 <description>El capiroto</description>
             </god>
-            
+
             <god>
                 <godName>Hera</godName>
                 <description>Rainha do Olimpo</description>
@@ -67,7 +59,7 @@
         <originYear>70</originYear>
         <endingYear>90</endingYear>
         <mapMarker>
-            <top>25%</top>
+            <top>15%</top>
             <left>50%</left>
         </mapMarker>
     </Civilization>
@@ -77,8 +69,8 @@
         <originYear>0</originYear>
         <endingYear>30</endingYear>
         <mapMarker>
-            <top>48%</top>
-            <left>55%</left>
+            <top>39%</top>
+            <left>53%</left>
         </mapMarker>
     </Civilization>
 

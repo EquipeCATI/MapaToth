@@ -7,58 +7,64 @@ function loadAssets() {
     preload.on("error", handleError);
     preload.on("progress", handleProgress);
 
+    var img = {
+        src: "seta.png",
+        id: "seta"
+    };
+    imgManifest.push(img);
+
     $.each(civilizations, function () {
         //Fundo para os botões
-        var img = {
-            src: this.name + "/menu.png",
+        img = {
+            src: "Civilizacoes/" + this.name + "/menu.png",
             id: "menu" + this.name
         };
         imgManifest.push(img);
 
         //Textura de background da pagina inicial da civilização
         img = {
-            src: this.name + "/menuBackground.png",
+            src: "Civilizacoes/" + this.name + "/menuBackground.png",
             id: "menuBackground" + this.name
         };
 
         imgManifest.push(img);
-        
+
         //Textura de background da teogonia da civilização
         img = {
-            src: this.name + "/Teogonia/teogonyBackground.png",
+            src: "Civilizacoes/" + this.name + "/Teogonia/teogonyBackground.png",
             id: "teogonyBackground" + this.name
         };
 
         imgManifest.push(img);
 
-        
+
         //Botões
         img = {
-            src: this.name + "/Cosmogonia/Botao.png",
+            src: "Civilizacoes/" + this.name + "/Cosmogonia/Botao.png",
             id: "cosmogonyButton" + this.name
         };
         imgManifest.push(img);
         img = {
-            src: this.name + "/Teogonia/Botao.png",
+            src: "Civilizacoes/" + this.name + "/Teogonia/Botao.png",
             id: "teogonyButton" + this.name
         };
         imgManifest.push(img);
         img = {
-            src: this.name + "/Cultura/Botao.png",
+            src: "Civilizacoes/" + this.name + "/Cultura/Botao.png",
             id: "cultureButton" + this.name
         };
         imgManifest.push(img);
 
         $.each(this.gods, function () {
             img = {
-                src: this.civilization.name + "/Teogonia/" + this.name + ".png",
+                src: "Civilizacoes/" + this.civilization.name + "/Teogonia/" + this.name + ".png",
                 id: this.name
             };
             imgManifest.push(img);
         });
     });
 
-    preload.loadManifest(imgManifest, true, "Conteudo/Civilizacoes/");
+    preload.loadManifest(imgManifest, true, "Conteudo/");
 }
 
 function handleComplete() {
