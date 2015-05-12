@@ -1,13 +1,13 @@
 var currentCivilization;
 $(document).on('mouseover', '.MapButton', function () {
-    $(".MapButton").animate({
-        left: '0%'
+    $(".MapButton").transition({
+        x: '0'
     });
 });
 
 $(document).on('mouseout', '.MapButton', function () {
-    $(".MapButton").animate({
-        left: '-20px'
+    $(".MapButton").transition({
+        x: '-20px'
     });
 });
 

@@ -34,21 +34,21 @@
         <gods>
             <god>
                 <godName>Zeus</godName>
-                <description>
+                <godDescription>
 
                     Zeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses Zeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deusesZeus é o bichão, rei dos deuses
 
-                </description>
+                </godDescription>
             </god>
 
             <god>
                 <godName>Hades</godName>
-                <description>El capiroto</description>
+                <godDescription>El capiroto</godDescription>
             </god>
 
             <god>
                 <godName>Hera</godName>
-                <description>Rainha do Olimpo</description>
+                <godDescription>Rainha do Olimpo</godDescription>
             </god>
         </gods>
 

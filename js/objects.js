@@ -21,7 +21,7 @@ function Civilization(xmlNode) {
 
 function God(xmlNode, civilization){
     this.name = $(xmlNode).find("godName").text();
-    this.description = $(xmlNode).find("description").text();
+    this.description = $(xmlNode).find("godDescription").text();
     this.civilization = civilization;
     this.source = undefined;
 }

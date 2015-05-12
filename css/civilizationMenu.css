@@ -21,6 +21,8 @@
     position: absolute;
     resize: both;
     height: auto;
+    cursor: pointer;
+    cursor: hand;
 }
 
 .MapButton {
@@ -30,4 +32,6 @@
     max-width: 15vw;
     max-height: 15vh;
     resize: both;
+    cursor: pointer;
+    cursor: hand;
 }

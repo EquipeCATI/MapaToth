@@ -3,7 +3,7 @@ var currentGodIndex;
 function transitionToCivilizationTeogony() {
     currentGodIndex = 0;
     var civ = currentCivilization;
-    $("#mainDiv").fadeOut(1250, function () {
+    $("#mainDiv").fadeOut(625, function () {
         $("#mainDiv").empty();
 
         $("#mainDiv").css("background-image", "url('" + $(preload.getResult('teogonyBackground' + currentCivilization.name)).attr('src') + "')");
@@ -44,10 +44,13 @@ function transitionToCivilizationTeogony() {
 
 
         $("#civilizationTeogony").append("<div id='descriptionDiv'></div>");
+        
         $("#descriptionDiv").append("<p>" + currentCivilization.gods[currentGodIndex].description) + "</p>";
-
+        $("#descriptionDiv").mCustomScrollbar({
+            theme: "dark-thin"
+        });
         $("#mainDiv").append("<img src='Conteudo/compass.jpg' class='MapButton'></img>");
-        $("#mainDiv").fadeIn(1250);
+        $("#mainDiv").fadeIn(625);
     });
 }
 
@@ -65,25 +68,25 @@ $(document).on('click', '#nextButton', function () {
 
     var width = $("#godImage").width();
 
-    $("#descriptionDiv *").fadeOut(100);
+    $("#descriptionDiv *").fadeOut(625);
 
     $("#godImage").transition({
         x: "" + width / 2 + "px",
         scale: "0.25",
         opacity: "0"
-    }, function () {
-        $("#descriptionDiv").empty();
+    }, 625, function () {
         $("#godImage").transition({
             x: "-" + width / 2 + "px"
         }, 0, function () {
             $("#godImage").attr("src", currentCivilization.gods[currentGodIndex].source);
-            $("#descriptionDiv").append("<p>" + currentCivilization.gods[currentGodIndex].description + "</p>");
+            $("#descriptionDiv").find("p").text(currentCivilization.gods[currentGodIndex].description);
+            $("#descriptionDiv *").fadeIn(625);
             $("#godImage").fadeIn();
             $("#godImage").transition({
                 x: "0px",
                 scale: "1",
                 opacity: 1
-            });
+            }, 625);
         })
     });
 });
@@ -102,27 +105,25 @@ $(document).on('click', '#previousButton', function () {
 
     var width = $("#godImage").width();
 
-    $("#descriptionDiv *").fadeOut(100);
+    $("#descriptionDiv *").fadeOut(625);
 
 
     $("#godImage").transition({
         x: "-" + width / 2 + "px",
         scale: "0.25",
         opacity: "0"
-    }, function () {
-        $("#descriptionDiv").empty();
-
-
+    },625, function () {
         $("#godImage").transition({
             x: "" + width / 2 + "px"
         }, 0, function () {
-            $("#descriptionDiv").append("<p>" + currentCivilization.gods[currentGodIndex].description + "</p>");
             $("#godImage").attr("src", currentCivilization.gods[currentGodIndex].source);
+            $("#descriptionDiv").find("p").text(currentCivilization.gods[currentGodIndex].description);
+            $("#descriptionDiv *").fadeIn(625);
             $("#godImage").transition({
                 x: "0px",
                 scale: "1",
                 opacity: 1
-            });
+            },625);
         })
     });
 });
