@@ -1,0 +1,49 @@
+#civilizationCulture {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.CultureButton {
+    position: absolute;
+    display: inline-block;
+    resize: both;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    cursor: hand;
+    margin: auto;
+    z-index: 1;
+}
+
+.CultureButtonDiv {
+    display: inline-block;
+    position: absolute;
+    border-radius: 100%;
+    background-color: gray;
+    
+    width: auto;
+    height: auto;
+    z-index: 0;
+}
+
+.CultureButtonDiv p {
+    font-family: sans-serif;
+    color: white;
+    max-width: 300px;
+    max-height: 300px;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}

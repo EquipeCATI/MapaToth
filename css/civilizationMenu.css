@@ -27,11 +27,12 @@
 
 .MapButton {
     position: fixed;
-    left: -20px;
+    left: -1vw;
     top: 5%;
     max-width: 15vw;
     max-height: 15vh;
     resize: both;
     cursor: pointer;
     cursor: hand;
+    z-index: 100;
 }

@@ -7,19 +7,27 @@ function Civilization(xmlNode) {
     this.cosmogonyButton = new CivilizationButton($(xmlNode).find("menuButtons"), "cosmogonyButton");
     this.teogonyButton = new CivilizationButton($(xmlNode).find("menuButtons"), "teogonyButton");
     this.cultureButton = new CivilizationButton($(xmlNode).find("menuButtons"), "cultureButton");
+
+    this.culturalManifestation = $(xmlNode).find("culturalManifestation").text();
+    this.subsistenceMethod =  $(xmlNode).find("subsistenceMethod").text();
+    this.socialStructure =  $(xmlNode).find("socialStructure").text();
     
+    this.culturalManifestationButton = new CivilizationButton($(xmlNode).find("cultureButtons"), "culturalManifestationButton");
+    this.subsistenceMethodButton = new CivilizationButton($(xmlNode).find("cultureButtons"), "subsistenceMethodButton");
+    this.socialStructureButton = new CivilizationButton($(xmlNode).find("cultureButtons"), "socialStructureButton");
+
     this.mapMarker.civilization = this;
-    
+
     var nodes = $(xmlNode).find("god");
     var gods = [];
-    for(var i = 0; i < nodes.length; i++){
+    for (var i = 0; i < nodes.length; i++) {
         gods.push(new God(nodes[i], this));
     }
-    
+
     this.gods = gods;
 }
 
-function God(xmlNode, civilization){
+function God(xmlNode, civilization) {
     this.name = $(xmlNode).find("godName").text();
     this.description = $(xmlNode).find("godDescription").text();
     this.civilization = civilization;

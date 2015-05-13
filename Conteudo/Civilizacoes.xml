@@ -25,13 +25,49 @@
             </teogonyButton>
 
             <cultureButton>
-                <top>54.5%</top>
-                <left>74%</left>
+                <top>55%</top>
+                <left>55%</left>
             </cultureButton>
 
         </menuButtons>
 
-        <gods>
+        <culture>
+           <culturalManifestation>
+               Os gregos deram origem às ciências como matemática, filosofia e também trouxeram a arte ao mundo com seus poemas e peças.
+           </culturalManifestation>
+           
+           <subsistenceMethod>
+               O solo pouco fértil e as regiões montanhosas que lhe rodeavam fizeram os gregos utilizarem do comércio e expansão imperial.
+           </subsistenceMethod>
+           
+           <socialStructure>
+               Em cada pólis sua estrutura social mudava, mas predominava-se a democracia, criada em Atenas.
+           </socialStructure>
+           
+            <cultureButtons>
+
+                <height>10%</height>
+
+                <culturalManifestationButton>
+                    <top>54.5%</top>
+                    <left>20%</left>
+                </culturalManifestationButton>
+
+                <subsistenceMethodButton>
+                    <top>54.5%</top>
+                    <left>45%</left>
+                </subsistenceMethodButton>
+
+                <socialStructureButton>
+                    <top>54.5%</top>
+                    <left>70%</left>
+                </socialStructureButton>
+
+            </cultureButtons>
+            
+        </culture>
+        <teogony>
+
             <god>
                 <godName>Zeus</godName>
                 <godDescription>
@@ -50,8 +86,8 @@
                 <godName>Hera</godName>
                 <godDescription>Rainha do Olimpo</godDescription>
             </god>
-        </gods>
 
+        </teogony>
     </Civilization>
 
     <Civilization>

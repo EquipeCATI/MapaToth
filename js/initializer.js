@@ -54,6 +54,23 @@ function loadAssets() {
             id: "cultureButton" + this.name
         };
         imgManifest.push(img);
+        
+        //Botões cultura
+        img = {
+            src: "Civilizacoes/" + this.name + "/Cultura/ManifestacaoCultural.png",
+            id: "culturalManifestationButton" + this.name
+        };
+        imgManifest.push(img);
+        img = {
+            src: "Civilizacoes/" + this.name + "/Cultura/MetodoDeSubsistencia.png",
+            id: "subsistenceMethodButton" + this.name
+        };
+        imgManifest.push(img);
+        img = {
+            src: "Civilizacoes/" + this.name + "/Cultura/EstruturaSocial.png",
+            id: "socialStructureButton" + this.name
+        };
+        imgManifest.push(img);
 
         $.each(this.gods, function () {
             img = {
