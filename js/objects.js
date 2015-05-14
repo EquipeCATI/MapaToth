@@ -9,9 +9,9 @@ function Civilization(xmlNode) {
     this.cultureButton = new CivilizationButton($(xmlNode).find("menuButtons"), "cultureButton");
 
     this.culturalManifestation = $(xmlNode).find("culturalManifestation").text();
-    this.subsistenceMethod =  $(xmlNode).find("subsistenceMethod").text();
-    this.socialStructure =  $(xmlNode).find("socialStructure").text();
-    
+    this.subsistenceMethod = $(xmlNode).find("subsistenceMethod").text();
+    this.socialStructure = $(xmlNode).find("socialStructure").text();
+
     this.culturalManifestationButton = new CivilizationButton($(xmlNode).find("cultureButtons"), "culturalManifestationButton");
     this.subsistenceMethodButton = new CivilizationButton($(xmlNode).find("cultureButtons"), "subsistenceMethodButton");
     this.socialStructureButton = new CivilizationButton($(xmlNode).find("cultureButtons"), "socialStructureButton");

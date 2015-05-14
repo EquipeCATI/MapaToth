@@ -93,21 +93,22 @@ function showTopic(id) {
 
     //Usado para elevar o botão quando este for selecionado
     buttonTopSpace = currentCivilization[id].getTopSpaceFloat();
+    buttonLeftSpace = currentCivilization[id].getLeftSpaceFloat();
     buttonHeight = currentCivilization[id].getHeightFloat();
 
     $("#" + id).animate({
-        top: "5%",
-        left: 50 - percentage / 2 + "%"
+        left: buttonLeftSpace + percentage * 0.5 + "%",
     }, {
         duration: 625,
         queue: false
     });
 
     $('#' + divID).animate({
-        height: "100%",
-        width: "100%",
-        left: "0%",
-        top: "0%",
+        height: "20%",
+        width: "20%",
+        //Mantém a div centralizada verticalmente
+        top: buttonTopSpace - (20 - buttonHeight) / 2 + "%",
+        left: buttonLeftSpace - 21 + percentage / 2 + "%",
         borderRadius: "10px"
     }, {
         duration: 625,
@@ -150,14 +151,12 @@ function hideTopic(id) {
         borderRadius: "100%"
     }, {
         duration: 625,
-        queue: false,
-        complete: function () {
-            //Traz o botão e div de volta a camada inicial
-            $("#" + id).css("z-index", "1");
-            $("#" + id).css("right", "");
-            $("#" + divID).css("z-index", "0");
-        }
+        queue: false
     });
 
 
+    //Traz o botão e div de volta a camada inicial
+    $("#" + id).css("z-index", "1");
+    $("#" + id).css("right", "");
+    $("#" + divID).css("z-index", "0");
 }
