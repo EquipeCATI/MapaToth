@@ -5,6 +5,10 @@
     -webkit-padding-start: 0px;
 }
 
+* {
+    overflow: hidden;
+}
+
 #mainDiv {
     background-image: url("http://1-background.com/images/nature/images/wood-walnut-background-tile.jpg");
     background-size: 25%;
@@ -14,6 +18,7 @@
     text-align: center;
     vertical-align: middle;
     display: table-cell;
+    overflow: hidden;
 }
 
 .progress {

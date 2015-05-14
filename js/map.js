@@ -65,30 +65,30 @@ function snapToClosest() {
 }
 
 function selectMarker(marker) {
+
     //Salvando o estado atual do mapa
     $("#mainDiv").data("map", $("#mainDiv").clone(true));
-
+    $(marker).css("pointer-events", "none");
     //Leitura da posição do marcador
-    var origin = marker.position();
+    var origin = marker.offset();
 
     var x = origin.left + marker.width() / 2;
     var y = origin.top + marker.height() / 2;
 
     //Setando o ponto de origem de Scale, faz o zoom ir na direção do marcador
-    $('.Map').css({
+    $('#mainDiv').css({
         transformOrigin: "" + x + "px " + y + "px"
     });
 
-    $('.Map').transition({
-        scale: '4'
+    $('#mainDiv').transition({
+        scale: '3'
     }, 1250);
 
     $('.MapMarker').not(marker).fadeOut(10);
 
-    marker.transition({
-        scale: '4'
-    }, 1250);
-
+    //    marker.transition({
+    //        scale: '4'
+    //    }, 1250);
     transitionToCivilizationMenu(marker);
 }
 

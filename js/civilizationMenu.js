@@ -5,6 +5,9 @@ function transitionToCivilizationMenu(marker) {
     var civilizationName = currentCivilization.name;
 
     $("#mainDiv").fadeOut(1250, function () {
+        $('#mainDiv').transition({
+            scale: '1'
+        }, 0);
         $("#mainDiv").empty();
         $("#mainDiv").css("background-image", "url('" + $(preload.getResult('menuBackground' + civilizationName)).attr('src') + "')");
 

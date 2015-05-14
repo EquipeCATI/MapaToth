@@ -8,7 +8,7 @@
 
         <mapMarker>
             <top>28%</top>
-            <left>47%</left>
+            <left>49%</left>
         </mapMarker>
 
         <menuButtons>
@@ -32,18 +32,18 @@
         </menuButtons>
 
         <culture>
-           <culturalManifestation>
-               Os gregos deram origem às ciências como matemática, filosofia e também trouxeram a arte ao mundo com seus poemas e peças.
-           </culturalManifestation>
-           
-           <subsistenceMethod>
-               O solo pouco fértil e as regiões montanhosas que lhe rodeavam fizeram os gregos utilizarem do comércio e expansão imperial.
-           </subsistenceMethod>
-           
-           <socialStructure>
-               Em cada pólis sua estrutura social mudava, mas predominava-se a democracia, criada em Atenas.
-           </socialStructure>
-           
+            <culturalManifestation>
+                Os gregos deram origem às ciências como matemática, filosofia e também trouxeram a arte ao mundo com seus poemas e peças.
+            </culturalManifestation>
+
+            <subsistenceMethod>
+                O solo pouco fértil e as regiões montanhosas que lhe rodeavam fizeram os gregos utilizarem do comércio e expansão imperial.
+            </subsistenceMethod>
+
+            <socialStructure>
+                Em cada pólis sua estrutura social mudava, mas predominava-se a democracia, criada em Atenas.
+            </socialStructure>
+
             <cultureButtons>
 
                 <height>10%</height>
@@ -64,7 +64,7 @@
                 </socialStructureButton>
 
             </cultureButtons>
-            
+
         </culture>
         <teogony>
 
@@ -95,8 +95,8 @@
         <originYear>70</originYear>
         <endingYear>90</endingYear>
         <mapMarker>
-            <top>15%</top>
-            <left>50%</left>
+            <top>16%</top>
+            <left>46%</left>
         </mapMarker>
     </Civilization>
 
@@ -106,7 +106,7 @@
         <endingYear>30</endingYear>
         <mapMarker>
             <top>39%</top>
-            <left>53%</left>
+            <left>55%</left>
         </mapMarker>
     </Civilization>
 

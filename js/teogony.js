@@ -44,7 +44,7 @@ function transitionToCivilizationTeogony() {
 
 
         $("#civilizationTeogony").append("<div id='descriptionDiv'></div>");
-        
+
         $("#descriptionDiv").append("<p>" + currentCivilization.gods[currentGodIndex].description) + "</p>";
         $("#descriptionDiv").mCustomScrollbar({
             theme: "dark-thin"
@@ -55,7 +55,8 @@ function transitionToCivilizationTeogony() {
 }
 
 $(document).on('click', '#nextButton', function () {
-
+    $(this).css("pointer-events", "none");
+    $("#previousButton").css("pointer-events", "none");
     currentGodIndex++;
 
     if (currentGodIndex == currentCivilization.gods.length) {
@@ -86,13 +87,17 @@ $(document).on('click', '#nextButton', function () {
                 x: "0px",
                 scale: "1",
                 opacity: 1
-            }, 625);
+            }, 625, function () {
+                $("#nextButton").css("pointer-events", "auto");
+                $("#previousButton").css("pointer-events", "auto");
+            });
         })
     });
 });
 
 $(document).on('click', '#previousButton', function () {
-
+    $(this).css("pointer-events", "none");
+    $("#nextButton").css("pointer-events", "none");
     currentGodIndex--;
 
     if (currentGodIndex == -1) {
@@ -112,7 +117,7 @@ $(document).on('click', '#previousButton', function () {
         x: "-" + width / 2 + "px",
         scale: "0.25",
         opacity: "0"
-    },625, function () {
+    }, 625, function () {
         $("#godImage").transition({
             x: "" + width / 2 + "px"
         }, 0, function () {
@@ -123,7 +128,10 @@ $(document).on('click', '#previousButton', function () {
                 x: "0px",
                 scale: "1",
                 opacity: 1
-            },625);
+            }, 625, function () {
+                $("#previousButton").css("pointer-events", "auto");
+                $("#nextButton").css("pointer-events", "auto");
+            });
         })
     });
 });
