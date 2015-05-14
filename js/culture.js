@@ -150,11 +150,14 @@ function hideTopic(id) {
         borderRadius: "100%"
     }, {
         duration: 625,
-        queue: false
+        queue: false,
+        complete: function () {
+            //Traz o botão e div de volta a camada inicial
+            $("#" + id).css("z-index", "1");
+            $("#" + id).css("right", "");
+            $("#" + divID).css("z-index", "0");
+        }
     });
 
-    //Traz o botão e div de volta a camada inicial
-    $("#" + id).css("z-index", "1");
-    $("#" + id).css("right", "");
-    $("#" + divID).css("z-index", "0");
+
 }
