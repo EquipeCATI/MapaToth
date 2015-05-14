@@ -64,79 +64,97 @@ function addCultureDivs() {
 var selected;
 
 $(document).on('click', '.CultureButton', function () {
-    buttonID = $(this).attr("id");
-    divID = buttonID + "Div";
 
     if (selected == this) {
-        
-        
-        $("#" + divID + "p").fadeOut(625, function () {
-            $("#" + divID).empty();
-            $("#" + buttonID).animate({
-                top: currentCivilization[buttonID].topSpace,
-                left: currentCivilization[buttonID].leftSpace,
-            }, {
-                duration: 625,
-                queue: false
-            });
-
-            $('#' + divID).stop().delay(625).animate({
-                top: currentCivilization[buttonID].topSpace,
-                left: currentCivilization[buttonID].leftSpace,
-                right: "",
-                height: currentCivilization[buttonID].height,
-                width: $("#" + buttonID).width() + "px",
-                borderRadius: "100%"
-            }, {
-                duration: 625,
-                queue: false
-            });
-            
-            $("#" + buttonID).css("z-index", "1");
-            $("#" + buttonID).css("right", "");
-            $("#" + divID).css("z-index", "0");
-        });
-
-
-
+        hideTopic($(this).attr("id"));
         selected = undefined;
     } else {
-        var divWidth = $(window).width();
+        if (selected != undefined) {
+            hideTopic($(selected).attr("id"));
+        }
 
-        var buttonWidth = $(this).width();
+        showTopic($(this).attr("id"));
 
-        var percentage = (100 - ((buttonWidth / divWidth) * 100)) / 2;
-        $(this).css("z-index", "3");
-        $("#" + divID).css("z-index", "2");
-        $(this).animate({
-            top: "5%",
-            left: percentage + "%",
-        }, {
-            duration: 625,
-            queue: false
-        });
-
-        $('#' + divID).animate({
-            height: "100%",
-            width: "100%",
-            top: "0%",
-            left: "0%",
-            borderRadius: "0%"
-        }, {
-            duration: 625,
-            queue: false
-        });
-        culturalPoint = buttonID.substring(0, buttonID.length - 6);
-        $('#' + divID).append("<p id='" + divID + "p'>" + currentCivilization[culturalPoint] + "</p>");
-        $('#' + divID + "p").fadeOut(0);
-        $('#' + divID + "p").delay(625).fadeIn(625);
-        $('#' + divID + "p").mCustomScrollbar({
-            theme: "dark-thin"
-        });
         selected = this;
     }
-
-
-
-
 });
+
+function showTopic(id) {
+    divID = id + "Div";
+
+    //Garante que o botão e sua div ficarão visíveis, por cima dos outros elementos
+    $("#" + id).css("z-index", "3");
+    $("#" + divID).css("z-index", "2");
+
+    //Calculo para que a div fique no centro horizontal do botao
+    var divWidth = $(window).width();
+    var buttonWidth = $("#" + id).width();
+    var percentage = (buttonWidth / divWidth) * 100;
+
+    //Usado para elevar o botão quando este for selecionado
+    buttonTopSpace = currentCivilization[id].getTopSpaceFloat();
+    buttonHeight = currentCivilization[id].getHeightFloat();
+
+    $("#" + id).animate({
+        top: "5%",
+        left: 50 - percentage / 2 + "%"
+    }, {
+        duration: 625,
+        queue: false
+    });
+
+    $('#' + divID).animate({
+        height: "100%",
+        width: "100%",
+        left: "0%",
+        top: "0%",
+        borderRadius: "10px"
+    }, {
+        duration: 625,
+        queue: false
+    });
+    culturalPoint = id.substring(0, id.length - 6);
+    $('#' + divID).append("<p id='" + divID + "p'>" + currentCivilization[culturalPoint] + "</p>");
+    $('#' + divID + "p").fadeOut(0);
+    $('#' + divID + "p").delay(625).fadeIn(625);
+    $('#' + divID + "p").mCustomScrollbar({
+        theme: "dark-thin"
+    });
+}
+
+function hideTopic(id) {
+    var divID = id + "Div";
+
+    //Calculo para que a div fique no centro horizontal do botao
+    var divWidth = $(window).width();
+    var buttonWidth = $("#" + id).width();
+    var percentage = (buttonWidth / divWidth) * 100;
+    var buttonLeftSpace = currentCivilization[id].getLeftSpaceFloat();
+
+    $("#" + divID).empty();
+    $("#" + id).animate({
+        top: currentCivilization[id].topSpace,
+        left: currentCivilization[id].leftSpace,
+    }, {
+        duration: 625,
+        queue: false
+    });
+
+    //O centro horizontal é usado aqui!
+    $('#' + divID).stop().delay(625).animate({
+        top: currentCivilization[id].topSpace,
+        left: buttonLeftSpace + percentage / 2 + "%",
+        right: "",
+        height: currentCivilization[id].height,
+        width: "0",
+        borderRadius: "100%"
+    }, {
+        duration: 625,
+        queue: false
+    });
+
+    //Traz o botão e div de volta a camada inicial
+    $("#" + id).css("z-index", "1");
+    $("#" + id).css("right", "");
+    $("#" + divID).css("z-index", "0");
+}

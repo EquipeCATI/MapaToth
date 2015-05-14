@@ -36,9 +36,19 @@ function God(xmlNode, civilization) {
 
 function CivilizationButton(xmlNode, buttonName) {
     this.height = $(xmlNode).find("height").text();
+    this.getHeightFloat = function () {
+        return parseFloat(this.height.substring(0, this.height.length - 1));
+    }
 
     this.topSpace = $(xmlNode).find(buttonName).find("top").text();
+    this.getTopSpaceFloat = function () {
+        return parseFloat(this.topSpace.substring(0, this.topSpace.length - 1));
+    }
+
     this.leftSpace = $(xmlNode).find(buttonName).find("left").text();
+    this.getLeftSpaceFloat = function () {
+        return parseFloat(this.leftSpace.substring(0, this.leftSpace.length - 1));
+    }
 }
 
 function MapMarker(xmlNode) {
