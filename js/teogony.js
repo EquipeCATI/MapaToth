@@ -49,7 +49,6 @@ function transitionToCivilizationTeogony() {
         $("#descriptionDiv").mCustomScrollbar({
             theme: "dark-thin"
         });
-        $("#mainDiv").append("<img src='Conteudo/compass.jpg' class='MapButton'></img>");
         $("#mainDiv").fadeIn(625);
     });
 }

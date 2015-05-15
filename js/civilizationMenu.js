@@ -20,7 +20,6 @@ function transitionToCivilizationMenu(marker) {
 
         addCivilizationButtons();
 
-        $("#mainDiv").append("<img src='Conteudo/compass.jpg' class='MapButton'></img>");
         $("#mainDiv").fadeIn(1250);
     });
 }

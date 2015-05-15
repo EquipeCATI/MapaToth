@@ -1,6 +1,7 @@
 var preload = new createjs.LoadQueue(true);
 var line;
 var civilizations = [];
+var menuIsOpen = false;
 
 function loadAssets() {
     var imgManifest = [];
@@ -54,7 +55,7 @@ function loadAssets() {
             id: "cultureButton" + this.name
         };
         imgManifest.push(img);
-        
+
         //Botões cultura
         img = {
             src: "Civilizacoes/" + this.name + "/Cultura/ManifestacaoCultural.png",
@@ -88,8 +89,30 @@ function handleComplete() {
     $("#progress").fadeOut();
     $("#mainDiv").fadeIn();
     $("#mainDiv *").fadeIn();
+    $("#MenuButton").fadeIn();
     updateMarkers();
 }
+
+$(document).on("click", "#MenuButton", function () {
+    $(this).css("pointer-events", "none");
+
+    if (menuIsOpen) {
+        $("#menuDiv").transition({
+            scale: "0"
+        }, 625, function () {
+            menuIsOpen = false;
+            $("#MenuButton").css("pointer-events", "auto");
+        });
+    } else {
+        $("#menuDiv").transition({
+            scale: "1"
+        }, 625, function () {
+
+            menuIsOpen = true;
+            $("#MenuButton").css("pointer-events", "auto");
+        });
+    }
+});
 
 function handleError() {
     console.log("deu merda");
@@ -112,12 +135,31 @@ $(document).ready(function () {
         success: parseXML
     });
 
-    $("#mainDiv").fadeOut(0);
-    $("#mainDiv *").fadeOut(0);
+    $("#mainDiv").fadeOut(10);
+    $("#mainDiv *").fadeOut(10);
+    $("#MenuButton").fadeOut(10);
+
+
+
+
+    $('#menuDiv').css({
+        transformOrigin: "0px 0px"
+    });
+    $("#menuDiv").transition({
+        scale: "0"
+    }, 0);
 
     line = new ProgressBar.Line('#progress', {
         color: '#FCB03C'
     });
+});
+
+$(document).on("click", ".menuRow", function () {
+    $("#MenuButton").trigger("click");
+    $(".menuRow").removeClass("Disabled");
+    $(this).addClass("Disabled");
+
+    transitionToCivilizationMenu($(this));
 });
 
 
@@ -132,6 +174,9 @@ function parseXML(xml) {
 
     $.each(civilizations, function () {
         $("#mapDiv").append("<img src='Conteudo/Civilizacoes/" + this.name + "/MarcadorMapa.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
+        $("#menuUl").append("<li id='menuRow" + this.name + "' class='menuRow'><p><img src='Conteudo/Civilizacoes/" + this.name + "/MarcadorMapa.png' class='menuIcon'/>" + this.name + "</p>");
+
+        $("#menuRow" + this.name).data("civilization", this);
 
         var marker = $("#" + this.name);
         marker.css("top", this.mapMarker.topSpace);

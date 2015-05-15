@@ -10,8 +10,6 @@ function transitionToCivilizationCulture() {
 
         $("#mainDiv").append("<div id='civilizationCulture'></div>");
 
-        $("#mainDiv").append("<img src='Conteudo/compass.jpg' class='MapButton'></img>");
-
         addCultureButtons();
 
         $("#mainDiv").fadeIn(625, function () {
