@@ -60,7 +60,7 @@
 
                 <socialStructureButton>
                     <top>75.75%</top>
-                    <left>44.5%</left>
+                    <left>43.5%</left>
                 </socialStructureButton>
 
             </cultureButtons>
@@ -85,6 +85,11 @@
             <god>
                 <godName>Hera</godName>
                 <godDescription>Rainha do Olimpo</godDescription>
+            </god>
+
+            <god>
+                <godName>Ares</godName>
+                <godDescription>Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla Deus da guerra, lascou o Kratos, blablablabla </godDescription>
             </god>
 
         </teogony>

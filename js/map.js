@@ -84,11 +84,11 @@ function selectMarker(marker) {
         scale: '3'
     }, 1250);
 
-    $('.MapMarker').not(marker).fadeOut(10);
 
     //    marker.transition({
     //        scale: '4'
     //    }, 1250);
+
     transitionToCivilizationMenu(marker);
 }
 
