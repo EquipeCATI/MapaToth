@@ -76,9 +76,9 @@ $(document).on('click', '#nextButton', function () {
         scale: "0.25",
         opacity: "0"
     }, 625, function () {
-        $("#godImage").transition({
+        $(this).transition({
             x: "-" + width / 2 + "px"
-        }, 0, function () {
+        }, 100, function () {
             $("#godImage").attr("src", currentCivilization.gods[currentGodIndex].source);
             $("#descriptionDiv").find("p").text(currentCivilization.gods[currentGodIndex].description);
             $("#descriptionDiv *").fadeIn(625);
@@ -120,7 +120,7 @@ $(document).on('click', '#previousButton', function () {
     }, 625, function () {
         $("#godImage").transition({
             x: "" + width / 2 + "px"
-        }, 0, function () {
+        }, 100, function () {
             $("#godImage").attr("src", currentCivilization.gods[currentGodIndex].source);
             $("#descriptionDiv").find("p").text(currentCivilization.gods[currentGodIndex].description);
             $("#descriptionDiv *").fadeIn(625);

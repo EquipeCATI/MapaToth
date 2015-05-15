@@ -80,7 +80,7 @@ function selectMarker(marker) {
         transformOrigin: "" + x + "px " + y + "px"
     });
 
-    $('#mainDiv').transition({
+    $('#mainDiv').animate({
         scale: '3'
     }, 1250);
 
