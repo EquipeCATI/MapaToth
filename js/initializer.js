@@ -1,7 +1,6 @@
 var preload = new createjs.LoadQueue(true);
 var line;
 var civilizations = [];
-var menuIsOpen = false;
 
 function loadAssets() {
     var imgManifest = [];
@@ -93,26 +92,7 @@ function handleComplete() {
     updateMarkers();
 }
 
-$(document).on("click", "#MenuButton", function () {
-    $(this).css("pointer-events", "none");
 
-    if (menuIsOpen) {
-        $("#menuDiv").transition({
-            scale: "0"
-        }, 625, function () {
-            menuIsOpen = false;
-            $("#MenuButton").css("pointer-events", "auto");
-        });
-    } else {
-        $("#menuDiv").transition({
-            scale: "1"
-        }, 625, function () {
-
-            menuIsOpen = true;
-            $("#MenuButton").css("pointer-events", "auto");
-        });
-    }
-});
 
 function handleError() {
     console.log("deu merda");
@@ -124,7 +104,6 @@ function handleProgress(event) {
             handleComplete();
     });
 }
-
 
 $(document).ready(function () {
 
@@ -139,9 +118,6 @@ $(document).ready(function () {
     $("#mainDiv *").fadeOut(10);
     $("#MenuButton").fadeOut(10);
 
-
-
-
     $('#menuDiv').css({
         transformOrigin: "0px 0px"
     });
@@ -153,15 +129,6 @@ $(document).ready(function () {
         color: '#FCB03C'
     });
 });
-
-$(document).on("click", ".menuRow", function () {
-    $("#MenuButton").trigger("click");
-    $(".menuRow").removeClass("Disabled");
-    $(this).addClass("Disabled");
-
-    transitionToCivilizationMenu($(this));
-});
-
 
 function parseXML(xml) {
 
@@ -185,6 +152,10 @@ function parseXML(xml) {
     });
 
     civilizations = [];
+
+    $("#menuDiv").mCustomScrollbar({
+        theme: "dark-thin"
+    });
 
     updateMarkers();
 }

@@ -54,8 +54,8 @@ function transitionToCivilizationTeogony() {
 }
 
 $(document).on('click', '#nextButton', function () {
-    $(this).css("pointer-events", "none");
-    $("#previousButton").css("pointer-events", "none");
+    $(this).addClass("Disabled");
+    $("#previousButton").addClass("Disabled");
     currentGodIndex++;
 
     if (currentGodIndex == currentCivilization.gods.length) {
@@ -87,16 +87,16 @@ $(document).on('click', '#nextButton', function () {
                 scale: "1",
                 opacity: 1
             }, 625, function () {
-                $("#nextButton").css("pointer-events", "auto");
-                $("#previousButton").css("pointer-events", "auto");
+                $("#nextButton").removeClass("Disabled");
+                $("#previousButton").removeClass("Disabled");
             });
         })
     });
 });
 
 $(document).on('click', '#previousButton', function () {
-    $(this).css("pointer-events", "none");
-    $("#nextButton").css("pointer-events", "none");
+    $(this).addClass("Disabled");
+    $("#nextButton").addClass("Disabled");
     currentGodIndex--;
 
     if (currentGodIndex == -1) {
@@ -128,8 +128,8 @@ $(document).on('click', '#previousButton', function () {
                 scale: "1",
                 opacity: 1
             }, 625, function () {
-                $("#previousButton").css("pointer-events", "auto");
-                $("#nextButton").css("pointer-events", "auto");
+                $("#previousButton").removeClass("Disabled");
+                $("#nextButton").removeClass("Disabled");
             });
         })
     });

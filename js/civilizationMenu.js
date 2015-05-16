@@ -3,6 +3,8 @@ var currentCivilization;
 function transitionToCivilizationMenu(marker) {
     currentCivilization = marker.data("civilization");
     var civilizationName = currentCivilization.name;
+    $(".menuRow").removeClass("Disabled");
+    $("#menuRow" + civilizationName).addClass("Disabled");
 
     $("#mainDiv").fadeOut(1250, function () {
         $('#mainDiv').transition({
