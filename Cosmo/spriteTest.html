@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Recurso interativo Toth</title>
+    
+    <style>
+        #page1 {
+			background: transparent url(Conteudo/Civilizacoes/Grega/Cosmogonia/animations/page1.png) 0 0 no-repeat;
+			position: absolute;
+			top: 150px;
+			left: 65px;
+			width: 512px;
+			height: 256px;
+			z-index: 2000;
+			cursor: pointer;
+		}
+    
+    </style>
+
+    
+
+    <script src="lib/jquery.js"></script>
+    <script src="lib/jquery.spritely.js"></script>
+    <script>
+        $( document ).ready(function() {
+                $('#page1').sprite({fps: 4, no_of_frames: 2});
+        });
+    </script>
+
+    
+</head>
+
+<body>
+    <div id="mainDiv">
+        <div id="page1">
+        </div>
+        
+    </div>
+</body>
+
+</html>

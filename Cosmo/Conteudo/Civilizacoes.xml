@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Civilizations>
+
+    <Civilization>
+        <name>Grega</name>
+        <originYear>20</originYear>
+        <endingYear>50</endingYear>
+
+        <mapMarker>
+            <top>42%</top>
+            <left>50%</left>
+        </mapMarker>
+
+        <menuButtons>
+            <height>45%</height>
+
+            <cosmogonyButton>
+                <top>54.5%</top>
+                <left>18%</left>
+            </cosmogonyButton>
+
+            <teogonyButton>
+                <top>54.5%</top>
+                <left>37%</left>
+            </teogonyButton>
+
+            <cultureButton>
+                <top>54.5%</top>
+                <left>74%</left>
+            </cultureButton>
+            
+            <cosmogony>
+                
+                <display>
+                    <animationFrames>5</animationFrames>
+                    <cosmoText>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor nunc quis maximus tincidunt. Phasellus faucibus    odio nec massa scelerisque, in sollicitudin erat feugiat. Vivamus mauris nisi, scelerisque id blandit molestie, pellentesque vitae orci. Sed ultricies dapibus augue ac viverra. Cras in justo nec ex semper iaculis ut et nisi. Suspendisse nec malesuada odio. Proin porttitor nibh et dignissim pharetra. Donec blandit nisl vel dolor congue, et feugiat quam pellentesque. Phasellus congue malesuada tincidunt. Praesent eget interdum mauris. Vivamus porttitor nisi lorem, in viverra turpis consectetur vitae.
+                    </cosmoText>                
+                </display>
+                
+                <display>                    
+                <animationFrames>5</animationFrames>                
+                <cosmoText>
+                    Morbi nec sodales massa. Suspendisse malesuada urna ac erat porta, at ultrices magna tristique. Quisque blandit lacus a ex euismod, a bibendum tellus pulvinar. Donec sagittis, neque vitae semper ullamcorper, nulla lorem efficitur tellus, accumsan commodo metus mauris id dui. Ut tortor leo, varius nec faucibus sed, hendrerit vel velit. Vivamus ut magna ac lacus pulvinar gravida. Nulla facilisi. Praesent malesuada metus vitae leo hendrerit, at vulputate tortor porttitor. Mauris blandit id velit at eleifend. Etiam vitae quam sapien. Ut consectetur dictum leo, non fermentum dolor pretium in. 
+                </cosmoText>
+                </display>
+                
+                <display>                    
+                <animationFrames>5</animationFrames>                
+                <cosmoText>
+                    Ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor nunc quis maximus tincidunt. Phasellus faucibus odio nec massa scelerisque, in sollicitudin erat feugiat. Donec sagittis, neque vitae semper ullamcorper, nulla lorem efficitur tellus, accumsan commodo metus mauris id dui. Ut tortor leo, varius nec faucibus sed, hendrerit vel velit. Vivamus ut magna ac lacus pulvinar gravida. Nulla facilisi. Praesent malesuada metus vitae leo hendrerit, at vulputate tortor porttitor. Mauris blandit id velit at eleifend. Etiam vitae quam sapien. Ut consectetur dictum leo, non fermentum dolor pretium in. 
+                </cosmoText>
+                </display>
+                
+                
+            </cosmogony>
+
+        </menuButtons>
+
+
+    </Civilization>
+
+    <Civilization>
+        <name>Nórdica</name>
+        <originYear>70</originYear>
+        <endingYear>90</endingYear>
+        <mapMarker>
+            <top>25%</top>
+            <left>50%</left>
+        </mapMarker>
+    </Civilization>
+
+    <Civilization>
+        <name>Egípcia</name>
+        <originYear>0</originYear>
+        <endingYear>30</endingYear>
+        <mapMarker>
+            <top>48%</top>
+            <left>55%</left>
+        </mapMarker>
+    </Civilization>
+
+</Civilizations>
