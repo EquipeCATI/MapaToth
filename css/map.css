@@ -4,12 +4,11 @@
     vertical-align: middle;
     margin: 0 auto;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .Map {
-    resize: both;
-    max-height: 90vh;
+    max-height: 95vh;
     max-width: 100%;
     width: auto;
     height: auto;

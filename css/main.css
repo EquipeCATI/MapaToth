@@ -14,8 +14,34 @@
     margin: auto;
     text-align: center;
     vertical-align: middle;
-    display: table-cell;
     overflow: hidden;
+}
+
+#contentDiv {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#bg {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    vertical-align: middle;
 }
 
 .progress {

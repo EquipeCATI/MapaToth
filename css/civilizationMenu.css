@@ -1,38 +1,32 @@
 #civilizationMenuDiv {
-    display: inline-block;
-    max-width: 90vw;
-    max-height: 98vh;
-    vertical-align: bottom;
     position: relative;
-    overflow: hidden;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    margin: auto;
+    width: auto;
+    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+    vertical-align: middle;
 }
 
 #civilizationMenuImg {
-    display: block;
-    margin-bottom: 0px;
-    resize: both;
-    max-height: 98vh;
+    position: relative;
+    display: inline-block;
+    max-height: 100%;
     max-width: 100%;
     width: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
 }
 
 .CivilizationButton {
     display: inline-block;
     position: absolute;
-    resize: both;
     height: auto;
     cursor: pointer;
     cursor: hand;
-}
-
-.MapButton {
-    position: fixed;
-    left: -1vw;
-    top: 5%;
-    max-width: 15vw;
-    max-height: 15vh;
-    resize: both;
-    cursor: pointer;
-    cursor: hand;
-    z-index: 100;
 }

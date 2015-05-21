@@ -13,6 +13,18 @@ function loadAssets() {
     };
     imgManifest.push(img);
 
+    img = {
+        src: "mapNavIcon.png",
+        id: "mapNavItem"
+    };
+    imgManifest.push(img);
+
+    img = {
+        src: "bg.png",
+        id: "bg"
+    };
+    imgManifest.push(img);
+
     $.each(civilizations, function () {
         //Fundo para os botões
         img = {
@@ -72,6 +84,13 @@ function loadAssets() {
         };
         imgManifest.push(img);
 
+        //Botoes de navegação
+        img = {
+            src: "Civilizacoes/" + this.name + "/mainNavItem.png",
+            id: "mainNavItem" + this.name
+        };
+        imgManifest.push(img);
+
         $.each(this.gods, function () {
             img = {
                 src: "Civilizacoes/" + this.civilization.name + "/Teogonia/" + this.name + ".png",
@@ -92,8 +111,6 @@ function handleComplete() {
     updateMarkers();
 }
 
-
-
 function handleError() {
     console.log("deu merda");
 }
@@ -107,6 +124,7 @@ function handleProgress(event) {
 
 $(document).ready(function () {
 
+    //Leitura do XML
     $.ajax({
         type: "GET",
         url: "Conteudo/Civilizacoes.xml",
@@ -132,23 +150,34 @@ $(document).ready(function () {
 
 function parseXML(xml) {
 
+    //Para cada civilização lida no XML, é criado um objeto Civilization e este é salvo no array civilizations
     $(xml).find("Civilization").each(function () {
         var civilization = new Civilization($(this));
         civilizations.push(civilization);
     });
 
+    //Carregamento de arquivos, feito aqui pois depende dos objetos Civilization 
     loadAssets();
 
+
     $.each(civilizations, function () {
+        //Criação do marcador de mapa
         $("#mapDiv").append("<img src='Conteudo/Civilizacoes/" + this.name + "/MarcadorMapa.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
+
+        var marker = $("#" + this.name);
+
+        //Posicionamento de acordo com os dados do XML
+        marker.css("top", this.mapMarker.topSpace);
+        marker.css("left", this.mapMarker.leftSpace);
+
+        marker.data("civilization", this);
+
+        //Criação do ícone no menu
         $("#menuUl").append("<li id='menuRow" + this.name + "' class='menuRow'><p><img src='Conteudo/Civilizacoes/" + this.name + "/MarcadorMapa.png' class='menuIcon'/>" + this.name + "</p>");
 
         $("#menuRow" + this.name).data("civilization", this);
 
-        var marker = $("#" + this.name);
-        marker.css("top", this.mapMarker.topSpace);
-        marker.css("left", this.mapMarker.leftSpace);
-        marker.data("civilization", this);
+
     });
 
     civilizations = [];

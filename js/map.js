@@ -1,3 +1,17 @@
+function transitionToMap() {
+    currentCivilization = undefined;
+    $("#mainDiv").fadeOut(625, function () {
+        $("#mainDiv").replaceWith($("#mainDiv").data('map'));
+        $("#mainDiv").fadeOut(0);
+        $("#mainDiv").fadeIn(1250);
+    });
+}
+
+function saveMap() {
+    //Salvando o estado atual do mapa
+    $("#mainDiv").data("map", $("#mainDiv").clone(true));
+}
+
 function updateMarkers() {
     var year = parseInt($("#slider").val());
 
@@ -66,28 +80,31 @@ function snapToClosest() {
 
 function selectMarker(marker) {
 
-    //Salvando o estado atual do mapa
-    $("#mainDiv").data("map", $("#mainDiv").clone(true));
+    saveMap();
     $(marker).css("pointer-events", "none");
     //Leitura da posição do marcador
-    var origin = marker.offset();
+    var origin = marker.position();
 
     var x = origin.left + marker.width() / 2;
     var y = origin.top + marker.height() / 2;
 
     //Setando o ponto de origem de Scale, faz o zoom ir na direção do marcador
-    $('#mainDiv').css({
+    $('.Map').css({
         transformOrigin: "" + x + "px " + y + "px"
     });
 
-    $('#mainDiv').animate({
-        scale: '3'
+    $('.Map').transition({
+        scale: '5'
     }, 1250);
 
 
-    //    marker.transition({
-    //        scale: '4'
-    //    }, 1250);
+    marker.transition({
+        scale: '5'
+    }, 1250);
+
+    $('.MapMarker').not(marker).transition({
+        opacity: 0
+    }, 100);
 
     transitionToCivilizationMenu(marker);
 }

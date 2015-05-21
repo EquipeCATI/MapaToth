@@ -1,3 +1,4 @@
+//Indice do Deus atual no array de Deuses
 var currentGodIndex;
 
 function transitionToCivilizationTeogony() {
@@ -31,7 +32,6 @@ function transitionToCivilizationTeogony() {
         $(setaDireita).attr("id", "nextButton");
         $("#civilizationTeogony").append(setaDireita);
 
-
         var setaEsquerda = $(setaDireita).clone();
         setaEsquerda.attr("id", "previousButton");
 
@@ -39,8 +39,6 @@ function transitionToCivilizationTeogony() {
         $(setaEsquerda).transition({
             rotate: '180deg'
         }, 0);
-
-
 
 
         $("#civilizationTeogony").append("<div id='descriptionDiv'></div>");
@@ -53,6 +51,7 @@ function transitionToCivilizationTeogony() {
     });
 }
 
+//Ler em previousButton
 $(document).on('click', '#nextButton', function () {
     $(this).addClass("Disabled");
     $("#previousButton").addClass("Disabled");
@@ -95,13 +94,18 @@ $(document).on('click', '#nextButton', function () {
 });
 
 $(document).on('click', '#previousButton', function () {
+    //Desabilita os botões
     $(this).addClass("Disabled");
     $("#nextButton").addClass("Disabled");
+
     currentGodIndex--;
 
+    //Checagem do limite do índice, caso seja -1, volta para o último Deus do array
     if (currentGodIndex == -1) {
         currentGodIndex = currentCivilization.gods.length - 1;
     }
+
+    //Por algum motivo pegar o elemento do preload mais de uma vez não estava dando certo. Por isso o uso do source
     var name = currentCivilization.gods[currentGodIndex].name;
     if (currentCivilization.gods[currentGodIndex].source == undefined) {
         currentCivilization.gods[currentGodIndex].source = $(preload.getResult(name)).attr('src');
@@ -111,23 +115,29 @@ $(document).on('click', '#previousButton', function () {
 
     $("#descriptionDiv *").fadeOut(625);
 
-
+    //Move para a esquerda, diminui e dá fade
     $("#godImage").transition({
         x: "-" + width / 2 + "px",
         scale: "0.25",
         opacity: "0"
     }, 625, function () {
+        //Enquanto a imagem está invisível, é movida para a direita
         $("#godImage").transition({
             x: "" + width / 2 + "px"
         }, 100, function () {
+            //Substituição do attr src para a nova imagem
             $("#godImage").attr("src", currentCivilization.gods[currentGodIndex].source);
+            //Setando o texto para o novo Deus
             $("#descriptionDiv").find("p").text(currentCivilization.gods[currentGodIndex].description);
             $("#descriptionDiv *").fadeIn(625);
+
+            //Manda a imagem de volta para o centro, com sua escala e opacidade originais
             $("#godImage").transition({
                 x: "0px",
                 scale: "1",
                 opacity: 1
             }, 625, function () {
+                //Reabilitação dos botões
                 $("#previousButton").removeClass("Disabled");
                 $("#nextButton").removeClass("Disabled");
             });

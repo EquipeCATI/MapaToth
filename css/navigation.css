@@ -1,0 +1,34 @@
+#navigationDiv {
+    display: inline-block;
+    height: 100%;
+    width: auto;
+}
+
+.NavSeparator {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    height: 35%;
+    opacity: 0.8;
+}
+
+#navigationDiv ul {
+    height: 100%;
+}
+
+.navLi {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.navItem {
+    vertical-align: middle;
+    cursor: pointer;
+    cursor: hand;
+    height: 90%;
+}

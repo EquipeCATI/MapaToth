@@ -7,6 +7,7 @@ function transitionToCivilizationMenu(marker) {
     $("#menuRow" + civilizationName).addClass("Disabled");
 
     $("#mainDiv").fadeOut(1250, function () {
+        initNavController(); //navigation
         $('#mainDiv').transition({
             scale: '1'
         }, 0);
@@ -14,21 +15,30 @@ function transitionToCivilizationMenu(marker) {
         $("#mainDiv").css("background-image", "url('" + $(preload.getResult('menuBackground' + civilizationName)).attr('src') + "')");
 
         $("#mainDiv").css("verticalAlign", "bottom");
-        $("#mainDiv").append("<div id='civilizationMenuDiv'></div>");
+        $("#mainDiv").append("<div id='contentDiv'></div>");
+
+        var bg = preload.getResult('bg')
+        $(bg).attr("id", "bg");
+        $("#mainDiv").prepend(bg);
+        $("#contentDiv").append("<div id='civilizationMenuDiv'></div>");
 
         var menuBg = preload.getResult("menu" + civilizationName);
         $(menuBg).attr("id", "civilizationMenuImg");
-        $("#civilizationMenuDiv").append(menuBg);
+        $("#civilizationMenuDiv").hide().append(menuBg);
 
-        addCivilizationButtons();
+        $("#mainDiv").fadeIn(1250, function () {
+            var width = $("#bg").width();
+            var height = $("#bg").height();
+            $("#contentDiv").css("width", "" + width);
+            $("#contentDiv").css("height", "" + height);
+            $("#civilizationMenuDiv").fadeIn("fast");
+            addCivilizationButtons();
 
-        $("#mainDiv").fadeIn(1250);
+        });
     });
 }
 
 function addCivilizationButtons() {
-
-
     var cosmogonyButton = preload.getResult("cosmogonyButton" + currentCivilization.name);
     $(cosmogonyButton).css("top", currentCivilization.cosmogonyButton.topSpace);
     $(cosmogonyButton).css("left", currentCivilization.cosmogonyButton.leftSpace);
@@ -50,9 +60,9 @@ function addCivilizationButtons() {
     $(cultureButton).attr("id", "cultureButton");
     $(cultureButton).attr("class", "CivilizationButton");
 
-    $("#civilizationMenuDiv").append(cultureButton);
-    $("#civilizationMenuDiv").append(teogonyButton);
-    $("#civilizationMenuDiv").append(cosmogonyButton);
+    $(cultureButton).hide().appendTo("#civilizationMenuDiv");
+    $(teogonyButton).hide().appendTo("#civilizationMenuDiv");
+    $(cosmogonyButton).hide().appendTo("#civilizationMenuDiv");
 
     var divWidth = $("#civilizationMenuDiv").width();
 
@@ -60,20 +70,19 @@ function addCivilizationButtons() {
 
     var percentage = (buttonWidth / divWidth) * 100;
 
-    $(".CivilizationButton").css("max-width", "" + percentage + "%");
+    $(".CivilizationButton").animate({
+        maxWidth: "" + percentage + "%"
+    });
+
+    $(".CivilizationButton").fadeIn();
+
 }
 
-
-$(document).on('mouseover', '.MapButton', function () {
-    $(".MapButton").transition({
-        x: '0'
-    });
-});
-
-$(document).on('mouseout', '.MapButton', function () {
-    $(".MapButton").transition({
-        x: '-20px'
-    });
+$(window).on("resize", function () {
+    var width = $("#bg").width();
+    var height = $("#bg").height();
+    $("#contentDiv").css("width", "" + width);
+    $("#contentDiv").css("height", "" + height);
 });
 
 $(document).on('click', '.MapButton', function () {
@@ -93,15 +102,6 @@ $(document).on('click', '.MapButton', function () {
 
     transitionToMap();
 });
-
-function transitionToMap() {
-    currentCivilization = undefined;
-    $("#mainDiv").fadeOut(625, function () {
-        $("#mainDiv").replaceWith($("#mainDiv").data('map'));
-        $("#mainDiv").fadeOut(0);
-        $("#mainDiv").fadeIn(1250);
-    });
-}
 
 $(document).on('click', '#cultureButton', function () {
     transitionToCivilizationCulture();

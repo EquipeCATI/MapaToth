@@ -30,7 +30,11 @@ $(document).on("click", "#MenuButton", function () {
 
 $(document).on("click", ".menuRow", function () {
     $("#MenuButton").trigger("click");
+    if (currentCivilization == undefined) {
+        saveMap();
+    }
     transitionToCivilizationMenu($(this));
+
 });
 
 $(document).on("click", "#mainDiv", function () {

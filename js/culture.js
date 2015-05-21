@@ -59,6 +59,7 @@ function addCultureDivs() {
     });
 }
 
+//Armazena o botão correspondente ao assunto exibido
 var selected;
 
 $(document).on('click', '.CultureButton', function () {
