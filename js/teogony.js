@@ -5,13 +5,12 @@ function transitionToCivilizationTeogony() {
     currentGodIndex = 0;
     var civ = currentCivilization;
     $("#mainDiv").fadeOut(625, function () {
-        $("#mainDiv").empty();
+        $("#contentDiv").empty();
 
         $("#mainDiv").css("background-image", "url('" + $(preload.getResult('teogonyBackground' + currentCivilization.name)).attr('src') + "')");
 
-        $("#mainDiv").css("verticalAlign", "middle");
-
-        $("#mainDiv").append("<div id='civilizationTeogony'></div>");
+        $("#contentDiv").append("<div id='civilizationTeogony'></div>");
+        $("#civilizationTeogony").append("<div id='godImgDiv'></div>");
 
         var id = currentCivilization.gods[currentGodIndex].name;
         var godImg = preload.getResult(id);
@@ -22,7 +21,7 @@ function transitionToCivilizationTeogony() {
         } else {
             $(godImg).attr('src', currentCivilization.gods[currentGodIndex].source);
         }
-        $("#mainDiv").prepend(godImg);
+        $("#godImgDiv").append(godImg);
 
         var teogonyImg = preload.getResult("teogony" + currentCivilization.name);
         $(teogonyImg).attr("id", "civilizationTeogonyImg");

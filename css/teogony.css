@@ -1,36 +1,37 @@
 .God {}
 
 #civilizationTeogony {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     margin: 0 auto;
     display: block;
-    width: 75vw;
-    max-width: 500px;
-    height: 12vh;
-    vertical-align: middle;
+    width: 80%;
+    height: 80%;
     text-align: center;
     position: relative;
 }
 
 #nextButton {
     position: absolute;
-    resize: both;
-    max-height: 30%;
+    max-width: 5%;
     width: auto;
     height: auto;
     right: 0%;
-    top: 35%;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
     cursor: hand;
 }
 
 #previousButton {
     position: absolute;
-    resize: both;
-    max-height: 30%;
+    max-width: 5%;
     width: auto;
     height: auto;
     left: 0%;
-    top: 35%;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
     cursor: hand;
 }
@@ -45,28 +46,28 @@
     padding: 1%;
     padding-left: 2%;
     background-color: gray;
-    max-width: 400px;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    top: 5%;
-    left: 10%;
+    width: 20%;
+    height: 40%;
+    top: 50%;
+    transform: translateY(-50%);
     right: 10%;
-    bottom: 5%;
-    bottom: 2.5%;
 }
 
-#descriptionDiv p{
+#descriptionDiv p {
     margin-top: 1%;
     margin-bottom: 1%;
 }
 
 #godImage {
-    margin: 0 auto;
-    display: block;
-    resize: both;
-    max-height: 75vh;
-    max-width: 75vw;
+    max-width: 100%;
     width: auto;
+    max-height: 100%;
     height: auto;
+}
+
+#godImgDiv {
+    position: absolute;
+    left: 8%;
+    width: 55%;
+    height: 100%;
 }

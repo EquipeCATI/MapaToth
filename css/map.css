@@ -5,6 +5,8 @@
     margin: 0 auto;
     position: relative;
     overflow: visible;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .Map {
