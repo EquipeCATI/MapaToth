@@ -2,10 +2,19 @@ var preload = new createjs.LoadQueue(true);
 var line;
 var civilizations = [];
 
+//Uso da biblioteca PreloadJS, para um carregamento prévio de todas as mídias usadas
 function loadAssets() {
+    //O manifest é uma lista de mídias que serão carregadas
     var imgManifest = [];
+
+    //Cada erro que ocorrer será lidado com a função handleError
     preload.on("error", handleError);
+
+    //A cada item carregado, este evento aciona handleProgress
     preload.on("progress", handleProgress);
+
+    //Cada uma das imagens possui um path e são obtidas pelo seu id posteriormente
+    //preloadjs.getResult("id")
 
     var img = {
         src: "seta.png",
@@ -20,11 +29,18 @@ function loadAssets() {
     imgManifest.push(img);
 
     img = {
+        src: "cultureNavIcon.png",
+        id: "cultureNavItem"
+    };
+    imgManifest.push(img);
+
+    img = {
         src: "bg.png",
         id: "bg"
     };
     imgManifest.push(img);
 
+    //Mídia variável, lida de cada uma das civilizações cadastradas
     $.each(civilizations, function () {
         //Fundo para os botões
         img = {
@@ -91,6 +107,7 @@ function loadAssets() {
         };
         imgManifest.push(img);
 
+        //Imagens dos Deuses
         $.each(this.gods, function () {
             img = {
                 src: "Civilizacoes/" + this.civilization.name + "/Teogonia/" + this.name + ".png",
@@ -112,9 +129,10 @@ function handleComplete() {
 }
 
 function handleError() {
-    console.log("deu merda");
+    console.log("erro");
 }
 
+//Animação da barra de carregamento de acordo com o progress informado no evento
 function handleProgress(event) {
     line.animate(event.progress, function () {
         if (event.progress == 1)
@@ -132,10 +150,12 @@ $(document).ready(function () {
         success: parseXML
     });
 
+    //Elementos iniciais são escondidos e só reaparecem após o carregamento
     $("#mainDiv").fadeOut(10);
     $("#mainDiv *").fadeOut(10);
     $("#MenuButton").fadeOut(10);
 
+    //ponto de transformação do menu mudado para o canto esquerdo
     $('#menuDiv').css({
         transformOrigin: "0px 0px"
     });
@@ -143,6 +163,7 @@ $(document).ready(function () {
         scale: "0"
     }, 0);
 
+    //Uso da biblioteca progressBar para a criação de uma barra de carregamento em SVG
     line = new ProgressBar.Line('#progress', {
         color: '#FCB03C'
     });
@@ -186,5 +207,6 @@ function parseXML(xml) {
         theme: "dark-thin"
     });
 
-    updateMarkers();
+    //Ícones de marcadores no mapa são carregados
+    updateMarkers(); //map.js
 }

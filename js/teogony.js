@@ -50,58 +50,21 @@ function transitionToCivilizationTeogony() {
     });
 }
 
-//Ler em previousButton
-$(document).on('click', '#nextButton', function () {
-    $(this).addClass("Disabled");
-    $("#previousButton").addClass("Disabled");
-    currentGodIndex++;
-
-    if (currentGodIndex == currentCivilization.gods.length) {
-        currentGodIndex = 0;
-    }
-    var name = currentCivilization.gods[currentGodIndex].name;
-    if (currentCivilization.gods[currentGodIndex].source == undefined) {
-        currentCivilization.gods[currentGodIndex].source = $(preload.getResult(name)).attr('src');
-    }
-
-    var width = $("#godImage").width();
-
-    $("#descriptionDiv *").fadeOut(625);
-
-    $("#godImage").transition({
-        x: "" + width / 2 + "px",
-        scale: "0.25",
-        opacity: "0"
-    }, 625, function () {
-        $(this).transition({
-            x: "-" + width / 2 + "px"
-        }, 100, function () {
-            $("#godImage").attr("src", currentCivilization.gods[currentGodIndex].source);
-            $("#descriptionDiv").find("p").text(currentCivilization.gods[currentGodIndex].description);
-            $("#descriptionDiv *").fadeIn(625);
-            $("#godImage").fadeIn();
-            $("#godImage").transition({
-                x: "0px",
-                scale: "1",
-                opacity: 1
-            }, 625, function () {
-                $("#nextButton").removeClass("Disabled");
-                $("#previousButton").removeClass("Disabled");
-            });
-        })
-    });
-});
-
-$(document).on('click', '#previousButton', function () {
+function changeGod(direction) {
     //Desabilita os botões
     $(this).addClass("Disabled");
     $("#nextButton").addClass("Disabled");
 
-    currentGodIndex--;
+    currentGodIndex += direction;
 
     //Checagem do limite do índice, caso seja -1, volta para o último Deus do array
     if (currentGodIndex == -1) {
         currentGodIndex = currentCivilization.gods.length - 1;
+    }
+
+    //Checagem do limite do índice, caso seja maior que o tamanho do array, volta para o primeiro Deus 
+    if (currentGodIndex == currentCivilization.gods.length) {
+        currentGodIndex = 0;
     }
 
     //Por algum motivo pegar o elemento do preload mais de uma vez não estava dando certo. Por isso o uso do source
@@ -114,9 +77,9 @@ $(document).on('click', '#previousButton', function () {
 
     $("#descriptionDiv *").fadeOut(625);
 
-    //Move para a esquerda, diminui e dá fade
+    //Move para a esquerda se -1, direita se 1, diminui e dá fade
     $("#godImage").transition({
-        x: "-" + width / 2 + "px",
+        x: direction * width / 2 + "px",
         scale: "0.25",
         opacity: "0"
     }, 625, function () {
@@ -142,4 +105,13 @@ $(document).on('click', '#previousButton', function () {
             });
         })
     });
+}
+
+//Ler em previousButton
+$(document).on('click', '#nextButton', function () {
+    changeGod(1);
+});
+
+$(document).on('click', '#previousButton', function () {
+    changeGod(-1);
 });

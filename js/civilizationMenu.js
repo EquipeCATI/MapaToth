@@ -1,32 +1,48 @@
 var currentCivilization;
 
 function transitionToCivilizationMenu(marker) {
+    //marker pois inicialmente a navegação se dava apenas no mapa,
+    //mas pode ser qualquer objeto que tenha uma civilização em seu data
     currentCivilization = marker.data("civilization");
     var civilizationName = currentCivilization.name;
+    
+    //Aqui os botões do menu são ativados
     $(".menuRow").removeClass("Disabled");
+    //E o botão da civilização exibida desativado
     $("#menuRow" + civilizationName).addClass("Disabled");
 
-    $("#mainDiv").fadeOut(1250, function () {
+    
+    $("#mainDiv").fadeOut(625, function () {
         initNavController(); //navigation
+        
+        //Reajuste do zoom do mapa
         $('#mainDiv').transition({
             scale: '1'
         }, 0);
+        
+        //Objetos são retirados, mainDiv será reestrutrada
         $("#mainDiv").empty();
+        
+        //Background específico de cada civilização
         $("#mainDiv").css("background-image", "url('" + $(preload.getResult('menuBackground' + civilizationName)).attr('src') + "')");
 
-        $("#mainDiv").css("verticalAlign", "bottom");
+        //ContentDiv é utilizada para manter o conteúdo dentro da folha
+        //Ela é sempre redimensionada de acordo com a imagem da folha
         $("#mainDiv").append("<div id='contentDiv'></div>");
 
+        //Folha
         var bg = preload.getResult('bg')
         $(bg).attr("id", "bg");
         $("#mainDiv").prepend(bg);
+        
+        //Conteúdo em si
         $("#contentDiv").append("<div id='civilizationMenuDiv'></div>");
-
+        
         var menuBg = preload.getResult("menu" + civilizationName);
         $(menuBg).attr("id", "civilizationMenuImg");
         $("#civilizationMenuDiv").hide().append(menuBg);
 
-        $("#mainDiv").fadeIn(1250, function () {
+        $("#mainDiv").fadeIn(625, function () {
             var width = $("#bg").width();
             var height = $("#bg").height();
             $("#contentDiv").css("width", "" + width);
@@ -79,56 +95,22 @@ function addCivilizationButtons() {
 }
 
 $(window).on("resize", function () {
+    //Redimensionamento de contentDiv de acordo com a imagem
     var width = $("#bg").width();
     var height = $("#bg").height();
     $("#contentDiv").css("width", "" + width);
     $("#contentDiv").css("height", "" + height);
 });
 
-$(document).on('click', '.MapButton', function () {
-    var origin = $("#civilizationMenuDiv").position();
-
-    var x = $("#civilizationMenuDiv").width() / 2;
-    var y = $("#civilizationMenuDiv").height();
-
-    //Setando o ponto de origem de Scale, faz o zoom ir na direção do marcador
-    $('#civilizationMenuDiv').css({
-        transformOrigin: "" + x + "px " + y + "px"
-    });
-
-    $("#civilizationMenuDiv").transition({
-        scale: '0.25'
-    }, 1250);
-
-    transitionToMap();
-});
-
+//Transições para cada tela
 $(document).on('click', '#cultureButton', function () {
     transitionToCivilizationCulture();
 });
 
 $(document).on('click', '#cosmogonyButton', function () {
+    //cosmogonia pendente
     transitionToCivilizationTeogony();
 });
-
-function transitionToCivilizationCosmogony() {
-    $("#mainDiv").fadeOut(1250, function () {
-
-        $("#mainDiv").empty();
-
-        $("#mainDiv").css("background-image", "url('" + $(preload.getResult('teogonyBackground' + currentCivilization.name)).attr('src') + "')");
-
-        $("#mainDiv").css("verticalAlign", "bottom");
-        $("#mainDiv").append("<div id='civilizationTeogonyDiv'></div>");
-
-        var teogonyBg = preload.getResult("teogony" + civilizationName);
-        $(teogonyBg).attr("id", "civilizationTeogonyImg");
-        $("#civilizationMenuDiv").append(menuBg);
-
-        $("#mainDiv").append("<img src='../assets/compass.jpg' class='MapButton'></img>");
-        $("#mainDiv").fadeIn(1250);
-    });
-}
 
 $(document).on('click', '#teogonyButton', function () {
     transitionToCivilizationTeogony();

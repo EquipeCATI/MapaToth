@@ -1,5 +1,6 @@
 var menuIsOpen = false;
 
+
 function hideMenu() {
     $("#menuDiv").transition({
         scale: "0"
@@ -18,6 +19,7 @@ function showMenu() {
     });
 }
 
+//Clique no botão de menu
 $(document).on("click", "#MenuButton", function () {
     $(this).css("pointer-events", "none");
 
@@ -28,6 +30,7 @@ $(document).on("click", "#MenuButton", function () {
     }
 });
 
+//Clique em uma das opções
 $(document).on("click", ".menuRow", function () {
     $("#MenuButton").trigger("click");
     if (currentCivilization == undefined) {
@@ -37,6 +40,7 @@ $(document).on("click", ".menuRow", function () {
 
 });
 
+//Clicar fora retira o menu
 $(document).on("click", "#mainDiv", function () {
     if (menuIsOpen) {
         hideMenu();

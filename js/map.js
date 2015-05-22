@@ -26,13 +26,14 @@ function updateMarkers() {
     });
 }
 
+//Faz o marcador do input range andar até a posição válida mais próxima
 function snapToClosest() {
     var sliderValue = parseInt($("#slider").val());
     var closestDistance = 100000;
     var distance;
     var finalValue;
 
-
+    //Comparação com os valores de início e queda das civilizações
     $(".MapMarker").each(function () {
         var civilization = $(this).data("civilization");
 
@@ -59,7 +60,7 @@ function snapToClosest() {
         }
     });
 
-
+    //Animação do marcador até o ponto definido
     var interval = setInterval(function () {
         if (finalValue > sliderValue) {
             var newVal = parseFloat($('#slider').val()) + 0.25;
@@ -68,18 +69,21 @@ function snapToClosest() {
         }
 
         $('#slider').val(newVal);
+        
+        //Chama o updateMarkers
         $('#slider').trigger("input");
 
         if (parseInt($('#slider').val()) == finalValue) {
             clearInterval(interval);
         }
+        
     }, 1);
 
 
 }
 
 function selectMarker(marker) {
-
+    //Estado atual do mapa é salvo
     saveMap();
     $(marker).css("pointer-events", "none");
     //Leitura da posição do marcador
@@ -97,14 +101,11 @@ function selectMarker(marker) {
         scale: '5'
     }, 1250, "snap");
 
-
     marker.transition({
         scale: '5'
     }, 1250, "snap");
 
-    $('.MapMarker').not(marker).transition({
-        opacity: 0
-    }, 100);
+    $('.MapMarker').not(marker).fadeOut(100);
 
     transitionToCivilizationMenu(marker);
 }
