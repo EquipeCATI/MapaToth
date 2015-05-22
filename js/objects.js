@@ -16,11 +16,6 @@ function Civilization(xmlNode) {
     this.socialStructure = $(xmlNode).find("socialStructure").text();
 
 
-    this.culturalManifestationButton = new CivilizationButton($(xmlNode).find("cultureButtons"), "culturalManifestationButton");
-    this.subsistenceMethodButton = new CivilizationButton($(xmlNode).find("cultureButtons"), "subsistenceMethodButton");
-    this.socialStructureButton = new CivilizationButton($(xmlNode).find("cultureButtons"), "socialStructureButton");
-
-
     this.mapMarker.civilization = this;
 
     var nodes = $(xmlNode).find("god");

@@ -95,12 +95,12 @@ function selectMarker(marker) {
 
     $('.Map').transition({
         scale: '5'
-    }, 1250);
+    }, 1250, "snap");
 
 
     marker.transition({
         scale: '5'
-    }, 1250);
+    }, 1250, "snap");
 
     $('.MapMarker').not(marker).transition({
         opacity: 0

@@ -13,24 +13,47 @@
     display: inline-block;
     resize: both;
     width: auto;
-    height: auto;
+    height: 10%;
     cursor: pointer;
     cursor: hand;
     margin: auto;
     z-index: 1;
+    top: -5%;
 }
 
-.CultureButtonDiv {
+#culturalManifestationButton{
+    right: 20%;
+}
+
+#subsistenceMethodButton{
+    right: 10%;
+}
+
+#socialStructureButton{
+    right: 30%;
+}
+
+.DisabledCultureButton{
+    pointer-events: none;
+}
+
+.CultureDiv {
+    background-image: url(http://demilked.uuuploads.com/free-paper-textures/free-paper-texture-2.jpg);
     display: inline-block;
     position: absolute;
-    border-radius: 100%;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     background-color: gray;
-    width: auto;
-    height: auto;
+    width: 500px;
+    height: 500px;
     z-index: 0;
+    overflow: visible;
 }
 
-.CultureButtonDiv p {
+.CultureDiv p {
     font-family: sans-serif;
     font-size: 1.5vw;
     color: white;

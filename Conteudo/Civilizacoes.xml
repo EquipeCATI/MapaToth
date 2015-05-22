@@ -44,27 +44,6 @@
                 Em cada pólis sua estrutura social mudava, mas predominava-se a democracia, criada em Atenas.
             </socialStructure>
 
-            <cultureButtons>
-
-                <height>10%</height>
-
-                <culturalManifestationButton>
-                    <top>9.15%</top>
-                    <left>42.5%</left>
-                </culturalManifestationButton>
-
-                <subsistenceMethodButton>
-                    <top>42.48%</top>
-                    <left>42.5%</left>
-                </subsistenceMethodButton>
-
-                <socialStructureButton>
-                    <top>75.75%</top>
-                    <left>43.5%</left>
-                </socialStructureButton>
-
-            </cultureButtons>
-
         </culture>
         <teogony>
 
