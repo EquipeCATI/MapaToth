@@ -5,24 +5,24 @@ function transitionToCivilizationMenu(marker) {
     //mas pode ser qualquer objeto que tenha uma civilização em seu data
     currentCivilization = marker.data("civilization");
     var civilizationName = currentCivilization.name;
-    
+
     //Aqui os botões do menu são ativados
     $(".menuRow").removeClass("Disabled");
     //E o botão da civilização exibida desativado
     $("#menuRow" + civilizationName).addClass("Disabled");
 
-    
+
     $("#mainDiv").fadeOut(625, function () {
         initNavController(); //navigation
-        
+
         //Reajuste do zoom do mapa
         $('#mainDiv').transition({
             scale: '1'
         }, 0);
-        
+
         //Objetos são retirados, mainDiv será reestrutrada
         $("#mainDiv").empty();
-        
+
         //Background específico de cada civilização
         $("#mainDiv").css("background-image", "url('" + $(preload.getResult('menuBackground' + civilizationName)).attr('src') + "')");
 
@@ -34,13 +34,13 @@ function transitionToCivilizationMenu(marker) {
         var bg = preload.getResult('bg')
         $(bg).attr("id", "bg");
         $("#mainDiv").prepend(bg);
-        
+
         //Conteúdo em si
         $("#contentDiv").append("<div id='civilizationMenuDiv'></div>");
-        
+
         var menuBg = preload.getResult("menu" + civilizationName);
         $(menuBg).attr("id", "civilizationMenuImg");
-        $("#civilizationMenuDiv").hide().append(menuBg);
+        $("#civilizationMenuDiv").append(menuBg).fadeOut(0);
 
         $("#mainDiv").fadeIn(625, function () {
             var width = $("#bg").width();
