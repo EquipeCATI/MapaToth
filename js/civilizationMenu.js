@@ -24,7 +24,7 @@ function transitionToCivilizationMenu(marker) {
         $("#mainDiv").empty();
 
         //Background específico de cada civilização
-        $("#mainDiv").css("background-image", "url('" + $(preload.getResult('menuBackground' + civilizationName)).attr('src') + "')");
+        //$("#mainDiv").css("background-image", "url('" + $(preload.getResult('menuBackground' + civilizationName)).attr('src') + "')");
 
         //ContentDiv é utilizada para manter o conteúdo dentro da folha
         //Ela é sempre redimensionada de acordo com a imagem da folha
@@ -80,16 +80,6 @@ function addCivilizationButtons() {
     $(teogonyButton).hide().appendTo("#civilizationMenuDiv");
     $(cosmogonyButton).hide().appendTo("#civilizationMenuDiv");
 
-    var divWidth = $("#civilizationMenuDiv").width();
-
-    var buttonWidth = $(".CivilizationButton").width();
-
-    var percentage = (buttonWidth / divWidth) * 100;
-
-    $(".CivilizationButton").animate({
-        maxWidth: "" + percentage + "%"
-    });
-
     $(".CivilizationButton").fadeIn();
 
 }
@@ -98,8 +88,8 @@ $(window).on("resize", function () {
     //Redimensionamento de contentDiv de acordo com a imagem
     var width = $("#bg").width();
     var height = $("#bg").height();
-    $("#contentDiv").css("width", "" + width);
-    $("#contentDiv").css("height", "" + height);
+    $("#contentDiv").css("width", "" + width + "px");
+    $("#contentDiv").css("height", "" + height + "px");
 });
 
 //Transições para cada tela
