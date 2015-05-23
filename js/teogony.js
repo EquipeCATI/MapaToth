@@ -27,17 +27,13 @@ function transitionToCivilizationTeogony() {
         $(teogonyImg).attr("id", "civilizationTeogonyImg");
         $("#civilizationTeogony").append(teogonyImg);
 
-        var setaDireita = preload.getResult("seta");
-        $(setaDireita).attr("id", "nextButton");
-        $("#civilizationTeogony").append(setaDireita);
 
-        var setaEsquerda = $(setaDireita).clone();
-        setaEsquerda.attr("id", "previousButton");
+        $("#civilizationTeogony").append("<img id='nextButton' src=''>");
+        $("#nextButton").attr('src', $(preload.getResult("seta")).attr('src'));
 
-        $("#civilizationTeogony").append(setaEsquerda);
-        $(setaEsquerda).transition({
-            rotate: '180deg'
-        }, 0);
+        $("#civilizationTeogony").append("<img id='previousButton' src=''>");
+        $("#previousButton").attr('src', $(preload.getResult("seta")).attr('src'));
+
 
 
         $("#civilizationTeogony").append("<div id='descriptionDiv'></div>");
@@ -83,9 +79,9 @@ function changeGod(direction) {
         scale: "0.25",
         opacity: "0"
     }, 625, function () {
-        //Enquanto a imagem está invisível, é movida para a direita
+        //Enquanto a imagem está invisível, é movida para a direita se -1, esquerda se 1
         $("#godImage").transition({
-            x: "" + width / 2 + "px"
+            x: -1 * direction * width / 2 + "px"
         }, 100, function () {
             //Substituição do attr src para a nova imagem
             $("#godImage").attr("src", currentCivilization.gods[currentGodIndex].source);
