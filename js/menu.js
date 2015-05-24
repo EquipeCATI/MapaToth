@@ -37,7 +37,6 @@ $(document).on("click", ".menuRow", function () {
         saveMap();
     }
     transitionToCivilizationMenu($(this));
-
 });
 
 //Clicar fora retira o menu

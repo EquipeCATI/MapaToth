@@ -1,19 +1,21 @@
 #navigationDiv {
+    float: left;
     display: inline-block;
     height: 100%;
-    width: auto;
+    width: 50%;
 }
 
 .NavSeparator {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 20px;
+    margin-right: 2%;
     height: 35%;
     opacity: 0.8;
 }
 
 #navigationDiv ul {
     height: 100%;
+    width: auto;
 }
 
 .navLi {
@@ -22,7 +24,7 @@
     margin: 0 auto;
     height: 100%;
     width: auto;
-    margin-right: 20px;
+    margin-right: 2%;
     text-align: center;
 }
 
@@ -31,4 +33,5 @@
     cursor: pointer;
     cursor: hand;
     height: 90%;
+    width: auto;
 }

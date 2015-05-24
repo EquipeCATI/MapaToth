@@ -5,7 +5,7 @@ var civilizations = [];
 //Uso da biblioteca PreloadJS, para um carregamento prévio de todas as mídias usadas
 function loadAssets() {
     //O manifest é uma lista de mídias que serão carregadas
-    var imgManifest = [];
+    var manifest = [];
 
     //Cada erro que ocorrer será lidado com a função handleError
     preload.on("error", handleError);
@@ -13,41 +13,82 @@ function loadAssets() {
     //A cada item carregado, este evento aciona handleProgress
     preload.on("progress", handleProgress);
 
+    //Extensões procuradas caso o tipo de arquivo não seja suportado
+    createjs.Sound.alternateExtensions = ["mp3","m4a", "wav", "ogg"];
+	var manifestAudio = [];
+    
+
+    //Configurando para que sons sejam lidos no Preload
+    createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.HTMLAudioPlugin]);
+    createjs.Sound.initializeDefaultPlugins();
+    preload.installPlugin(createjs.Sound);
+    
     //Cada uma das imagens possui um path e são obtidas pelo seu id posteriormente
     //preloadjs.getResult("id")
+
+    var sound = {
+        src: "mapMusic.mp3",
+        id: "mapMusic"
+    };
+    manifest.push(sound);
 
     var img = {
         src: "seta.png",
         id: "seta"
     };
-    imgManifest.push(img);
+    manifest.push(img);
 
     img = {
         src: "mapNavIcon.png",
         id: "mapNavItem"
     };
-    imgManifest.push(img);
+    manifest.push(img);
 
     img = {
         src: "cultureNavIcon.png",
         id: "cultureNavItem"
     };
-    imgManifest.push(img);
+    manifest.push(img);
 
     img = {
         src: "bg.png",
         id: "bg"
     };
-    imgManifest.push(img);
+    manifest.push(img);
 
     //Mídia variável, lida de cada uma das civilizações cadastradas
     $.each(civilizations, function () {
+
+        
+        sound = {
+            src: "Civilizacoes/" + this.name + "/musica.mp3",
+            id: this.name
+        };
+        manifest.push(sound);
+        
+        
+        sound = {
+            src: "Civilizacoes/" + this.name + "/Cosmogonia/musica.mp3",
+            id: this.name + "Culture"
+        };
+        manifest.push(sound);
+        
+        sound = {
+            src: "Civilizacoes/" + this.name + "/Teogonia/musica.mp3",
+            id: this.name + "Teogony"
+        };
+        manifest.push(sound);
+        
+        
+
         //Fundo para os botões
         img = {
             src: "Civilizacoes/" + this.name + "/menu.png",
             id: "menu" + this.name
         };
-        imgManifest.push(img);
+        manifest.push(img);
+
+        /*
 
         //Textura de background da pagina inicial da civilização
         img = {
@@ -55,7 +96,7 @@ function loadAssets() {
             id: "menuBackground" + this.name
         };
 
-        imgManifest.push(img);
+        manifest.push(img);
 
         //Textura de background da teogonia da civilização
         img = {
@@ -63,49 +104,50 @@ function loadAssets() {
             id: "teogonyBackground" + this.name
         };
 
-        imgManifest.push(img);
-
+        manifest.push(img);
+        
+        */
 
         //Botões
         img = {
             src: "Civilizacoes/" + this.name + "/Cosmogonia/Botao.png",
             id: "cosmogonyButton" + this.name
         };
-        imgManifest.push(img);
+        manifest.push(img);
         img = {
             src: "Civilizacoes/" + this.name + "/Teogonia/Botao.png",
             id: "teogonyButton" + this.name
         };
-        imgManifest.push(img);
+        manifest.push(img);
         img = {
             src: "Civilizacoes/" + this.name + "/Cultura/Botao.png",
             id: "cultureButton" + this.name
         };
-        imgManifest.push(img);
+        manifest.push(img);
 
         //Botões cultura
         img = {
             src: "Civilizacoes/" + this.name + "/Cultura/ManifestacaoCultural.png",
             id: "culturalManifestationButton" + this.name
         };
-        imgManifest.push(img);
+        manifest.push(img);
         img = {
             src: "Civilizacoes/" + this.name + "/Cultura/MetodoDeSubsistencia.png",
             id: "subsistenceMethodButton" + this.name
         };
-        imgManifest.push(img);
+        manifest.push(img);
         img = {
             src: "Civilizacoes/" + this.name + "/Cultura/EstruturaSocial.png",
             id: "socialStructureButton" + this.name
         };
-        imgManifest.push(img);
+        manifest.push(img);
 
-        //Botoes de navegação
+        //Botão de navegação
         img = {
             src: "Civilizacoes/" + this.name + "/mainNavItem.png",
             id: "mainNavItem" + this.name
         };
-        imgManifest.push(img);
+        manifest.push(img);
 
         //Imagens dos Deuses
         $.each(this.gods, function () {
@@ -113,18 +155,22 @@ function loadAssets() {
                 src: "Civilizacoes/" + this.civilization.name + "/Teogonia/" + this.name + ".png",
                 id: this.name
             };
-            imgManifest.push(img);
+            manifest.push(img);
         });
     });
 
-    preload.loadManifest(imgManifest, true, "Conteudo/");
+    preload.loadManifest(manifest, true, "Conteudo/");
 }
 
 function handleComplete() {
     $("#progress").fadeOut();
     $("#mainDiv").fadeIn();
     $("#mainDiv *").fadeIn();
-    $("#MenuButton").fadeIn();
+    $("#header").fadeIn(function () {
+        createjs.Sound.play("mapMusic", {
+            loop: -1
+        });
+    });
     updateMarkers();
 }
 
@@ -135,8 +181,11 @@ function handleError() {
 //Animação da barra de carregamento de acordo com o progress informado no evento
 function handleProgress(event) {
     line.animate(event.progress, function () {
-        if (event.progress == 1)
+        if (event.progress == 1){
+            preloadFinished = true;
             handleComplete();
+        }
+            
     });
 }
 
@@ -153,7 +202,7 @@ $(document).ready(function () {
     //Elementos iniciais são escondidos e só reaparecem após o carregamento
     $("#mainDiv").fadeOut(10);
     $("#mainDiv *").fadeOut(10);
-    $("#MenuButton").fadeOut(10);
+    $("#header").fadeOut(10);
 
     //ponto de transformação do menu mudado para o canto esquerdo
     $('#menuDiv').css({

@@ -1,5 +1,6 @@
 function transitionToMap() {
     currentCivilization = undefined;
+    transitionToSoundNamed("mapMusic");
     $("#mainDiv").fadeOut(625, function () {
         $("#mainDiv").replaceWith($("#mainDiv").data('map'));
         $("#mainDiv").fadeOut(0);

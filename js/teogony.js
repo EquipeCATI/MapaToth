@@ -40,7 +40,7 @@ function transitionToCivilizationTeogony() {
 
         $("#descriptionDiv").append("<p>" + currentCivilization.gods[currentGodIndex].description) + "</p>";
         $("#descriptionDiv").mCustomScrollbar({
-            theme: "dark-thin"
+            theme: "dark"
         });
         $("#mainDiv").fadeIn(625);
     });
@@ -48,7 +48,7 @@ function transitionToCivilizationTeogony() {
 
 function changeGod(direction) {
     //Desabilita os botões
-    $(this).addClass("Disabled");
+    $("#previousButton").addClass("Disabled");
     $("#nextButton").addClass("Disabled");
 
     currentGodIndex += direction;

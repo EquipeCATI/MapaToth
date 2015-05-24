@@ -1,16 +1,34 @@
+#soundButton{
+    float: right;
+    height: 100%;
+    width: auto;
+    margin-right: 1%;
+    cursor: hand;
+    cursor: pointer;
+}
+
+#soundButton.Inactive{
+    content: url("../Conteudo/sound.png");
+    
+}
+
+#soundButton.Active{
+    content: url("../Conteudo/noSound.png")
+}
+
 #header {
     position: fixed;
     z-index: 100;
     height: 5%;
     width: 100%;
+    margin-bottom: 1%;
     padding-top: 1%;
-    padding-left: 1%;
 }
 
 #MenuButton {
+    float: left;
     display: inline-block;
-    top: 1%;
-    left: 1%;
+    margin-left: 1%;
     height: 100%;
     cursor: hand;
     cursor: pointer;

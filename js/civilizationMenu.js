@@ -10,7 +10,8 @@ function transitionToCivilizationMenu(marker) {
     $(".menuRow").removeClass("Disabled");
     //E o botão da civilização exibida desativado
     $("#menuRow" + civilizationName).addClass("Disabled");
-
+    
+    transitionToSoundNamed(civilizationName);
 
     $("#mainDiv").fadeOut(625, function () {
         initNavController(); //navigation

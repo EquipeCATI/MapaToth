@@ -23,6 +23,7 @@ function addCultureDivs() {
     addCultureDiv("subsistenceMethod");
     addCultureDiv("socialStructure");
     selected = $("#socialStructureButton");
+    $("#socialStructureDiv").css("z-index", "3");
 }
 
 //Adiciona divs de acordo com a string
@@ -43,7 +44,10 @@ function addCultureDiv(topic) {
 var selected;
 
 $(document).on('click', '.CultureButton:not(.DisabledCultureButton)', function () {
-    showTopic($(this).attr("id"));
+    if (this != selected) {
+        showTopic($(this).attr("id"));
+    }
+
     selected = this;
 });
 
