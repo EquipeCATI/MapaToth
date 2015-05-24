@@ -3,15 +3,21 @@ var currentCivilization;
 function transitionToCivilizationMenu(marker) {
     //marker pois inicialmente a navegação se dava apenas no mapa,
     //mas pode ser qualquer objeto que tenha uma civilização em seu data
-    currentCivilization = marker.data("civilization");
+
+
+    if (currentCivilization != marker.data("civilization")) {
+        currentCivilization = marker.data("civilization");
+        transitionToSoundNamed(currentCivilization.name);
+    }
+
     var civilizationName = currentCivilization.name;
 
     //Aqui os botões do menu são ativados
     $(".menuRow").removeClass("Disabled");
     //E o botão da civilização exibida desativado
     $("#menuRow" + civilizationName).addClass("Disabled");
-    
-    transitionToSoundNamed(civilizationName);
+
+
 
     $("#mainDiv").fadeOut(625, function () {
         initNavController(); //navigation

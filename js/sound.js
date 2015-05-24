@@ -26,12 +26,12 @@ function fadeVolumeDown(volume, completion) {
 }
 
 function fadeVolumeUp(volume) {
-    var volumeDown = setInterval(function () {
+    var volumeUp = setInterval(function () {
         var currentVolume = createjs.Sound.getVolume();
         currentVolume += 0.1;
 
         if (currentVolume >= volume) {
-            clearInterval(volumeDown);
+            clearInterval(volumeUp);
         } else {
             createjs.Sound.setVolume(currentVolume);
         }
@@ -43,7 +43,14 @@ function transitionToSoundNamed(name) {
 
     fadeVolumeDown(0, function () {
         createjs.Sound.stop();
-        createjs.Sound.play(name);
-        fadeVolumeUp(1);
+        createjs.Sound.play(name, {
+            volume: 0.7,
+            loop: -1
+        });
+
+        if ($("#soundButton").hasClass("Active")) {
+            fadeVolumeUp(1);
+        }
+
     });
 }

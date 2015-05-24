@@ -7,7 +7,7 @@ function transitionToCivilizationTeogony() {
     $("#mainDiv").fadeOut(625, function () {
         $("#contentDiv").empty();
 
-        $("#mainDiv").css("background-image", "url('" + $(preload.getResult('teogonyBackground' + currentCivilization.name)).attr('src') + "')");
+        //$("#mainDiv").css("background-image", "url('" + $(preload.getResult('teogonyBackground' + currentCivilization.name)).attr('src') + "')");
 
         $("#contentDiv").append("<div id='civilizationTeogony'></div>");
         $("#civilizationTeogony").append("<div id='godImgDiv'></div>");

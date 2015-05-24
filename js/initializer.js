@@ -14,21 +14,27 @@ function loadAssets() {
     preload.on("progress", handleProgress);
 
     //Extensões procuradas caso o tipo de arquivo não seja suportado
-    createjs.Sound.alternateExtensions = ["mp3","m4a", "wav", "ogg"];
-	var manifestAudio = [];
-    
+    createjs.Sound.alternateExtensions = ["mp3", "m4a", "wav", "ogg"];
+    var manifestAudio = [];
+
 
     //Configurando para que sons sejam lidos no Preload
     createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.HTMLAudioPlugin]);
     createjs.Sound.initializeDefaultPlugins();
     preload.installPlugin(createjs.Sound);
-    
+
     //Cada uma das imagens possui um path e são obtidas pelo seu id posteriormente
     //preloadjs.getResult("id")
 
     var sound = {
         src: "mapMusic.mp3",
         id: "mapMusic"
+    };
+    manifest.push(sound);
+
+    sound = {
+        src: "paperFold.mp3",
+        id: "paperFold"
     };
     manifest.push(sound);
 
@@ -59,27 +65,27 @@ function loadAssets() {
     //Mídia variável, lida de cada uma das civilizações cadastradas
     $.each(civilizations, function () {
 
-        
+
         sound = {
             src: "Civilizacoes/" + this.name + "/musica.mp3",
             id: this.name
         };
         manifest.push(sound);
-        
-        
+
+
         sound = {
             src: "Civilizacoes/" + this.name + "/Cosmogonia/musica.mp3",
             id: this.name + "Culture"
         };
         manifest.push(sound);
-        
+
         sound = {
             src: "Civilizacoes/" + this.name + "/Teogonia/musica.mp3",
             id: this.name + "Teogony"
         };
         manifest.push(sound);
-        
-        
+
+
 
         //Fundo para os botões
         img = {
@@ -168,6 +174,7 @@ function handleComplete() {
     $("#mainDiv *").fadeIn();
     $("#header").fadeIn(function () {
         createjs.Sound.play("mapMusic", {
+            volume: 0.7,
             loop: -1
         });
     });
@@ -181,11 +188,11 @@ function handleError() {
 //Animação da barra de carregamento de acordo com o progress informado no evento
 function handleProgress(event) {
     line.animate(event.progress, function () {
-        if (event.progress == 1){
+        if (event.progress == 1) {
             preloadFinished = true;
             handleComplete();
         }
-            
+
     });
 }
 

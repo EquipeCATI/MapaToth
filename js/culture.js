@@ -64,6 +64,8 @@ function showTopic(id) {
     $("#" + divID).css("z-index", "2");
 
     //Animação da div da frente
+
+    createjs.Sound.play("paperFold");
     $("#" + selectedDivID).transition({
         y: "-120%"
     }, "snap", function () {
