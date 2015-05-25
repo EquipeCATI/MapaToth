@@ -1,11 +1,54 @@
 function transitionToMap() {
     currentCivilization = undefined;
+    //Botôes do menu são todos ativados
+    $(".menuRow").removeClass("Disabled");
     transitionToSoundNamed("mapMusic");
     $("#mainDiv").fadeOut(625, function () {
         $("#mainDiv").replaceWith($("#mainDiv").data('map'));
         $("#mainDiv").fadeOut(0);
         $("#mainDiv").fadeIn(1250);
     });
+}
+
+//Adição das bolinhas da linha do tempo, marcam a origem de uma nova civilização
+function addSliderMarkers() {
+    $.each(civilizations, function () {
+
+        $("#sliderDiv").append("<img id=" + this.name + "Born class='SliderMarker' src='../Conteudo/Imagens/SliderMarker.png'>");
+        var sliderMin = parseFloat($("#slider").attr("min"));
+        var sliderMax = parseFloat($("#slider").attr("max"));
+        var sliderSize = sliderMax - sliderMin;
+
+
+        var percentage = ((this.originYear - sliderMin) / (sliderSize)) * 80;
+        if (percentage > 40) {
+            percentage += 8;
+            percentage += "%";
+        } else {
+            percentage += 11;
+            percentage += "%";
+        }
+        $("#" + this.name + "Born").css("left", percentage);
+
+
+        /*Marcadores de queda da civilização
+        $("#sliderDiv").append("<img id=" + this.name + "Dead class='SliderMarker' src='../Conteudo/Imagens/SliderMarker.png'>");
+
+
+        percentage = ((this.endingYear - sliderMin) / (sliderMax - sliderMin)) * 80;
+        if (percentage > 40) {
+            percentage += 8;
+            percentage += "%";
+        } else {
+            percentage += 11;
+            percentage += "%";
+        }
+        $("#" + this.name + "Dead").css("left", percentage);
+        */
+    });
+
+    civilizations = [];
+
 }
 
 function saveMap() {
@@ -49,6 +92,8 @@ function snapToClosest() {
             closestDistance = distance;
         }
 
+        /*
+
         if (civilization.endingYear <= sliderValue) {
             distance = sliderValue - civilization.endingYear;
         } else {
@@ -59,9 +104,11 @@ function snapToClosest() {
             finalValue = civilization.endingYear;
             closestDistance = distance;
         }
+        */
     });
 
     //Animação do marcador até o ponto definido
+    $('#slider').css("pointer-events", "none");
     var interval = setInterval(function () {
         if (finalValue > sliderValue) {
             var newVal = parseFloat($('#slider').val()) + 0.25;
@@ -70,17 +117,33 @@ function snapToClosest() {
         }
 
         $('#slider').val(newVal);
-        
+
         //Chama o updateMarkers
         $('#slider').trigger("input");
 
         if (parseInt($('#slider').val()) == finalValue) {
+            var percentage = (finalValue - parseFloat($("#slider").attr("min"))) / (parseFloat($("#slider").attr("max")) - parseFloat($("#slider").attr("min")));
+            //percentage = percentage / 100;
+            var width = percentage * $("#slider").width();
+            var div = $('#sliderVal');
+            div.html("Século " + Math.abs(parseInt(finalValue)));
+
+            if (finalValue > 0) {
+                div.append(" D.C.");
+            } else {
+                div.append(" A.C.");
+            }
+
+            div.css('top', $("#slider").offset().top - div.outerHeight(true));
+            div.css('left', $("#slider").offset().left + width);
+
+            div.fadeIn();
+
+            $('#slider').css("pointer-events", "auto");
             clearInterval(interval);
         }
-        
+
     }, 1);
-
-
 }
 
 function selectMarker(marker) {
@@ -99,16 +162,18 @@ function selectMarker(marker) {
     });
 
     $('.Map').transition({
-        scale: '5'
-    }, 1250, "snap");
+        scale: '4'
+    }, 2500, "ease");
 
     marker.transition({
-        scale: '5'
-    }, 1250, "snap");
+        scale: '4'
+    }, 2500, "ease", function () {
+        transitionToCivilizationMenu(marker);
+    });
 
     $('.MapMarker').not(marker).fadeOut(100);
 
-    transitionToCivilizationMenu(marker);
+
 }
 
 $(document).on('click', '.MapMarker', function () {
@@ -116,9 +181,18 @@ $(document).on('click', '.MapMarker', function () {
 });
 
 $(document).on('input', '#slider', function () {
+    $("#sliderVal").fadeOut("fast");
     updateMarkers();
 });
 
-$(document).on('change', '#slider', function () {
+$(document).on('mouseover', '#slider', function () {
+    $('#sliderVal').fadeIn();
+});
+
+$(document).on('mouseout', '#slider', function () {
+    $('#sliderVal').fadeOut();
+});
+
+$(document).on('change', '#slider', function (event) {
     snapToClosest();
 });

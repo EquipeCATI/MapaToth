@@ -5,21 +5,27 @@
     -webkit-transform: translateY(-50%);
     display: inline-block;
     margin: auto;
-    width: 80%;
+    height: 80%;
+    width: auto;
+    max-width: 80%;
     vertical-align: middle;
 }
 
 #civilizationMenuImg {
-    display: inline-block;
-    height: auto;
-    width: 100%;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
     margin: auto;
 }
 
 .CivilizationButton {
     display: inline-block;
     position: absolute;
-    height: 48%;
     cursor: pointer;
     cursor: hand;
+    top: 20%;
+}
+
+.CivilizationButton:hover {
+    box-sizing: content-box box-shadow: 0px 0px 50px black;
 }

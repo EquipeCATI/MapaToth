@@ -22,8 +22,8 @@ function addCultureDivs() {
     addCultureDiv("culturalManifestation");
     addCultureDiv("subsistenceMethod");
     addCultureDiv("socialStructure");
-    selected = $("#socialStructureButton");
-    $("#socialStructureDiv").css("z-index", "3");
+    selected = $("#culturalManifestationButton");
+    $("#culturalManifestationDiv").css("z-index", "3");
 }
 
 //Adiciona divs de acordo com a string
@@ -34,14 +34,18 @@ function addCultureDiv(topic) {
 
     $("#civilizationCulture").append("<div id='" + topic + "Div' class='CultureDiv'></div>");
     $("#" + topic + "Div").append(button);
-    $("#" + topic + "Div").append("<p>" + currentCivilization[topic] + "</p>");
+    $("#" + topic + "Div").append("<p><span class='dropCap'>" + currentCivilization[topic].substr(0, 1) + "</span>" +
+        currentCivilization[topic].substr(1, currentCivilization[topic].length) + "</p>");
+
+
+    $("#" + topic + "Div").css("background-image", "url(" + preload.getResult("bg").src) + ")";
     //    $('#' + divID + "p").mCustomScrollbar({
     //        theme: "dark-thin"
     //    });
 }
 
 //Armazena o botão correspondente ao assunto exibido
-var selected;
+var selected = $("#culturalManifestationDiv");
 
 $(document).on('click', '.CultureButton:not(.DisabledCultureButton)', function () {
     if (this != selected) {
@@ -67,8 +71,8 @@ function showTopic(id) {
 
     createjs.Sound.play("paperFold");
     $("#" + selectedDivID).transition({
-        y: "-120%"
-    }, "snap", function () {
+        x: "110%"
+    }, 625, "ease", function () {
         //As outras folhas são colocadas atrás
         $(".CultureDiv").not($("#" + divID)).css("z-index", "1");
 
@@ -80,7 +84,7 @@ function showTopic(id) {
 
         //Folha(agora antiga) desce
         $(this).transition({
-            y: "0%"
-        }, "snap");
+            x: "0%"
+        }, 625, "ease");
     });
 }

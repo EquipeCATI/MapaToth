@@ -29,10 +29,10 @@ function transitionToCivilizationTeogony() {
 
 
         $("#civilizationTeogony").append("<img id='nextButton' src=''>");
-        $("#nextButton").attr('src', $(preload.getResult("seta")).attr('src'));
+        $("#nextButton").attr('src', $(preload.getResult("setaPapelPreenchida")).attr('src'));
 
         $("#civilizationTeogony").append("<img id='previousButton' src=''>");
-        $("#previousButton").attr('src', $(preload.getResult("seta")).attr('src'));
+        $("#previousButton").attr('src', $(preload.getResult("setaPapelPreenchida")).attr('src'));
 
 
 
@@ -73,7 +73,7 @@ function changeGod(direction) {
         currentCivilization.gods[currentGodIndex].source = $(preload.getResult(name)).attr('src');
     }
 
-    var width = $("#godImage").width();
+    var width = $("#godImgDiv").width();
 
     $("#descriptionDiv *").fadeOut(625);
     $("#civilizationTeogony h1").fadeOut(625);
@@ -108,16 +108,22 @@ function changeGod(direction) {
                 //Reabilitação dos botões
                 $("#previousButton").removeClass("Disabled");
                 $("#nextButton").removeClass("Disabled");
+
+                //Setas retornam ao estado normal
+                $("#nextButton").attr('src', $(preload.getResult("setaPapelPreenchida")).attr('src'));
+                $("#previousButton").attr('src', $(preload.getResult("setaPapelPreenchida")).attr('src'));
             });
         })
     });
 }
 
-//Ler em previousButton
 $(document).on('click', '#nextButton', function () {
+    //Botão clicado fica "não-preenchido"
+    $(this).attr('src', $(preload.getResult("setaPapel")).attr('src'));
     changeGod(1);
 });
 
 $(document).on('click', '#previousButton', function () {
+    $(this).attr('src', $(preload.getResult("setaPapel")).attr('src'));
     changeGod(-1);
 });

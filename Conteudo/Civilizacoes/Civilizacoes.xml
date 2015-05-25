@@ -3,8 +3,8 @@
 
     <Civilization>
         <name>Grega</name>
-        <originYear>20</originYear>
-        <endingYear>50</endingYear>
+        <originYear>-2</originYear>
+        <endingYear>5</endingYear>
 
         <mapMarker>
             <top>28%</top>
@@ -12,37 +12,31 @@
         </mapMarker>
 
         <menuButtons>
-            <height>45%</height>
+            <height>63%</height>
 
             <cosmogonyButton>
-                <top>54.5%</top>
-                <left>18%</left>
+                <top>29%</top>
+                <left>20%</left>
             </cosmogonyButton>
 
             <teogonyButton>
-                <top>54.5%</top>
-                <left>37%</left>
+                <top>29%</top>
+                <left>40%</left>
             </teogonyButton>
 
             <cultureButton>
-                <top>55%</top>
-                <left>55%</left>
+                <top>29%</top>
+                <left>60%</left>
             </cultureButton>
 
         </menuButtons>
 
         <culture>
-            <culturalManifestation>
-                Os gregos deram origem às ciências como matemática, filosofia e também trouxeram a arte ao mundo com seus poemas e peças.
-            </culturalManifestation>
+            <culturalManifestation>Os gregos deram origem às ciências como matemática, filosofia e também trouxeram a arte ao mundo com seus poemas e peças. Lorem ipsum dolor sit amet, das vect rurst vandelar ist main dar bressen aletarge vivarium der mint gusst vich. acht tunger bless ni aus vardalem morghas turdis al pace tuti vamer das minten.</culturalManifestation>
 
-            <subsistenceMethod>
-                O solo pouco fértil e as regiões montanhosas que lhe rodeavam fizeram os gregos utilizarem do comércio e expansão imperial.
-            </subsistenceMethod>
+            <subsistenceMethod>O solo pouco fértil e as regiões montanhosas que lhe rodeavam fizeram os gregos utilizarem do comércio e expansão imperial.</subsistenceMethod>
 
-            <socialStructure>
-                Em cada pólis sua estrutura social mudava, mas predominava-se a democracia, criada em Atenas.
-            </socialStructure>
+            <socialStructure>Em cada pólis sua estrutura social mudava, mas predominava-se a democracia, criada em Atenas.</socialStructure>
 
         </culture>
         <teogony>
@@ -76,8 +70,8 @@
 
     <Civilization>
         <name>Nórdica</name>
-        <originYear>70</originYear>
-        <endingYear>90</endingYear>
+        <originYear>10</originYear>
+        <endingYear>18</endingYear>
         <mapMarker>
             <top>16%</top>
             <left>46%</left>
@@ -86,8 +80,8 @@
 
     <Civilization>
         <name>Egípcia</name>
-        <originYear>0</originYear>
-        <endingYear>30</endingYear>
+        <originYear>-70</originYear>
+        <endingYear>2</endingYear>
         <mapMarker>
             <top>39%</top>
             <left>55%</left>

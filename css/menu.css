@@ -7,18 +7,10 @@
     cursor: pointer;
 }
 
-#soundButton.Inactive {
-    content: url("../Conteudo/Imagens/Som.png");
-}
-
-#soundButton.Active {
-    content: url("../Conteudo/Imagens/SemSom.png")
-}
-
 #header {
     position: fixed;
     z-index: 100;
-    height: 5%;
+    height: 40px;
     width: 100%;
     margin-bottom: 1%;
     padding-top: 1%;
@@ -37,8 +29,9 @@
 #menuDiv {
     padding: 1%;
     position: fixed;
-    left: 2.5%;
-    top: 6%;
+    top: 0%;
+    left: 0%;
+    transform: translate(-100%);
     width: 50%;
     max-width: 200px;
     height: 50%;
@@ -49,21 +42,31 @@
 }
 
 #menuDiv ul {
-    width: auto;
-    height: auto;
+    margin-top: 7%;
+    width: 100%;
+    height: 70%;
     vertical-align: middle;
 }
 
+#MenuCloseButton {
+    cursor: pointer;
+    cursor: hand;
+    display: inline-block;
+    height: 10%;
+}
+
 .menuRow {
-    display: table;
+    list-style-image: none;
+    display: inline-block;
     margin: 0 auto;
-    width: 100%;
-    height: 100px;
+    width: 49%;
     margin-bottom: 1%;
     text-align: center;
-    border-radius: 5%;
     cursor: hand;
     cursor: pointer;
+    right: 0;
+    left: 0;
+    vertical-align: middle;
 }
 
 .Disabled {
@@ -75,31 +78,25 @@
     background-color: blue;
 }
 
-#titleLi {
-    display: table;
-    margin: 0 auto;
-    width: 100%;
-    height: 33%;
-    margin-bottom: 1%;
+#menuDiv h1 {
+    top: 10%;
+    display: inline-block;
+    margin: auto;
     text-align: center;
-    border-bottom: 1px black solid;
-    -webkit-box-shadow: 0px 3px 17px 0px rgba(0, 0, 0, 0.28);
-    -moz-box-shadow: 0px 3px 17px 0px rgba(0, 0, 0, 0.28);
-    box-shadow: 0px 3px 17px 0px rgba(0, 0, 0, 0.28);
-}
-
-#titleLi h1 {
-    display: table-cell;
+    font-size: 20px;
+    width: 100%;
     vertical-align: middle;
+    margin-top: 5%;
 }
 
 .menuRow p {
-    display: table-cell;
+    position: relative;
+    display: inliblock;
     vertical-align: middle;
 }
 
 .menuIcon {
-    display: inline-block;
-    width: 10%;
-    margin-right: 1%;
+    display: block;
+    width: 50%;
+    margin: auto;
 }

@@ -9,8 +9,7 @@
     display: inline-block;
     vertical-align: middle;
     margin-right: 2%;
-    height: 35%;
-    opacity: 0.8;
+    height: 50%;
 }
 
 #navigationDiv ul {
@@ -32,6 +31,6 @@
     vertical-align: middle;
     cursor: pointer;
     cursor: hand;
-    height: 90%;
+    height: 100%;
     width: auto;
 }
