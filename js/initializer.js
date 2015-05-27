@@ -27,37 +27,61 @@ function loadAssets() {
     //preloadjs.getResult("id")
 
     var sound = {
-        src: "mapMusic.mp3",
+        src: "Sons/Mapa.mp3",
         id: "mapMusic"
     };
     manifest.push(sound);
 
     sound = {
-        src: "paperFold.mp3",
+        src: "Sons/TrocaCultura.mp3",
         id: "paperFold"
     };
     manifest.push(sound);
 
     var img = {
-        src: "seta.png",
+        src: "Imagens/Seta.png",
         id: "seta"
     };
     manifest.push(img);
 
+    var img = {
+        src: "Imagens/Mapa.png",
+        id: "map"
+    };
+    manifest.push(img);
+
+    var img = {
+        src: "Imagens/Som.png",
+        id: "sound"
+    };
+    manifest.push(img);
+
+    var img = {
+        src: "Imagens/SemSom.png",
+        id: "noSound"
+    };
+    manifest.push(img);
+
     img = {
-        src: "mapNavIcon.png",
+        src: "Imagens/IconeNavegacaoMapa.png",
         id: "mapNavItem"
     };
     manifest.push(img);
 
     img = {
-        src: "cultureNavIcon.png",
+        src: "Imagens/IconeNavegacaoCultura.png",
         id: "cultureNavItem"
     };
     manifest.push(img);
 
     img = {
-        src: "bg.png",
+        src: "Imagens/IconeNavegacaoTeogonia.png",
+        id: "teogonyNavItem"
+    };
+    manifest.push(img);
+
+    img = {
+        src: "Imagens/FundoConteudo.png",
         id: "bg"
     };
     manifest.push(img);
@@ -67,29 +91,30 @@ function loadAssets() {
 
 
         sound = {
-            src: "Civilizacoes/" + this.name + "/musica.mp3",
+            src: "Civilizacoes/" + this.name + "/Sons/Musica.mp3",
             id: this.name
         };
         manifest.push(sound);
 
-
+        /*
         sound = {
-            src: "Civilizacoes/" + this.name + "/Cosmogonia/musica.mp3",
+            src: "Civilizacoes/" + this.name + "/Cosmogonia/Sons/Musica.mp3",
             id: this.name + "Culture"
         };
         manifest.push(sound);
 
         sound = {
-            src: "Civilizacoes/" + this.name + "/Teogonia/musica.mp3",
+            src: "Civilizacoes/" + this.name + "/Teogonia/Sons/Musica.mp3",
             id: this.name + "Teogony"
         };
         manifest.push(sound);
+        */
 
 
 
         //Fundo para os botões
         img = {
-            src: "Civilizacoes/" + this.name + "/menu.png",
+            src: "Civilizacoes/" + this.name + "/Imagens/TelaInicial.png",
             id: "menu" + this.name
         };
         manifest.push(img);
@@ -150,8 +175,15 @@ function loadAssets() {
 
         //Botão de navegação
         img = {
-            src: "Civilizacoes/" + this.name + "/mainNavItem.png",
+            src: "Civilizacoes/" + this.name + "/Imagens/IconeNavegacao.png",
             id: "mainNavItem" + this.name
+        };
+        manifest.push(img);
+
+        //ícone do mapa
+        img = {
+            src: "Civilizacoes/" + this.name + "/Imagens/MarcadorMapa.png",
+            id: "marker" + this.name
         };
         manifest.push(img);
 
@@ -178,7 +210,8 @@ function handleComplete() {
             loop: -1
         });
     });
-    updateMarkers();
+
+    addCivilizations();
 }
 
 function handleError() {
@@ -201,7 +234,7 @@ $(document).ready(function () {
     //Leitura do XML
     $.ajax({
         type: "GET",
-        url: "Conteudo/Civilizacoes.xml",
+        url: "Conteudo/Civilizacoes/Civilizacoes.xml",
         dataType: "xml",
         success: parseXML
     });
@@ -235,11 +268,18 @@ function parseXML(xml) {
 
     //Carregamento de arquivos, feito aqui pois depende dos objetos Civilization 
     loadAssets();
+}
 
-
+function addCivilizations() {
     $.each(civilizations, function () {
         //Criação do marcador de mapa
-        $("#mapDiv").append("<img src='Conteudo/Civilizacoes/" + this.name + "/MarcadorMapa.png' alt='Cidade " + this.name + "' id='" + this.name + "' class='MapMarker'/>");
+
+        var markerImg = preload.getResult("marker" + this.name);
+        $(markerImg).attr("alt", "Cidade " + this.name);
+        $(markerImg).attr("id", this.name);
+        $(markerImg).addClass("MapMarker");
+
+        $("#mapDiv").append(markerImg);
 
         var marker = $("#" + this.name);
 
@@ -250,8 +290,12 @@ function parseXML(xml) {
         marker.data("civilization", this);
 
         //Criação do ícone no menu
-        $("#menuUl").append("<li id='menuRow" + this.name + "' class='menuRow'><p><img src='Conteudo/Civilizacoes/" + this.name + "/MarcadorMapa.png' class='menuIcon'/>" + this.name + "</p>");
+        var mainNavImg = preload.getResult("mainNavItem" + this.name);
+        $(mainNavImg).addClass("menuIcon");
 
+        $("#menuUl").append("<li id='menuRow" + this.name + "' class='menuRow'><p></p>");
+        $("#menuRow" + this.name + " > p").append(mainNavImg);
+        $("#menuRow" + this.name + " > p").append(this.name);
         $("#menuRow" + this.name).data("civilization", this);
 
 

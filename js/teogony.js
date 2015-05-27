@@ -37,12 +37,16 @@ function transitionToCivilizationTeogony() {
 
 
         $("#civilizationTeogony").append("<div id='descriptionDiv'></div>");
+        $("#civilizationTeogony").append("<h1>" + currentCivilization.gods[currentGodIndex].name + "</h1>");
 
-        $("#descriptionDiv").append("<p>" + currentCivilization.gods[currentGodIndex].description) + "</p>";
+        $("#descriptionDiv").append("<p>" + currentCivilization.gods[currentGodIndex].description) + " </p>";
         $("#descriptionDiv").mCustomScrollbar({
             theme: "dark"
         });
-        $("#mainDiv").fadeIn(625);
+
+        $("#mainDiv").fadeIn(625, function () {
+            addNavIconNamed("teogony");
+        });
     });
 }
 
@@ -72,6 +76,7 @@ function changeGod(direction) {
     var width = $("#godImage").width();
 
     $("#descriptionDiv *").fadeOut(625);
+    $("#civilizationTeogony h1").fadeOut(625);
 
     //Move para a esquerda se -1, direita se 1, diminui e dá fade
     $("#godImage").transition({
@@ -85,6 +90,11 @@ function changeGod(direction) {
         }, 100, function () {
             //Substituição do attr src para a nova imagem
             $("#godImage").attr("src", currentCivilization.gods[currentGodIndex].source);
+
+            //Setando o título para o novo Deus
+            $("#civilizationTeogony h1").fadeIn(625);
+            $("#civilizationTeogony").find("h1").text(currentCivilization.gods[currentGodIndex].name);
+
             //Setando o texto para o novo Deus
             $("#descriptionDiv").find("p").text(currentCivilization.gods[currentGodIndex].description);
             $("#descriptionDiv *").fadeIn(625);

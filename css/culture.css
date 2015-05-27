@@ -20,19 +20,19 @@
     top: -5%;
 }
 
-#culturalManifestationButton{
+#culturalManifestationButton {
     right: 20%;
 }
 
-#subsistenceMethodButton{
+#subsistenceMethodButton {
     right: 10%;
 }
 
-#socialStructureButton{
+#socialStructureButton {
     right: 30%;
 }
 
-.DisabledCultureButton{
+.DisabledCultureButton {
     pointer-events: none;
 }
 
@@ -53,9 +53,7 @@
 }
 
 .CultureDiv p {
-    font-family: sans-serif;
     font-size: 1.5vw;
-    color: white;
     max-width: 300px;
     max-height: 300px;
     width: 80%;

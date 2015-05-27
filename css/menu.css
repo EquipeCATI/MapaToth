@@ -1,4 +1,4 @@
-#soundButton{
+#soundButton {
     float: right;
     height: 100%;
     width: auto;
@@ -7,13 +7,12 @@
     cursor: pointer;
 }
 
-#soundButton.Inactive{
-    content: url("../Conteudo/sound.png");
-    
+#soundButton.Inactive {
+    content: url("../Conteudo/Som.png");
 }
 
-#soundButton.Active{
-    content: url("../Conteudo/noSound.png")
+#soundButton.Active {
+    content: url("../Conteudo/SemSom.png")
 }
 
 #header {
@@ -69,7 +68,7 @@
 
 .Disabled {
     pointer-events: none;
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .menuRow:hover {
