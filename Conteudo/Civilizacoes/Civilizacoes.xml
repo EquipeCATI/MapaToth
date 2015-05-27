@@ -46,22 +46,30 @@
 
         </culture>
         <teogony>
+            <god>
+                <godName>Zeus</godName>
+                <godDescription>Rei do Olimpo Rei do Olimpo Rei do Olimpo Rei do Olimpo Rei do Olimpo Rei do Olimpo Rei do Olimpo Rei do Olimpo </godDescription>
+            </god>
 
             <god>
-                <god>
-                    <godName>Hades</godName>
-                    <godDescription>Rei do mundo dos mortos Rei do mundo dos mortos Rei do mundo dos mortos Rei do mundo dos mortos Rei do mundo dos mortos Rei do mundo dos mortos Rei do mundo dos mortos </godDescription>
-                </god>
+                <godName>Poseidon</godName>
+                <godDescription>Rei dos mares Rei dos mares Rei dos mares Rei dos mares Rei dos mares Rei dos mares Rei dos mares Rei dos mares Rei dos mares </godDescription>
+            </god>
 
-                <god>
-                    <godName>Hera</godName>
-                    <godDescription>Rainha do Olimpo</godDescription>
-                </god>
+            <god>
+                <godName>Hades</godName>
+                <godDescription>Rei do mundo dos mortos Rei do mundo dos mortos Rei do mundo dos mortos Rei do mundo dos mortos Rei do mundo dos mortos Rei do mundo dos mortos Rei do mundo dos mortos </godDescription>
+            </god>
 
-                <god>
-                    <godName>Ares</godName>
-                    <godDescription>Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra </godDescription>
-                </god>
+            <god>
+                <godName>Hera</godName>
+                <godDescription>Rainha do Olimpo</godDescription>
+            </god>
+
+            <god>
+                <godName>Ares</godName>
+                <godDescription>Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra Deus da guerra </godDescription>
+            </god>
 
         </teogony>
     </Civilization>

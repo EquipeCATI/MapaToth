@@ -8,11 +8,11 @@
 }
 
 #soundButton.Inactive {
-    content: url("../Conteudo/Som.png");
+    content: url("../Conteudo/Imagens/Som.png");
 }
 
 #soundButton.Active {
-    content: url("../Conteudo/SemSom.png")
+    content: url("../Conteudo/Imagens/SemSom.png")
 }
 
 #header {
