@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Rothenburg;
+    src: url(../Conteudo/rothenbg.ttf);
+}
+
+@font-face {
+    font-family: Playfair;
+    src: url(../Conteudo/Playfair.otf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +16,8 @@
 }
 
 #mainDiv {
-    background-image: url("http://1-background.com/images/nature/images/wood-walnut-background-tile.jpg");
-    background-size: 25%;
+    background-image: url(../Conteudo/Imagens/Background.jpg);
+    background-position: center;
     width: 100vw;
     height: 100vh;
     margin: auto;

@@ -1,3 +1,7 @@
+html {
+    overflow: hidden;
+}
+
 #mapDiv {
     display: inline-block;
     max-width: 90vw;
@@ -31,18 +35,114 @@
 
 #slider {
     display: inline-block;
+    position: absolute;
     margin: auto;
-    left: 10%;
-    right: 10%;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 80%;
-    -webkit-backface-visibility: hidden;
+    height: 25px;
     cursor: pointer;
     cursor: hand;
+    background-image: url(../Conteudo/Imagens/SliderBackground.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: repeat-x;
+    background-color: transparent;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: transparent;
+    border-color: transparent;
+    width: 80%;
+    z-index: 90;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+input[type=range]:focus {
+    outline: none;
+    border-color: transparent;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    z-index: 90;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background-image: url(../Conteudo/Imagens/SliderThumb.png);
+    background-size: 100%;
+    background-color: transparent;
+    z-index: 90;
+}
+
+input[type=range]::-moz-range-thumb {
+    height: 30px;
+    width: 30px;
+    border-color: transparent;
+    border-radius: 100%;
+    background-image: url(../Conteudo/Imagens/SliderThumb.png);
+    background-size: 100%;
+    background-color: transparent;
+    z-index: 90;
+}
+
+input[type=range]::-ms-thumb {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border-color: transparent;
+    background-image: url(../Conteudo/Imagens/SliderThumb.png);
+    background-size: 100%;
+    background-color: transparent;
+    z-index: 90;
 }
 
 #sliderDiv {
-    display: block;
+    display: inline-block;
+    position: relative;
     text-align: center;
-    width: 100%;
+    width: 80%;
+    height: 25px;
     margin: auto;
+    border-left: 100px;
+    border-right: 100px;
+    background-image: url(../Conteudo/Imagens/extremosSlider.png);
+    background-size: 20% 100%;
+    background-repeat: repeat-x;
+    overflow: visible;
+}
+
+#sliderVal {
+    position: fixed;
+    background-color: bisque;
+    width: 50px;
+}
+
+.SliderMarker {
+    pointer-events: none;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    position: absolute;
+    font-size: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
 }

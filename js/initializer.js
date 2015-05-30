@@ -204,6 +204,7 @@ function handleComplete() {
     $("#progress").fadeOut();
     $("#mainDiv").fadeIn();
     $("#mainDiv *").fadeIn();
+    initNavController();
     $("#header").fadeIn(function () {
         createjs.Sound.play("mapMusic", {
             volume: 0.7,
@@ -248,9 +249,6 @@ $(document).ready(function () {
     $('#menuDiv').css({
         transformOrigin: "0px 0px"
     });
-    $("#menuDiv").transition({
-        scale: "0"
-    }, 0);
 
     //Uso da biblioteca progressBar para a criação de uma barra de carregamento em SVG
     line = new ProgressBar.Line('#progress', {
@@ -301,12 +299,13 @@ function addCivilizations() {
 
     });
 
-    civilizations = [];
+    addSliderMarkers();
 
-    $("#menuDiv").mCustomScrollbar({
+    $("#menuDiv ul").mCustomScrollbar({
         theme: "dark-thin"
     });
 
     //Ícones de marcadores no mapa são carregados
+
     updateMarkers(); //map.js
 }

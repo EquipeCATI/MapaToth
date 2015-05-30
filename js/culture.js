@@ -22,8 +22,8 @@ function addCultureDivs() {
     addCultureDiv("culturalManifestation");
     addCultureDiv("subsistenceMethod");
     addCultureDiv("socialStructure");
-    selected = $("#socialStructureButton");
-    $("#socialStructureDiv").css("z-index", "3");
+    selected = $("#culturalManifestationButton");
+    $("#culturalManifestationDiv").css("z-index", "3");
 }
 
 //Adiciona divs de acordo com a string
@@ -41,7 +41,7 @@ function addCultureDiv(topic) {
 }
 
 //Armazena o botão correspondente ao assunto exibido
-var selected;
+var selected = $("#culturalManifestationDiv");
 
 $(document).on('click', '.CultureButton:not(.DisabledCultureButton)', function () {
     if (this != selected) {

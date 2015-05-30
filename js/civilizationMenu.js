@@ -5,7 +5,7 @@ function transitionToCivilizationMenu(marker) {
     //mas pode ser qualquer objeto que tenha uma civilização em seu data
 
 
-    if (currentCivilization != marker.data("civilization")) {
+    if (currentCivilization != marker.data("civilization") && marker.data("civilization") != undefined) {
         currentCivilization = marker.data("civilization");
         transitionToSoundNamed(currentCivilization.name);
     }
@@ -17,10 +17,8 @@ function transitionToCivilizationMenu(marker) {
     //E o botão da civilização exibida desativado
     $("#menuRow" + civilizationName).addClass("Disabled");
 
-
-
     $("#mainDiv").fadeOut(625, function () {
-        initNavController(); //navigation
+        addCivilizationNavIcon(); //navigation
 
         //Reajuste do zoom do mapa
         $('#mainDiv').transition({
@@ -40,6 +38,7 @@ function transitionToCivilizationMenu(marker) {
         //Folha
         var bg = preload.getResult('bg')
         $(bg).attr("id", "bg");
+
         $("#mainDiv").prepend(bg);
 
         //Conteúdo em si
@@ -47,6 +46,7 @@ function transitionToCivilizationMenu(marker) {
 
         var menuBg = preload.getResult("menu" + civilizationName);
         $(menuBg).attr("id", "civilizationMenuImg");
+        $(menuBg).css("opacity", "0.8");
         $("#civilizationMenuDiv").append(menuBg).fadeOut(0);
 
         $("#mainDiv").fadeIn(625, function () {
@@ -87,7 +87,7 @@ function addCivilizationButtons() {
     $(teogonyButton).hide().appendTo("#civilizationMenuDiv");
     $(cosmogonyButton).hide().appendTo("#civilizationMenuDiv");
 
-    $(".CivilizationButton").fadeIn();
+    $(".CivilizationButton").fadeTo("fast", 0.8);
 
 }
 
@@ -100,15 +100,43 @@ $(window).on("resize", function () {
 });
 
 //Transições para cada tela
+$(document).on("mouseover", ".CivilizationButton", function () {
+    $(this).fadeTo("fast", 1);
+    $(this).transition({
+        scale: "1.05"
+    }, "fast");
+});
+
+$(document).on("mouseout", ".CivilizationButton", function () {
+    $(this).fadeTo("fast", 0.8);
+    $(this).transition({
+        scale: "1"
+    }, "fast");
+});
+
+
+
 $(document).on('click', '#cultureButton', function () {
+    $(this).fadeTo("fast", 0.8);
+    $(this).transition({
+        scale: "1"
+    }, "fast");
     transitionToCivilizationCulture();
 });
 
 $(document).on('click', '#cosmogonyButton', function () {
     //cosmogonia pendente
+    $(this).fadeTo("fast", 0.8);
+    $(this).transition({
+        scale: "1"
+    }, "fast");
     transitionToCivilizationTeogony();
 });
 
 $(document).on('click', '#teogonyButton', function () {
+    $(this).fadeTo("fast", 0.8);
+    $(this).transition({
+        scale: "1"
+    }, "fast");
     transitionToCivilizationTeogony();
 });

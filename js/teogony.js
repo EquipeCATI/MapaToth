@@ -73,7 +73,7 @@ function changeGod(direction) {
         currentCivilization.gods[currentGodIndex].source = $(preload.getResult(name)).attr('src');
     }
 
-    var width = $("#godImage").width();
+    var width = $("#godImgDiv").width();
 
     $("#descriptionDiv *").fadeOut(625);
     $("#civilizationTeogony h1").fadeOut(625);
