@@ -1,10 +1,12 @@
 $(document).on("click", "#soundButton.Active", function () {
+    $(this).attr("src", preload.getResult("noSound").src);
     $(this).removeClass("Active");
     $(this).addClass("Inactive");
     createjs.Sound.setVolume(0);
 });
 
 $(document).on("click", "#soundButton.Inactive", function () {
+    $(this).attr("src", preload.getResult("sound").src);
     $(this).removeClass("Inactive");
     $(this).addClass("Active");
     createjs.Sound.setVolume(1);

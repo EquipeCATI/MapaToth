@@ -22,19 +22,15 @@ var selectedTopicName;
 function addCivilizationNavIcon() {
 
     var civilizationName = currentCivilization.name;
-    var separator = preload.getResult("seta");
+    var separator = preload.getResult("setaNavegacao");
     $(separator).addClass("NavSeparator");
 
     $("#navigationUl").append(separator);
     $(separator).fadeOut(0);
 
-    var mainNavItem = preload.getResult('mainNavItem' + civilizationName);
 
-    $(mainNavItem).addClass("navItem");
+    $("#navigationUl").append("<li id='mainNavItem' class='navLi'> <img class='navItem' src='" + preload.getResult('mainNavItem' + civilizationName).src + "'/></li>");
 
-    $("#navigationUl").append("<li id='mainNavItem' class='navLi'></li>");
-
-    $("#mainNavItem").append(mainNavItem);
     $("#mainNavItem").data("civilization", currentCivilization);
     $("#mainNavItem").addClass("Disabled");
 
@@ -98,6 +94,6 @@ $(document).on("click", "#mainNavItem:not(.Disabled)", function () {
         $(this).addClass("Disabled");
     });
 
-    initNavController();
+
     transitionToCivilizationMenu($(this));
 });

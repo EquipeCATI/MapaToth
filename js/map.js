@@ -1,5 +1,7 @@
 function transitionToMap() {
     currentCivilization = undefined;
+    //Botôes do menu são todos ativados
+    $(".menuRow").removeClass("Disabled");
     transitionToSoundNamed("mapMusic");
     $("#mainDiv").fadeOut(625, function () {
         $("#mainDiv").replaceWith($("#mainDiv").data('map'));
@@ -160,12 +162,12 @@ function selectMarker(marker) {
     });
 
     $('.Map').transition({
-        scale: '6'
-    }, 1250, "snap");
+        scale: '4'
+    }, 2500, "ease");
 
     marker.transition({
-        scale: '6'
-    }, 1250, "snap", function () {
+        scale: '4'
+    }, 2500, "ease", function () {
         transitionToCivilizationMenu(marker);
     });
 

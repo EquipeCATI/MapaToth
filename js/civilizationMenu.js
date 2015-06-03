@@ -18,6 +18,7 @@ function transitionToCivilizationMenu(marker) {
     $("#menuRow" + civilizationName).addClass("Disabled");
 
     $("#mainDiv").fadeOut(625, function () {
+        initNavController();
         addCivilizationNavIcon(); //navigation
 
         //Reajuste do zoom do mapa
@@ -111,7 +112,7 @@ $(document).on("mouseout", ".CivilizationButton", function () {
     $(this).fadeTo("fast", 0.8);
     $(this).transition({
         scale: "1"
-    }, "fast");
+    }, "ease");
 });
 
 
@@ -120,7 +121,7 @@ $(document).on('click', '#cultureButton', function () {
     $(this).fadeTo("fast", 0.8);
     $(this).transition({
         scale: "1"
-    }, "fast");
+    }, "ease");
     transitionToCivilizationCulture();
 });
 

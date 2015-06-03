@@ -39,8 +39,20 @@ function loadAssets() {
     manifest.push(sound);
 
     var img = {
-        src: "Imagens/Seta.png",
-        id: "seta"
+        src: "Imagens/SetaNavegacao.png",
+        id: "setaNavegacao"
+    };
+    manifest.push(img);
+
+    var img = {
+        src: "Imagens/SetaPapel.png",
+        id: "setaPapel"
+    };
+    manifest.push(img);
+
+    var img = {
+        src: "Imagens/SetaPapelPreenchida.png",
+        id: "setaPapelPreenchida"
     };
     manifest.push(img);
 
@@ -298,6 +310,12 @@ function addCivilizations() {
 
 
     });
+
+    var children = $("#menuUl").children();
+    if (children.length % 2 != 0) {
+        var last = $(children).last();
+        $(last).css("display", "block");
+    }
 
     addSliderMarkers();
 

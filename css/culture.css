@@ -11,24 +11,25 @@
 .CultureButton {
     position: absolute;
     display: inline-block;
-    width: 8.5%;
+    height: 20%;
+    pointer-events: auto;
     cursor: pointer;
     cursor: hand;
     margin: auto;
     z-index: 1;
-    top: -7.5%;
+    right: -5%;
 }
 
 #culturalManifestationButton {
-    right: 20%;
+    top: -2.5%;
 }
 
 #subsistenceMethodButton {
-    right: 10%;
+    top: 27.5%;
 }
 
 #socialStructureButton {
-    right: 0%;
+    top: 57.5%;
 }
 
 .DisabledCultureButton {
@@ -36,7 +37,8 @@
 }
 
 .CultureDiv {
-    background-image: url(http://demilked.uuuploads.com/free-paper-textures/free-paper-texture-2.jpg);
+    background-image: url(../Conteudo/Imagens/FundoConteudo.png);
+    background-size: 100% 100%;
     display: inline-block;
     position: absolute;
     margin: auto;
@@ -45,18 +47,19 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: gray;
     width: 80%;
     height: 80%;
     overflow: visible;
+    pointer-events: none;
 }
 
 .CultureDiv p {
     font-size: 1.5vw;
-    width: 50%;
+    width: 40%;
     height: 80%;
     overflow: auto;
     margin: auto;
+    margin-left: 0px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -64,13 +67,16 @@
     text-align: left;
     overflow: visible;
     font-family: Playfair, serif;
+    color: #49392d;
 }
 
-.CultureDiv p:first-letter {
-    float: left;
-    display: block;
-    font-size: 7vw;
-    line-height: 2;
+.dropCap {
+    display: inline;
+    font-size: 6vw;
+    margin: 0;
     font-family: Rothenburg, cursive;
-    margin-right: 1%;
+    vertical-align: middle;
+    float: left;
+    margin-bottom: -2vw;
+    padding: auto;
 }
