@@ -131,7 +131,7 @@ $(document).on('click', '#cosmogonyButton', function () {
     $(this).transition({
         scale: "1"
     }, "fast");
-    transitionToCivilizationTeogony();
+    transitionToCivilizationCosmogony();
 });
 
 $(document).on('click', '#teogonyButton', function () {

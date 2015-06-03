@@ -1,6 +1,7 @@
 var preload = new createjs.LoadQueue(true);
 var line;
 var civilizations = [];
+var cosmogonyDisplay = [];
 
 //Uso da biblioteca PreloadJS, para um carregamento prévio de todas as mídias usadas
 function loadAssets() {
@@ -97,11 +98,13 @@ function loadAssets() {
         id: "bg"
     };
     manifest.push(img);
+    
+    
 
     //Mídia variável, lida de cada uma das civilizações cadastradas
     $.each(civilizations, function () {
 
-
+        
         sound = {
             src: "Civilizacoes/" + this.name + "/Sons/Musica.mp3",
             id: this.name
@@ -184,6 +187,18 @@ function loadAssets() {
             id: "socialStructureButton" + this.name
         };
         manifest.push(img);
+        
+        //Animações da cosmogonia
+        
+        var currentCivilization = this;// Pra não perder a civilização atual.
+        $.each(this.animations, function () {
+            var swf = {
+                src:"Civilizacoes/" + currentCivilization.name + "/Cosmogonia/Animations/"+this.animation+".swf",
+                id:this.animation              
+            };
+            manifest.push(swf);
+        });
+       
 
         //Botão de navegação
         img = {
@@ -275,6 +290,8 @@ function parseXML(xml) {
         var civilization = new Civilization($(this));
         civilizations.push(civilization);
     });
+    
+     
 
     //Carregamento de arquivos, feito aqui pois depende dos objetos Civilization 
     loadAssets();

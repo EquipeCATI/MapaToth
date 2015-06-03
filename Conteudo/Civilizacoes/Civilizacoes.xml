@@ -66,6 +66,21 @@
             </god>
 
         </teogony>
+        <cosmogony>
+                
+                <display>
+                    <animationSWF>animation0</animationSWF>                
+                </display>
+                
+                <display>                    
+                    <animationSWF>animation1</animationSWF>                
+                </display>
+                
+                <display>                    
+                    <animationSWF>animation2</animationSWF>                
+                </display>                
+                
+            </cosmogony>
     </Civilization>
 
     <Civilization>

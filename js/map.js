@@ -47,7 +47,7 @@ function addSliderMarkers() {
         */
     });
 
-    civilizations = [];
+    //civilizations = [];
 
 }
 

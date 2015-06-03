@@ -25,6 +25,14 @@ function Civilization(xmlNode) {
     }
 
     this.gods = gods;
+    
+    var animations = $(xmlNode).find('animationSWF');
+    for(var i = 0; i < animations.length; i++){
+        cosmogonyDisplay.push(new CosmogonyDisplay(animations[i], this));
+    }
+    
+    this.animations = cosmogonyDisplay;
+    
 }
 
 function God(xmlNode, civilization) {
@@ -55,4 +63,10 @@ function MapMarker(xmlNode) {
     this.topSpace = $(xmlNode).find("top").text();
     this.leftSpace = $(xmlNode).find("left").text();
     this.civilization;
+}
+
+function CosmogonyDisplay(xmlNode, civilization){
+    this.animation = $(xmlNode).text();
+    this.civilization = civilization;
+
 }

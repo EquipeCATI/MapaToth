@@ -1,0 +1,69 @@
+#cosmogonyDiv {
+    position: relative;
+    top:20vh ;
+    left:20vw;
+    height: 60vw;
+    width: 60vw;
+    max-width: 60vw;
+    max-height: 100vh;
+}
+
+
+
+#cosmogonyText {
+    position: absolute;
+    height: auto;
+    max-width: 60%;
+    width: auto;
+    left: 15%;
+    top: 40%;    
+    display: block;
+}
+
+#cosmogonyText p {
+    font-size: 1.4vw;
+    text-align: justify;
+}
+
+#cosmoNext{
+    position: relative;
+    max-width: 6%;
+    width: auto;
+    height: auto;
+    left: 90%;
+    top: 55%;
+    cursor: pointer;
+    cursor: hand;
+    
+}
+
+#cosmoPrev{
+    position: absolute;
+    max-width: 6%;
+    width: auto;
+    height: auto;
+    left: 10%;
+    top: 55%;
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    cursor: pointer;
+    cursor: hand;
+    
+}
+
+#rewind{
+    position: absolute;
+    width: 5vw;
+    height: auto;
+    left: 84%;
+    top: 75%;
+    
+}
+
+
+/*tirar quando juntar os códigos*/
+.Disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
