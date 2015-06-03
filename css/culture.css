@@ -56,7 +56,6 @@
 .CultureDiv p {
     font-size: 1.5vw;
     width: 40%;
-    height: 80%;
     overflow: auto;
     margin: auto;
     margin-left: 0px;
@@ -64,7 +63,7 @@
     top: 50%;
     transform: translateY(-50%);
     left: 10%;
-    text-align: left;
+    text-align: justify;
     overflow: visible;
     font-family: Playfair, serif;
     color: #49392d;
