@@ -31,7 +31,8 @@ function Civilization(xmlNode) {
         cosmogonyDisplay.push(new CosmogonyDisplay(animations[i], this));
     }
     
-    this.animations = cosmogonyDisplay;
+    this.display = cosmogonyDisplay;
+    cosmogonyDisplay = [];//cosmogonyDisplay está sendo aproveitada para manipular os dados em cosmogony.js
     
 }
 

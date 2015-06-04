@@ -190,10 +190,10 @@ function loadAssets() {
         
         //Animações da cosmogonia
         
-        var currentCivilization = this;// Pra não perder a civilização atual.
-        $.each(this.animations, function () {
+        var currentCivi = this;// Pra não perder a civilização atual.
+        $.each(this.display, function () {
             var swf = {
-                src:"Civilizacoes/" + currentCivilization.name + "/Cosmogonia/Animations/"+this.animation+".swf",
+                src:"Civilizacoes/" + currentCivi.name + "/Cosmogonia/animations/"+this.animation+".swf",
                 id:this.animation              
             };
             manifest.push(swf);

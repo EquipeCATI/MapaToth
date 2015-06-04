@@ -1,5 +1,8 @@
     var currentDisplayIndex = 0;   
     function transitionToCivilizationCosmogony() {
+        for(var i= 0; i < $(currentCivilization.display).length; i++){
+            cosmogonyDisplay[i] ={animationSource:"Conteudo/Civilizacoes/"+currentCivilization.name+"/Cosmogonia/animations/"+currentCivilization.display[i].animation+".swf"}; 
+        }
 
             $("#mainDiv").fadeOut(165, function () {
 
@@ -18,10 +21,10 @@
                 
                 //Construção do object
                 //$("#cosmogonyText").append("<p id='text'>'"+ cosmogonyDisplay[0].animation+"'</p>");
-                $("#cosmogonyText").append('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0"');
-                //$("#cosmogonyText").append('<param name=movie value="'+$(preload.getResult("animation0")).attr('src')+'">');
+                $("#cosmogonyText").append('<object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0">');
+                $("#cosmogonyText").append('<param class="swfSource" name=movie value="'+cosmogonyDisplay[0].animationSource+'">');
                 $("#cosmogonyText").append('<param name=quality value=high>');
-               // $("#cosmogonyText").append('<embed src="'+$(preload.getResult("animation0")).attr('src')+'" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash"></embed></object>');     
+                $("#cosmogonyText").append('<embed class="swfSource" src="'+cosmogonyDisplay[0].animationSource+'" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash"></embed></object>');     
                 
                 //fim
                 $("#cosmogonyDiv").append("<img id='cosmoNext' src=''>");
@@ -49,7 +52,7 @@
                 $(document).on('click', '#cosmoNext', function () {
                     currentDisplayIndex++;
                     $("#cosmogonyText").fadeOut(900, function(){
-                        $("#cosmogonyText").find("p").text(cosmogonyDisplay[currentDisplayIndex].animation);
+                        $(".swfSource").attr('src', cosmogonyDisplay[currentDisplayIndex].animationSource);
                         $("#cosmogonyText").fadeIn(900);
                     });
                     $("#cosmogonyAnimation").empty();//ajustar depois de decidir como serão feitas as animações.
@@ -65,7 +68,7 @@
                 $(document).on('click', '#cosmoPrev', function () {
                     currentDisplayIndex--;
                     $("#cosmogonyText").fadeOut(900, function(){
-                        $("#cosmogonyText").find("p").text(cosmogonyDisplay[currentDisplayIndex].animation);
+                        $(".swfSource").attr('src', cosmogonyDisplay[currentDisplayIndex].animationSource);
                         $("#cosmogonyText").fadeIn(900);
                     });
                     checkNavigation();
@@ -76,7 +79,7 @@
                 $(document).on('click', '#rewind', function () {
                     currentDisplayIndex = 0;
                     $("#cosmogonyText").fadeOut(900, function(){
-                        $("#cosmogonyText").find("p").text(cosmogonyDisplay[currentDisplayIndex].animation);
+                        $(".swfSource").attr('src', cosmogonyDisplay[currentDisplayIndex].animationSource);
                         $("#cosmogonyText").fadeIn(900);
                     });
                     checkNavigation();
