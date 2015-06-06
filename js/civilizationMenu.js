@@ -27,20 +27,20 @@ function transitionToCivilizationMenu(marker) {
         }, 0);
 
         //Objetos são retirados, mainDiv será reestrutrada
-        $("#mainDiv").empty();
+        $("#bodyDiv").empty();
 
         //Background específico de cada civilização
         //$("#mainDiv").css("background-image", "url('" + $(preload.getResult('menuBackground' + civilizationName)).attr('src') + "')");
 
         //ContentDiv é utilizada para manter o conteúdo dentro da folha
         //Ela é sempre redimensionada de acordo com a imagem da folha
-        $("#mainDiv").append("<div id='contentDiv'></div>");
+        $("#bodyDiv").append("<div id='contentDiv'></div>");
 
         //Folha
         var bg = preload.getResult('bg')
         $(bg).attr("id", "bg");
 
-        $("#mainDiv").prepend(bg);
+        $("#bodyDiv").prepend(bg);
 
         //Conteúdo em si
         $("#contentDiv").append("<div id='civilizationMenuDiv'></div>");

@@ -2,13 +2,13 @@ function transitionToCivilizationCulture() {
     var civ = currentCivilization;
 
     $("#mainDiv").fadeOut(625, function () {
-        $("#mainDiv").empty();
+        $("#bodyDiv").empty();
 
         //$("#mainDiv").css("background-image", "url('" + $(preload.getResult('cultureBackground' + currentCivilization.name)).attr('src') + "')");
 
-        $("#mainDiv").css("verticalAlign", "middle");
+        //$("#mainDiv").css("verticalAlign", "middle");
 
-        $("#mainDiv").append("<div id='civilizationCulture'></div>");
+        $("#bodyDiv").append("<div id='civilizationCulture'></div>");
 
         addCultureDivs();
 

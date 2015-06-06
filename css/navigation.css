@@ -31,6 +31,5 @@
     vertical-align: middle;
     cursor: pointer;
     cursor: hand;
-    height: 100%;
-    width: auto;
+    max-height: 100%;
 }
