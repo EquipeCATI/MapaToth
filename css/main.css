@@ -29,8 +29,9 @@
 #bodyDiv {
     position: absolute;
     width: 100vw;
-    height: 92vh;
+    height: 93vh;
     bottom: 0;
+    margin-bottom: 1vh;
 }
 
 #contentDiv {

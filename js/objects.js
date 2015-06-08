@@ -44,7 +44,8 @@ function God(xmlNode, civilization) {
 }
 
 function CivilizationButton(xmlNode, buttonName) {
-    this.height = $(xmlNode).find("height").text();
+    //Width e height sao proporcoes percentuais do botao para a imagem de fundo
+    //agora sao calculadas em civilizationMenu.js
     this.topSpace = $(xmlNode).find(buttonName).find("top").text();
     this.leftSpace = $(xmlNode).find(buttonName).find("left").text();
 

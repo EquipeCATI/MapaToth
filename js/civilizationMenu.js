@@ -63,33 +63,32 @@ function transitionToCivilizationMenu(marker) {
 }
 
 function addCivilizationButtons() {
-    var cosmogonyButton = preload.getResult("cosmogonyButton" + currentCivilization.name);
-    $(cosmogonyButton).css("top", currentCivilization.cosmogonyButton.topSpace);
-    $(cosmogonyButton).css("left", currentCivilization.cosmogonyButton.leftSpace);
-    $(cosmogonyButton).css("max-height", currentCivilization.cosmogonyButton.height);
-    $(cosmogonyButton).attr("id", "cosmogonyButton");
-    $(cosmogonyButton).attr("class", "CivilizationButton");
 
-    var teogonyButton = preload.getResult("teogonyButton" + currentCivilization.name);
-    $(teogonyButton).css("top", currentCivilization.teogonyButton.topSpace);
-    $(teogonyButton).css("left", currentCivilization.teogonyButton.leftSpace);
-    $(teogonyButton).css("max-height", currentCivilization.teogonyButton.height);
-    $(teogonyButton).attr("id", "teogonyButton");
-    $(teogonyButton).attr("class", "CivilizationButton");
-
-    var cultureButton = preload.getResult("cultureButton" + currentCivilization.name);
-    $(cultureButton).css("top", currentCivilization.cultureButton.topSpace);
-    $(cultureButton).css("left", currentCivilization.cultureButton.leftSpace);
-    $(cultureButton).css("max-height", currentCivilization.cultureButton.height);
-    $(cultureButton).attr("id", "cultureButton");
-    $(cultureButton).attr("class", "CivilizationButton");
-
-    $(cultureButton).hide().appendTo("#civilizationMenuDiv");
-    $(teogonyButton).hide().appendTo("#civilizationMenuDiv");
-    $(cosmogonyButton).hide().appendTo("#civilizationMenuDiv");
+    addCivilizationButton("cosmogony");
+    addCivilizationButton("teogony");
+    addCivilizationButton("culture");
 
     $(".CivilizationButton").fadeTo("fast", 0.8);
+}
 
+function addCivilizationButton(topic) {
+
+    var menuBg = preload.getResult("menu" + currentCivilization.name);
+
+    var civilizationButton = preload.getResult(topic + "Button" + currentCivilization.name);
+    $(civilizationButton).css("top", currentCivilization[topic + "Button"].topSpace);
+    $(civilizationButton).css("left", currentCivilization[topic + "Button"].leftSpace);
+
+    var height = (civilizationButton.naturalHeight / menuBg.naturalHeight) * 100;
+    $(civilizationButton).css("max-height", height + "%");
+
+    var width = (civilizationButton.naturalWidth / menuBg.naturalWidth) * 100;
+    $(civilizationButton).css("max-width", width + "%");
+
+    $(civilizationButton).attr("id", topic + "Button");
+    $(civilizationButton).attr("class", "CivilizationButton");
+
+    $(civilizationButton).hide().appendTo("#civilizationMenuDiv");
 }
 
 $(window).on("resize", function () {

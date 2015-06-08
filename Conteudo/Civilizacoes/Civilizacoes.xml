@@ -12,8 +12,6 @@
         </mapMarker>
 
         <menuButtons>
-            <height>63%</height>
-
             <cosmogonyButton>
                 <top>29%</top>
                 <left>20%</left>
