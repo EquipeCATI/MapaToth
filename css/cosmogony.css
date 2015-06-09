@@ -63,9 +63,3 @@
     cursor: pointer;
     cursor: hand;
 }
-/*tirar quando juntar os códigos*/
-
-.Disabled {
-    pointer-events: none;
-    opacity: 0.4;
-}

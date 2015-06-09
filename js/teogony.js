@@ -35,11 +35,12 @@ function transitionToCivilizationTeogony() {
         $("#previousButton").attr('src', $(preload.getResult("setaPapelPreenchida")).attr('src'));
 
 
-
-        $("#civilizationTeogony").append("<div id='descriptionDiv'></div>");
-        $("#civilizationTeogony").append("<h1>" + currentCivilization.gods[currentGodIndex].name + "</h1>");
+        $("#civilizationTeogony").append("<div id='textDiv'></div>");
+        $("#textDiv").append("<h1>" + currentCivilization.gods[currentGodIndex].name + "</h1>");
+        $("#textDiv").append("<div id='descriptionDiv'></div>");
 
         $("#descriptionDiv").append("<p>" + currentCivilization.gods[currentGodIndex].description) + " </p>";
+        
         $("#descriptionDiv").mCustomScrollbar({
             theme: "dark"
         });
@@ -79,29 +80,30 @@ function changeGod(direction) {
     $("#civilizationTeogony h1").fadeOut(625);
 
     //Move para a esquerda se -1, direita se 1, diminui e dá fade
-    $("#godImage").transition({
-        x: direction * width / 2 + "px",
+    $("#godImage").velocity({
+        translateX: direction * width / 2 + "px",
         scale: "0.25",
         opacity: "0"
     }, 625, function () {
         //Enquanto a imagem está invisível, é movida para a direita se -1, esquerda se 1
-        $("#godImage").transition({
-            x: -1 * direction * width / 2 + "px"
+        $("#godImage").velocity({
+            translateX: -1 * direction * width / 2 + "px"
         }, 100, function () {
             //Substituição do attr src para a nova imagem
             $("#godImage").attr("src", currentCivilization.gods[currentGodIndex].source);
 
             //Setando o título para o novo Deus
             $("#civilizationTeogony h1").fadeIn(625);
-            $("#civilizationTeogony").find("h1").text(currentCivilization.gods[currentGodIndex].name);
+            $("#textDiv").find("h1").text(currentCivilization.gods[currentGodIndex].name);
 
             //Setando o texto para o novo Deus
             $("#descriptionDiv").find("p").text(currentCivilization.gods[currentGodIndex].description);
+            
             $("#descriptionDiv *").fadeIn(625);
 
             //Manda a imagem de volta para o centro, com sua escala e opacidade originais
-            $("#godImage").transition({
-                x: "0px",
+            $("#godImage").velocity({
+                translateX: "0px",
                 scale: "1",
                 opacity: 1
             }, 625, function () {

@@ -63,9 +63,22 @@ function updateMarkers() {
         $(this).stop();
         var civilization = $(this).data("civilization");
         if (civilization.originYear <= year && civilization.endingYear > year) {
-            $(this).fadeIn(125);
+            var matrix = $(this).css('transform');
+            var values = matrix.match(/-?[\d\.]+/g);
+            if (values[0] == "0") {
+                $(this).velocity({
+                    scale: 1.2
+                }, "snap", function () {
+                    $(this).velocity({
+                            scale: 1
+                        },
+                        "snap");
+                });
+            }
         } else {
-            $(this).fadeOut(125);
+            $(this).velocity({
+                scale: 0
+            });
         }
     });
 }
@@ -109,6 +122,7 @@ function snapToClosest() {
 
     //Animação do marcador até o ponto definido
     $('#slider').css("pointer-events", "none");
+
     var interval = setInterval(function () {
         if (finalValue > sliderValue) {
             var newVal = parseFloat($('#slider').val()) + 0.25;
@@ -118,33 +132,39 @@ function snapToClosest() {
 
         $('#slider').val(newVal);
 
-        //Chama o updateMarkers
-        $('#slider').trigger("input");
-
         if (parseInt($('#slider').val()) == finalValue) {
-            var percentage = (finalValue - parseFloat($("#slider").attr("min"))) / (parseFloat($("#slider").attr("max")) - parseFloat($("#slider").attr("min")));
-            //percentage = percentage / 100;
-            var width = percentage * $("#slider").width();
-            var div = $('#sliderVal');
-            div.html("Século " + Math.abs(parseInt(finalValue)));
-
-            if (finalValue > 0) {
-                div.append(" D.C.");
-            } else {
-                div.append(" A.C.");
-            }
-
-            div.css('top', $("#slider").offset().top - div.outerHeight(true));
-            div.css('left', $("#slider").offset().left + width);
-
-            div.fadeIn();
 
             $('#slider').css("pointer-events", "auto");
+
+            //Chama o updateMarkers
+            $('#slider').trigger("input");
+
             clearInterval(interval);
         }
 
     }, 1);
 }
+
+$(document).on("mousemove", "#slider", function (event) {
+
+    var percentage = (event.pageX - $("#slider").offset().left) / $(this).width();
+
+    var numberOfValues = parseFloat($(this).attr("max")) - parseFloat($(this).attr('min'));
+
+    var century = percentage * numberOfValues + parseFloat($(this).attr('min'));
+
+    var div = $('#sliderVal');
+    div.html("Século " + Math.abs(parseInt(century)));
+
+    if (century > 0) {
+        div.append(" D.C.");
+    } else {
+        div.append(" A.C.");
+    }
+
+    div.css('top', $("#slider").offset().top - div.outerHeight(true));
+    div.css('left', event.pageX - div.outerWidth(true) / 2);
+});
 
 function selectMarker(marker) {
     //Estado atual do mapa é salvo
@@ -161,11 +181,11 @@ function selectMarker(marker) {
         transformOrigin: "" + x + "px " + y + "px"
     });
 
-    $('.Map').transition({
+    $('.Map').velocity({
         scale: '4'
     }, 2500, "ease");
 
-    marker.transition({
+    marker.velocity({
         scale: '4'
     }, 2500, "ease", function () {
         transitionToCivilizationMenu(marker);
@@ -178,6 +198,18 @@ function selectMarker(marker) {
 
 $(document).on('click', '.MapMarker', function () {
     selectMarker($(this));
+});
+
+$(document).on('mouseover', '.MapMarker', function () {
+    $(this).velocity({
+        scale: 1.2
+    });
+});
+
+$(document).on('mouseout', '.MapMarker', function () {
+    $(this).velocity({
+        scale: 1
+    });
 });
 
 $(document).on('input', '#slider', function () {

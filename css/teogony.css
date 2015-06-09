@@ -39,47 +39,46 @@
     cursor: hand;
 }
 
-#descriptionDiv {
+#textDiv{
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     position: absolute;
-    border-radius: 10px;
     display: block;
     text-align: left;
     padding: 1%;
     padding-left: 2%;
     width: 30%;
-    height: 40%;
+    height: 50%;
     top: 50%;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     right: 10%;
 }
 
+#descriptionDiv{
+    height: 60%;
+    width: 100%;
+}
+
 #descriptionDiv p {
     color: #49392d;
     font-family: Playfair;
-    font-size: 2vh;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    font-size: 3vh;
+    text-align: justify;
 }
 
 #civilizationTeogony h1 {
-    width: 30%;
-    right: 10%;
-    top: 30%;
+    width: 100%;
     padding-right: 35px;
-    transform: translateY(-100%);
     color: #49392d;
     font-family: Playfair;
     text-align: center;
-    position: absolute;
-    font-size: 5vh;
+    font-size: 6vh;
     margin: auto;
 }
 
 #civilizationTeogony h1:first-letter {
-    font-size: 7vh;
+    font-size: 9vh;
     font-family: Rothenburg;
     font-weight: normal;
 }

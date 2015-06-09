@@ -2,9 +2,9 @@ var menuIsOpen = false;
 
 
 function hideMenu() {
-    $("#menuDiv").animate({
-        x: "-100%",
-        translayteY: "-100%"
+    $("#menuDiv").velocity({
+        translateX: "-100%",
+        translateY: "-100%"
     }, 625, function () {
         menuIsOpen = false;
         $("#MenuButton").css("pointer-events", "auto");
@@ -13,9 +13,9 @@ function hideMenu() {
 }
 
 function showMenu() {
-    $("#menuDiv").transition({
-        x: "0%",
-        y: "0%"
+    $("#menuDiv").velocity({
+        translateX: "0%",
+        translateY: "0%"
     }, 625, function () {
         menuIsOpen = true;
         $("#MenuButton").css("pointer-events", "auto");
@@ -36,7 +36,7 @@ $(document).on("click", "#MenuCloseButton", function () {
 
 //Clique em uma das opções
 $(document).on("click", ".menuRow", function () {
-    $("#MenuButton").trigger("click");
+    $("#MenuCloseButton").trigger("click");
     if (currentCivilization == undefined) {
         saveMap();
     }

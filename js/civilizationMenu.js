@@ -22,7 +22,7 @@ function transitionToCivilizationMenu(marker) {
         addCivilizationNavIcon(); //navigation
 
         //Reajuste do zoom do mapa
-        $('#mainDiv').transition({
+        $('#mainDiv').velocity({
             scale: '1'
         }, 0);
 
@@ -37,7 +37,7 @@ function transitionToCivilizationMenu(marker) {
         $("#bodyDiv").append("<div id='contentDiv'></div>");
 
         //Folha
-        var bg = preload.getResult('bg')
+        var bg = preload.getResult('bg');
         $(bg).attr("id", "bg");
 
         $("#bodyDiv").prepend(bg);
@@ -102,14 +102,14 @@ $(window).on("resize", function () {
 //Transições para cada tela
 $(document).on("mouseover", ".CivilizationButton", function () {
     $(this).fadeTo("fast", 1);
-    $(this).transition({
+    $(this).velocity({
         scale: "1.05"
     }, "fast");
 });
 
 $(document).on("mouseout", ".CivilizationButton", function () {
     $(this).fadeTo("fast", 0.8);
-    $(this).transition({
+    $(this).velocity({
         scale: "1"
     }, "ease");
 });
@@ -118,7 +118,7 @@ $(document).on("mouseout", ".CivilizationButton", function () {
 
 $(document).on('click', '#cultureButton', function () {
     $(this).fadeTo("fast", 0.8);
-    $(this).transition({
+    $(this).velocity({
         scale: "1"
     }, "ease");
     transitionToCivilizationCulture();
@@ -127,7 +127,7 @@ $(document).on('click', '#cultureButton', function () {
 $(document).on('click', '#cosmogonyButton', function () {
     //cosmogonia pendente
     $(this).fadeTo("fast", 0.8);
-    $(this).transition({
+    $(this).velocity({
         scale: "1"
     }, "fast");
     transitionToCivilizationCosmogony();
@@ -135,7 +135,7 @@ $(document).on('click', '#cosmogonyButton', function () {
 
 $(document).on('click', '#teogonyButton', function () {
     $(this).fadeTo("fast", 0.8);
-    $(this).transition({
+    $(this).velocity({
         scale: "1"
     }, "fast");
     transitionToCivilizationTeogony();

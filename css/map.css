@@ -22,6 +22,7 @@ html {
 }
 
 .MapMarker {
+    transform: scale(0, 0);
     display: inline-block;
     position: absolute;
     width: auto;
@@ -130,11 +131,15 @@ input[type=range]::-ms-thumb {
 
 #sliderVal {
     position: fixed;
-    background-color: bisque;
-    width: 50px;
+    background-image: url(../Conteudo/Imagens/FundoConteudo.png);
+    background-position: center;
+    background-size: 100% 100%;
+    padding: 1%;
+    display: none;
 }
 
 .SliderMarker {
+    color: #49392d;
     pointer-events: none;
     display: block;
     width: 10px;

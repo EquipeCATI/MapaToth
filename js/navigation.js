@@ -90,7 +90,7 @@ $(document).on("click", "#mainNavItem:not(.Disabled)", function () {
         $(this).remove();
     });
 
-    $("#mainNavItem").fadeTo(625, 0.4, function () {
+    $("#mainNavItem").fadeTo(625, 0.8, function () {
         $(this).addClass("Disabled");
     });
 

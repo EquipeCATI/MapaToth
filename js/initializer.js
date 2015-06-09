@@ -98,13 +98,13 @@ function loadAssets() {
         id: "bg"
     };
     manifest.push(img);
-    
-    
+
+
 
     //Mídia variável, lida de cada uma das civilizações cadastradas
     $.each(civilizations, function () {
 
-        
+
         sound = {
             src: "Civilizacoes/" + this.name + "/Sons/Musica.mp3",
             id: this.name
@@ -187,18 +187,18 @@ function loadAssets() {
             id: "socialStructureButton" + this.name
         };
         manifest.push(img);
-        
+
         //Animações da cosmogonia
-        
-        var currentCivi = this;// Pra não perder a civilização atual.
+
+        var currentCivi = this; // Pra não perder a civilização atual.
         $.each(this.display, function () {
             var swf = {
-                src:"Civilizacoes/" + currentCivi.name + "/Cosmogonia/animations/"+this.animation+".swf",
-                id:this.animation              
+                src: "Civilizacoes/" + currentCivi.name + "/Cosmogonia/animations/" + this.animation + ".swf",
+                id: this.animation
             };
             manifest.push(swf);
         });
-       
+
 
         //Botão de navegação
         img = {
@@ -240,6 +240,9 @@ function handleComplete() {
     });
 
     addCivilizations();
+    updateMarkers(); //map.js
+    hideMenu();
+    $("#slider").trigger("input");
 }
 
 function handleError() {
@@ -290,8 +293,8 @@ function parseXML(xml) {
         var civilization = new Civilization($(this));
         civilizations.push(civilization);
     });
-    
-     
+
+
 
     //Carregamento de arquivos, feito aqui pois depende dos objetos Civilization 
     loadAssets();
@@ -336,11 +339,12 @@ function addCivilizations() {
 
     addSliderMarkers();
 
-    $("#menuDiv ul").mCustomScrollbar({
+
+    $("#menuDiv").mCustomScrollbar({
         theme: "dark-thin"
     });
 
     //Ícones de marcadores no mapa são carregados
 
-    updateMarkers(); //map.js
+    
 }

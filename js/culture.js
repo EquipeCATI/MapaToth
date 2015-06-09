@@ -70,8 +70,8 @@ function showTopic(id) {
     //Animação da div da frente
 
     createjs.Sound.play("paperFold");
-    $("#" + selectedDivID).transition({
-        x: "110%"
+    $("#" + selectedDivID).velocity({
+        translateX: "110%"
     }, 625, "ease", function () {
         //As outras folhas são colocadas atrás
         $(".CultureDiv").not($("#" + divID)).css("z-index", "1");
@@ -83,8 +83,8 @@ function showTopic(id) {
         $(id).addClass("DisabledCultureButton");
 
         //Folha(agora antiga) desce
-        $(this).transition({
-            x: "0%"
+        $(this).velocity({
+            translateX: "0%"
         }, 625, "ease");
     });
 }
