@@ -34,10 +34,10 @@
 
             <subsistenceMethod>O solo pouco fértil e as regiões montanhosas que lhes rodeavam obrigaram os gregos a evoluir comercialmente como forma de subsistência, além da expansão imperial. Construíram e desenvolveram diversos portos e utilizaram oliveiras, trigo e uva como matéria-prima para os diversos produtos que exportavam.</subsistenceMethod>
 
-            <socialStructure>A estrutura política era diferenciada em cada pólis, mas há um certo padrão na estrutura social. Os cidadãos ou eupátridas eram homens livres nascidos na cidade (excluiam-se mulheres e crianças); Os estrangeiros não tinham direitos políticos e eram proibidos de adquirir terras; E os escravos, provindos de povos conquistados.  </socialStructure>
+            <socialStructure>A estrutura política era diferenciada em cada pólis, mas há um certo padrão na estrutura social. Os cidadãos ou eupátridas eram homens livres nascidos na cidade (excluiam-se mulheres e crianças); Os estrangeiros não tinham direitos políticos e eram proibidos de adquirir terras; E os escravos, provindos de povos conquistados. </socialStructure>
 
         </culture>
-        
+
         <teogony>
             <god>
                 <godName>Zeus</godName>
@@ -46,7 +46,7 @@
 
             <god>
                 <godName>Poseidon</godName>
-                <godDescription>Irmão de Zeus. Lutou ao seu lado para destronar Cronos. Ele recebeu o domínio dos mares após o fim do combate e foi presenteado pelos ciclopes com um Tridente capaz de abalar a terra e os mares. Conhecido pelas suas constantes disputas com seus irmãos( principalmente com Zeus) pelas cidades e pelas suas constantes derrotas. Poseiodon Também liderou uma revolta contra o Zeus e mais uma vez saiu derrotado, tendo que servir o rei Laomedonte, de Tróia,  junto com seu sobrinho Apolo. Entre seus principais filhos estão o ciclopes Polifemo e o Pégaso, este feito com a medusa. </godDescription>
+                <godDescription>Irmão de Zeus. Lutou ao seu lado para destronar Cronos. Ele recebeu o domínio dos mares após o fim do combate e foi presenteado pelos ciclopes com um Tridente capaz de abalar a terra e os mares. Conhecido pelas suas constantes disputas com seus irmãos( principalmente com Zeus) pelas cidades e pelas suas constantes derrotas. Poseiodon Também liderou uma revolta contra o Zeus e mais uma vez saiu derrotado, tendo que servir o rei Laomedonte, de Tróia, junto com seu sobrinho Apolo. Entre seus principais filhos estão o ciclopes Polifemo e o Pégaso, este feito com a medusa. </godDescription>
             </god>
 
             <god>
@@ -65,7 +65,7 @@
             </god>
 
         </teogony>
-        
+
         <cosmogony>
 
             <display>
@@ -87,20 +87,167 @@
         <name>Nórdica</name>
         <originYear>10</originYear>
         <endingYear>18</endingYear>
+
         <mapMarker>
             <top>16%</top>
-            <left>46%</left>
+            <left>40%</left>
         </mapMarker>
+
+        <menuButtons>
+            <cosmogonyButton>
+                <top>30%</top>
+                <left>20%</left>
+            </cosmogonyButton>
+
+            <teogonyButton>
+                <top>15%</top>
+                <left>35%</left>
+            </teogonyButton>
+
+            <cultureButton>
+                <top>30%</top>
+                <left>50%</left>
+            </cultureButton>
+
+        </menuButtons>
+
+        <cosmogony>
+
+            <display>
+                <animationSWF>animation0</animationSWF>
+            </display>
+
+            <display>
+                <animationSWF>animation1</animationSWF>
+            </display>
+
+            <display>
+                <animationSWF>animation2</animationSWF>
+            </display>
+
+        </cosmogony>
+
+        <culture>
+            <culturalManifestation>Os nórdicos eram guerreiros. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen.</culturalManifestation>
+
+            <subsistenceMethod>Os nórdicos eram guerreiros. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen.</subsistenceMethod>
+
+            <socialStructure>Os nórdicos eram guerreiros. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen. </socialStructure>
+
+        </culture>
+
+        <teogony>
+            <god>
+                <godName>Odin</godName>
+                <godDescription>Rei de Valhalla, mestre das runas Rei de Valhalla, mestre das runas Rei de Valhalla, mestre das runas Rei de Valhalla, mestre das runas </godDescription>
+            </god>
+
+            <god>
+                <godName>Thor</godName>
+                <godDescription>Filho de Odin, deus dos trovões Filho de Odin, deus dos trovões Filho de Odin, deus dos trovões Filho de Odin, deus dos trovões Filho de Odin, deus dos trovões</godDescription>
+            </god>
+
+            <god>
+                <godName>Freya</godName>
+                <godDescription>Deusa da fertilidade, amor e sexualidade. Também dos felinos. Deusa da fertilidade, amor e sexualidade. Também dos felinos Deusa da fertilidade, amor e sexualidade. Também dos felinos Deusa da fertilidade, amor e sexualidade. Também dos felinos</godDescription>
+            </god>
+
+            <god>
+                <godName>Loki</godName>
+                <godDescription>Trapaceiro, filho adotivo de Odin, filho de um gigante Trapaceiro, filho adotivo de Odin, filho de um gigante Trapaceiro, filho adotivo de Odin, filho de um gigante Trapaceiro, filho adotivo de Odin, filho de um gigante</godDescription>
+            </god>
+
+            <god>
+                <godName>Heimdall</godName>
+                <godDescription>Guardião dos portões de Valhalla, seu olhar alcança outras dimensões, Guardião dos portões de Valhalla, seu olhar alcança outras dimensões Guardião dos portões de Valhalla, seu olhar alcança outras dimensões Guardião dos portões de Valhalla, seu olhar alcança outras dimensões</godDescription>
+            </god>
+
+        </teogony>
     </Civilization>
 
     <Civilization>
         <name>Egípcia</name>
         <originYear>-70</originYear>
         <endingYear>2</endingYear>
+
         <mapMarker>
             <top>37%</top>
             <left>55%</left>
         </mapMarker>
+
+        <menuButtons>
+            <cosmogonyButton>
+                <top>10%</top>
+                <left>10%</left>
+            </cosmogonyButton>
+
+            <teogonyButton>
+                <top>0%</top>
+                <left>55%</left>
+            </teogonyButton>
+
+            <cultureButton>
+                <top>19%</top>
+                <left>18%</left>
+            </cultureButton>
+
+        </menuButtons>
+
+
+        <cosmogony>
+
+            <display>
+                <animationSWF>animation0</animationSWF>
+            </display>
+
+            <display>
+                <animationSWF>animation1</animationSWF>
+            </display>
+
+            <display>
+                <animationSWF>animation2</animationSWF>
+            </display>
+
+        </cosmogony>
+
+        <culture>
+            <culturalManifestation>Os egípcios eram grandes religiosos e suas principais manifestações culturais eram na forma de ritos e festividades. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen</culturalManifestation>
+
+            <subsistenceMethod>A agricultura e a pesca foram os meios de subsistencia mais usados, apoiados pela riqueza proporcionada pelo Rio Nilo. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen.</subsistenceMethod>
+
+            <socialStructure>Haviam os escribas, sacerdotes, Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen. </socialStructure>
+
+        </culture>
+
+        <teogony>
+            <god>
+                <godName>Rá</godName>
+                <godDescription>Deus primordial do Sol. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen Lorem ipsum dolor</godDescription>
+            </god>
+
+            <god>
+                <godName>Osíris</godName>
+                <godDescription>Deus da unidade e mumificação. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen Lorem ipsum dolor</godDescription>
+            </god>
+
+            <god>
+                <godName>Ísis</godName>
+                <godDescription>Reinou a terra juntamento com Osíris. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen Lorem ipsum dolor</godDescription>
+            </god>
+
+            <god>
+                <godName>Hórus</godName>
+                <godDescription>Filho de osiris e Isis. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen Lorem ipsum dolor</godDescription>
+            </god>
+
+            <god>
+                <godName>Seth</godName>
+                <godDescription>Deus do deserto, maligno. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen Lorem ipsum dolor</godDescription>
+            </god>
+
+
+        </teogony>
+
     </Civilization>
 
 </Civilizations>
