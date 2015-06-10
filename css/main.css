@@ -12,12 +12,11 @@
     outline: 1px solid transparent;
     margin: 0;
     padding: 0;
-    -webkit-translate3d(0, 0, 0);
     font-family: Playfair, serif;
 }
 
 #mainDiv {
-    background-image: url(../Conteudo/Imagens/Background.jpg);
+    background-image: url(../Conteudo/Imagens/Background.png);
     background-position: center;
     background-size: 100% 100%;
     width: 100vw;
@@ -65,7 +64,7 @@
 
 .Disabled {
     pointer-events: none;
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
 .progress {

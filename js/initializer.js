@@ -20,7 +20,7 @@ function loadAssets() {
 
 
     //Configurando para que sons sejam lidos no Preload
-    createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.HTMLAudioPlugin]);
+    createjs.Sound.registerPlugins([createjs.HTMLAudioPlugin, createjs.WebAudioPlugin]);
     createjs.Sound.initializeDefaultPlugins();
     preload.installPlugin(createjs.Sound);
 
@@ -96,6 +96,12 @@ function loadAssets() {
     img = {
         src: "Imagens/FundoConteudo.png",
         id: "bg"
+    };
+    manifest.push(img);
+    
+    img = {
+        src: "Imagens/SliderMarker.png",
+        id: "sliderMarker"
     };
     manifest.push(img);
 

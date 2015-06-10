@@ -14,14 +14,15 @@
 .CultureButton {
     position: absolute;
     display: inline-block;
-    width: 20%;
+    max-width: 20%;
     max-height: 10%;
     pointer-events: auto;
     cursor: pointer;
     cursor: hand;
     margin: auto;
     z-index: 1;
-    right: -7%;
+    right: 3%;
+    transform: translateX(50%);
 }
 
 #culturalManifestationButton {
@@ -57,16 +58,17 @@
 }
 
 .CultureDiv p {
-    font-size: 1.5vw;
-    width: 35%;
+    font-size: 3vh;
     overflow: auto;
     margin: auto;
-    margin-left: 0px;
     position: absolute;
     top: 50%;
+    left: 0;
+    right: 0;
     transform: translateY(-50%);
-    left: 32.5%;
-    text-align: left;
+    max-height: 80%;
+    max-width: 70%;
+    text-align: justify;
     overflow: visible;
     font-family: Playfair, serif;
     color: #49392d;
@@ -74,11 +76,11 @@
 
 .dropCap {
     display: inline;
-    font-size: 6vw;
+    font-size: 12vh;
     margin: 0;
     font-family: Rothenburg, cursive;
     vertical-align: middle;
     float: left;
-    margin-bottom: -2vw;
+    margin-bottom: -1vh;
     padding: auto;
 }

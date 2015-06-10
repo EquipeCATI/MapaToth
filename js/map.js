@@ -14,7 +14,7 @@ function transitionToMap() {
 function addSliderMarkers() {
     $.each(civilizations, function () {
 
-        $("#sliderDiv").append("<img id=" + this.name + "Born class='SliderMarker' src='../Conteudo/Imagens/SliderMarker.png'>");
+        $("#sliderDiv").append("<img id=" + this.name + "Born class='SliderMarker' src='" + preload.getResult("sliderMarker").src + "'>");
         var sliderMin = parseFloat($("#slider").attr("min"));
         var sliderMax = parseFloat($("#slider").attr("max"));
         var sliderSize = sliderMax - sliderMin;

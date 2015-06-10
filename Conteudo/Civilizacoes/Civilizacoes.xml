@@ -7,8 +7,8 @@
         <endingYear>5</endingYear>
 
         <mapMarker>
-            <top>28%</top>
-            <left>49%</left>
+            <top>24%</top>
+            <left>48%</left>
         </mapMarker>
 
         <menuButtons>
@@ -30,9 +30,9 @@
         </menuButtons>
 
         <culture>
-            <culturalManifestation>As cidades-estado do império grego mantinham diferentes costumes, mas Atenas se destaca como o epicentro cultural do império greco-romano. Com o espírito indagador presente nos atenienses se desenvolveram diversas ciências como matemática, física e filosofia. Além disto, há também a expressão da arte nos poemas e peças, que são considerados como a base da cultura ocidental.</culturalManifestation>
+            <culturalManifestation>As cidades-estado do império grego mantinham diferentes costumes, mas Atenas se destaca como o epicentro cultural. Com o espírito indagador presente nos atenienses se desenvolveram diversas ciências como matemática, física e filosofia. Além disto, há também a expressão da arte nos poemas e peças, que são considerados como a base da cultura ocidental.</culturalManifestation>
 
-            <subsistenceMethod>O solo pouco fértil e as regiões montanhosas que lhe rodeavam obrigaram os gregos a evoluir comercialmente como forma de subsistência, além da expansão imperial. Construíram e desenvolveram diversos portos e utilizaram oliveiras, trigo e uva como matéria-prima para os diversos produtos que exportavam.</subsistenceMethod>
+            <subsistenceMethod>O solo pouco fértil e as regiões montanhosas que lhes rodeavam obrigaram os gregos a evoluir comercialmente como forma de subsistência, além da expansão imperial. Construíram e desenvolveram diversos portos e utilizaram oliveiras, trigo e uva como matéria-prima para os diversos produtos que exportavam.</subsistenceMethod>
 
             <socialStructure>A estrutura política era diferenciada em cada pólis, mas há um certo padrão na estrutura social. Os cidadãos ou eupátridas eram homens livres nascidos na cidade (excluiam-se mulheres e crianças); Os estrangeiros não tinham direitos políticos e eram proibidos de adquirir terras; E os escravos, provindos de povos conquistados.  </socialStructure>
 
@@ -98,7 +98,7 @@
         <originYear>-70</originYear>
         <endingYear>2</endingYear>
         <mapMarker>
-            <top>39%</top>
+            <top>37%</top>
             <left>55%</left>
         </mapMarker>
     </Civilization>
