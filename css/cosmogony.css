@@ -11,9 +11,11 @@
 #cosmogonyText {
     position: relative;
 	padding-bottom: 20%;
-    width: 40vw;
-    height: 30vw;
-	height: 0;
+    width: 69vw;
+    max-width: 70%;
+    height: 60%;
+    left: 16%;
+    top: 5%;
 }
 
 #cosmogonyText object, #cosmogonyText embed{
