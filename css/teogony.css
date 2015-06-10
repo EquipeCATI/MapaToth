@@ -47,12 +47,12 @@
     text-align: left;
     padding: 1%;
     padding-left: 2%;
-    width: 30%;
-    height: 50%;
+    width: 35%;
+    height: 60%;
     top: 50%;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
-    right: 10%;
+    right: 7%;
 }
 
 #descriptionDiv{
@@ -63,7 +63,7 @@
 #descriptionDiv p {
     color: #49392d;
     font-family: Playfair;
-    font-size: 3vh;
+    font-size: 2.5vh;
     text-align: justify;
 }
 
@@ -78,7 +78,7 @@
 }
 
 #civilizationTeogony h1:first-letter {
-    font-size: 9vh;
+    font-size: 8vh;
     font-family: Rothenburg;
     font-weight: normal;
 }
