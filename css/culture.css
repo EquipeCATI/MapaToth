@@ -65,8 +65,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 10%;
-    text-align: justify;
+    left: 32.5%;
+    text-align: left;
     overflow: visible;
     font-family: Playfair, serif;
     color: #49392d;

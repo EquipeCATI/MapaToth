@@ -13,30 +13,31 @@
 
         <menuButtons>
             <cosmogonyButton>
-                <top>29%</top>
+                <top>31%</top>
                 <left>20%</left>
             </cosmogonyButton>
 
             <teogonyButton>
-                <top>29%</top>
+                <top>31%</top>
                 <left>40%</left>
             </teogonyButton>
 
             <cultureButton>
-                <top>29%</top>
+                <top>31%</top>
                 <left>60%</left>
             </cultureButton>
 
         </menuButtons>
 
         <culture>
-            <culturalManifestation>Os gregos deram origem às ciências como matemática, filosofia e também trouxeram a arte ao mundo com seus poemas e peças. Lorem ipsum dolor sit amet, das vect rurst vandelar ist main dar bressen aletarge vivarium der mint gusst vich. acht tunger bless ni aus vardalem morghas turdis al pace tuti vamer das minten.</culturalManifestation>
+            <culturalManifestation>As cidades-estado do império grego mantinham diferentes costumes, mas Atenas se destaca como o epicentro cultural do império greco-romano. Com o espírito indagador presente nos atenienses se desenvolveram diversas ciências como matemática, física e filosofia. Além disto, há também a expressão da arte nos poemas e peças, que são considerados como a base da cultura ocidental.</culturalManifestation>
 
-            <subsistenceMethod>O solo pouco fértil e as regiões montanhosas que lhe rodeavam fizeram os gregos utilizarem do comércio e expansão imperial.</subsistenceMethod>
+            <subsistenceMethod>O solo pouco fértil e as regiões montanhosas que lhe rodeavam obrigaram os gregos a evoluir comercialmente como forma de subsistência, além da expansão imperial. Construíram e desenvolveram diversos portos e utilizaram oliveiras, trigo e uva como matéria-prima para os diversos produtos que exportavam.</subsistenceMethod>
 
-            <socialStructure>Em cada pólis sua estrutura social mudava, mas predominava-se a democracia, criada em Atenas.</socialStructure>
+            <socialStructure>A estrutura política era diferenciada em cada pólis, mas há um certo padrão na estrutura social. Os cidadãos ou eupátridas eram homens livres nascidos na cidade (excluiam-se mulheres e crianças); Os estrangeiros não tinham direitos políticos e eram proibidos de adquirir terras; E os escravos, provindos de povos conquistados.  </socialStructure>
 
         </culture>
+        
         <teogony>
             <god>
                 <godName>Zeus</godName>
@@ -64,6 +65,7 @@
             </god>
 
         </teogony>
+        
         <cosmogony>
 
             <display>
