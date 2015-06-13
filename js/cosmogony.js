@@ -47,7 +47,9 @@
             //$("#mainDiv").append("<img src='../Conteudo/compass.jpg' class='cosmoNext'></img>");
             //$("#cosmogonyDiv").append("<img src='../Conteudo/compass.jpg' class='cosmoBack'></img>");
             //$("#cosmogonyDiv").append("<img src='../Conteudo/compass.jpg' class='MapButton'></img>");
-            $("#mainDiv").fadeIn(1250);
+            $("#mainDiv").fadeIn(1250, function () {
+                addNavIconNamed("cosmogony");
+            });
         });
     }
 

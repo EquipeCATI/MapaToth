@@ -92,6 +92,12 @@ function loadAssets() {
         id: "teogonyNavItem"
     };
     manifest.push(img);
+    
+    img = {
+        src: "Imagens/IconeNavegacaoCosmogonia.png",
+        id: "cosmogonyNavItem"
+    };
+    manifest.push(img);
 
     img = {
         src: "Imagens/FundoConteudo.png",
