@@ -67,7 +67,7 @@
     right: 0;
     transform: translateY(-50%);
     max-height: 80%;
-    max-width: 70%;
+    max-width: 50%;
     text-align: justify;
     overflow: visible;
     font-family: Playfair, serif;
@@ -76,11 +76,11 @@
 
 .dropCap {
     display: inline;
-    font-size: 12vh;
+    font-size: 18vh;
     margin: 0;
-    font-family: Rothenburg, cursive;
+    font-family: FleurCorner, cursive;
     vertical-align: middle;
     float: left;
-    margin-bottom: -1vh;
-    padding: auto;
+    line-height: 18vh;
+    margin-bottom: -4vh;
 }

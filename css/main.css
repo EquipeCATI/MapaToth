@@ -8,6 +8,11 @@
     src: url(../Conteudo/Playfair.otf);
 }
 
+@font-face {
+    font-family: FleurCorner;
+    src: url(../Conteudo/FleurCorner.ttf);
+}
+
 * {
     outline: 1px solid transparent;
     margin: 0;
