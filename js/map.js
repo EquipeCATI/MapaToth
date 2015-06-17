@@ -154,6 +154,9 @@ $(document).on("mousemove", "#slider", function (event) {
     var century = percentage * numberOfValues + parseFloat($(this).attr('min'));
 
     var div = $('#sliderVal');
+    if (Math.abs(parseInt(century)) == 0) {
+        century++;
+    }
     div.html("Século " + Math.abs(parseInt(century)));
 
     if (century > 0) {

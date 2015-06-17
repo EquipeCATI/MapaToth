@@ -75,20 +75,22 @@ function addCivilizationButton(topic) {
 
     var menuBg = preload.getResult("menu" + currentCivilization.name);
 
-    var civilizationButton = preload.getResult(topic + "Button" + currentCivilization.name);
-    $(civilizationButton).css("top", currentCivilization[topic + "Button"].topSpace);
-    $(civilizationButton).css("left", currentCivilization[topic + "Button"].leftSpace);
+    if (menuBg != undefined) {
+        var civilizationButton = preload.getResult(topic + "Button" + currentCivilization.name);
+        $(civilizationButton).css("top", currentCivilization[topic + "Button"].topSpace);
+        $(civilizationButton).css("left", currentCivilization[topic + "Button"].leftSpace);
 
-    var height = (civilizationButton.naturalHeight / menuBg.naturalHeight) * 100;
-    $(civilizationButton).css("max-height", height + "%");
+        var height = (civilizationButton.naturalHeight / menuBg.naturalHeight) * 100;
+        $(civilizationButton).css("max-height", height + "%");
 
-    var width = (civilizationButton.naturalWidth / menuBg.naturalWidth) * 100;
-    $(civilizationButton).css("max-width", width + "%");
+        var width = (civilizationButton.naturalWidth / menuBg.naturalWidth) * 100;
+        $(civilizationButton).css("max-width", width + "%");
 
-    $(civilizationButton).attr("id", topic + "Button");
-    $(civilizationButton).attr("class", "CivilizationButton");
+        $(civilizationButton).attr("id", topic + "Button");
+        $(civilizationButton).attr("class", "CivilizationButton");
 
-    $(civilizationButton).hide().appendTo("#civilizationMenuDiv");
+        $(civilizationButton).hide().appendTo("#civilizationMenuDiv");
+    }
 }
 
 $(window).on("resize", function () {

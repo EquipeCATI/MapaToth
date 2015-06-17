@@ -2,7 +2,7 @@
     float: left;
     display: inline-block;
     height: 100%;
-    width: 50%;
+    width: 70%;
 }
 
 .NavSeparator {
@@ -21,7 +21,7 @@
     display: inline-block;
     vertical-align: middle;
     margin: 0 auto;
-    height: 125%;
+    height: 100%;
     width: auto;
     margin-right: 2%;
     text-align: center;

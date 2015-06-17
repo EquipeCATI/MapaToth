@@ -40,7 +40,7 @@ function transitionToCivilizationTeogony() {
         $("#textDiv").append("<div id='descriptionDiv'></div>");
 
         $("#descriptionDiv").append("<p>" + currentCivilization.gods[currentGodIndex].description) + " </p>";
-        
+
         $("#descriptionDiv").mCustomScrollbar({
             theme: "dark"
         });
@@ -81,13 +81,13 @@ function changeGod(direction) {
 
     //Move para a esquerda se -1, direita se 1, diminui e dá fade
     $("#godImage").velocity({
-        translateX: direction * width / 2 + "px",
+        translateX: -1 * direction * width / 2 + "px",
         scale: "0.25",
         opacity: "0"
     }, 625, function () {
         //Enquanto a imagem está invisível, é movida para a direita se -1, esquerda se 1
         $("#godImage").velocity({
-            translateX: -1 * direction * width / 2 + "px"
+            translateX: direction * width / 2 + "px"
         }, 100, function () {
             //Substituição do attr src para a nova imagem
             $("#godImage").attr("src", currentCivilization.gods[currentGodIndex].source);
@@ -98,7 +98,7 @@ function changeGod(direction) {
 
             //Setando o texto para o novo Deus
             $("#descriptionDiv").find("p").text(currentCivilization.gods[currentGodIndex].description);
-            
+
             $("#descriptionDiv *").fadeIn(625);
 
             //Manda a imagem de volta para o centro, com sua escala e opacidade originais
