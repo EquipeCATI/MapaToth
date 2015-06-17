@@ -25,10 +25,11 @@
 
             //Construção do object
             //$("#cosmogonyText").append("<p id='text'>'"+ cosmogonyDisplay[0].animation+"'</p>");
-            $("#cosmogonyText").append('<object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" >');
+             $("body").append('<script type="text/javascript">swfobject.registerObject("animus", "9.0.0", "expressInstall.swf");</script>');
+            $("#cosmogonyText").append('<object id="animus" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" >');
             $("#cosmogonyText").append('<param class="swfSource" name=movie value="' + cosmogonyDisplay[0].animationSource + '">');
             $("#cosmogonyText").append('<param name=quality value=high>');
-            $("#cosmogonyText").append('<embed class="swfSource" src="' + cosmogonyDisplay[0].animationSource + '" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash"></embed></object>');
+            $("#cosmogonyText").append('<embed class="swfSource" src="' + cosmogonyDisplay[0].animationSource + '" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash"></embed>');
 
             //fim
             $("#cosmogonyDiv").append("<img id='cosmoNext' src=''>");
