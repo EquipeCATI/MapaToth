@@ -52,12 +52,6 @@ function loadAssets() {
     manifest.push(img);
 
     var img = {
-        src: "Imagens/SetaPapelPreenchida.png",
-        id: "setaPapelPreenchida"
-    };
-    manifest.push(img);
-
-    var img = {
         src: "Imagens/Mapa.png",
         id: "map"
     };
@@ -92,7 +86,7 @@ function loadAssets() {
         id: "teogonyNavItem"
     };
     manifest.push(img);
-    
+
     img = {
         src: "Imagens/IconeNavegacaoCosmogonia.png",
         id: "cosmogonyNavItem"
@@ -104,12 +98,20 @@ function loadAssets() {
         id: "bg"
     };
     manifest.push(img);
-    
+
     img = {
         src: "Imagens/SliderMarker.png",
         id: "sliderMarker"
     };
     manifest.push(img);
+
+    img = {
+        src: "Imagens/SetaReiniciar.png",
+        id: "setaReiniciar"
+    };
+    manifest.push(img);
+
+
 
 
 
@@ -358,5 +360,5 @@ function addCivilizations() {
 
     //Ícones de marcadores no mapa são carregados
 
-    
+
 }

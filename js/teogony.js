@@ -29,10 +29,10 @@ function transitionToCivilizationTeogony() {
 
 
         $("#civilizationTeogony").append("<img id='nextButton' src=''>");
-        $("#nextButton").attr('src', $(preload.getResult("setaPapelPreenchida")).attr('src'));
+        $("#nextButton").attr('src', $(preload.getResult("setaPapel")).attr('src'));
 
         $("#civilizationTeogony").append("<img id='previousButton' src=''>");
-        $("#previousButton").attr('src', $(preload.getResult("setaPapelPreenchida")).attr('src'));
+        $("#previousButton").attr('src', $(preload.getResult("setaPapel")).attr('src'));
 
 
         $("#civilizationTeogony").append("<div id='textDiv'></div>");
@@ -110,10 +110,6 @@ function changeGod(direction) {
                 //Reabilitação dos botões
                 $("#previousButton").removeClass("Disabled");
                 $("#nextButton").removeClass("Disabled");
-
-                //Setas retornam ao estado normal
-                $("#nextButton").attr('src', $(preload.getResult("setaPapelPreenchida")).attr('src'));
-                $("#previousButton").attr('src', $(preload.getResult("setaPapelPreenchida")).attr('src'));
             });
         })
     });
@@ -121,11 +117,9 @@ function changeGod(direction) {
 
 $(document).on('click', '#nextButton', function () {
     //Botão clicado fica "não-preenchido"
-    $(this).attr('src', $(preload.getResult("setaPapel")).attr('src'));
     changeGod(1);
 });
 
 $(document).on('click', '#previousButton', function () {
-    $(this).attr('src', $(preload.getResult("setaPapel")).attr('src'));
     changeGod(-1);
 });

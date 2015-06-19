@@ -25,7 +25,7 @@
 
             //Construção do object
             //$("#cosmogonyText").append("<p id='text'>'"+ cosmogonyDisplay[0].animation+"'</p>");
-             $("body").append('<script type="text/javascript">swfobject.registerObject("animus", "9.0.0", "expressInstall.swf");</script>');
+            $("body").append('<script type="text/javascript">swfobject.registerObject("animus", "9.0.0", "expressInstall.swf");</script>');
             $("#cosmogonyText").append('<object id="animus" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" >');
             $("#cosmogonyText").append('<param class="swfSource" name=movie value="' + cosmogonyDisplay[0].animationSource + '">');
             $("#cosmogonyText").append('<param name=quality value=high>');
@@ -33,10 +33,10 @@
 
             //fim
             $("#cosmogonyDiv").append("<img id='cosmoNext' src=''>");
-            $("#cosmoNext").attr('src', $(preload.getResult("setaPapelPreenchida")).attr('src'));
+            $("#cosmoNext").attr('src', $(preload.getResult("setaPapel")).attr('src'));
 
             $("#cosmogonyDiv").append("<img id='cosmoPrev' src=''>");
-            $("#cosmoPrev").attr('src', $(preload.getResult("setaPapelPreenchida")).attr('src'));
+            $("#cosmoPrev").attr('src', $(preload.getResult("setaPapel")).attr('src'));
 
             $("#cosmoPrev").css("display", "none");
 
@@ -99,7 +99,7 @@
         if (cosmogonyDisplay[currentDisplayIndex + 1] == undefined) { //quando é a última página
             $("#cosmoNext").fadeOut(900, function () {
 
-                $("#cosmoNext").attr("src", "Conteudo/Civilizacoes/Grega/rewind.png");
+                $("#cosmoNext").attr("src", $(preload.getResult("setaReiniciar")).attr('src'));
                 $("#cosmoNext").fadeIn(900, function () {
                     $("#cosmoNext").attr("id", "rewind");
                 });
@@ -114,7 +114,7 @@
 
             if ($("#rewind").parents("#cosmogonyDiv").length == 1) { //checa se rewind é filho de cosmogonyDiv.
                 $("#rewind").fadeOut(900, function () {
-                    $("#rewind").attr("src", $(preload.getResult("setaPapelPreenchida")).attr('src'));
+                    $("#rewind").attr("src", $(preload.getResult("setaPapel")).attr('src'));
                     $("#rewind").fadeIn(900, function () {
                         $("#rewind").attr("id", "cosmoNext");
                     });
@@ -132,7 +132,7 @@
 
             if ($("#rewind").parents("#cosmogonyDiv").length == 1) { //checa se rewind é filho de cosmogonyDiv.
                 $("#rewind").fadeOut(900, function () {
-                    $("#rewind").attr("src", $(preload.getResult("setaPapelPreenchida")).attr('src'));
+                    $("#rewind").attr("src", $(preload.getResult("setaPapel")).attr('src'));
                     $("#rewind").fadeIn(900, function () {
                         $("#rewind").attr("id", "cosmoNext");
                     });
