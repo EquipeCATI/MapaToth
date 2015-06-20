@@ -19,11 +19,13 @@ html {
     width: auto;
     height: auto;
     transform: translateY(2.5%);
+    -webkit-transform: translateY(2.5%);
 }
 
 .MapMarker {
     -webkit-backface-visibility: hidden;
     transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
     display: inline-block;
     position: absolute;
     width: auto;
@@ -43,6 +45,7 @@ html {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     width: 80%;
     height: 25px;
     cursor: pointer;
@@ -130,6 +133,7 @@ input[type=range]::-ms-thumb {
     background-repeat: repeat-x;
     overflow: visible;
     transform: translateY(-70%);
+    -webkit-transform: translateY(-70%);
 }
 
 #sliderVal {
@@ -155,5 +159,6 @@ input[type=range]::-ms-thumb {
     font-size: 10px;
     top: 50%;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     z-index: 100;
 }

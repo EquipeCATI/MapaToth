@@ -243,9 +243,13 @@ function loadAssets() {
 
 function handleComplete() {
     $("#initialDiv").css("position", "fixed");
+    $("#compass").clearQueue();
+    $("#compass").stop();
     $("#initialDiv").velocity({
         translateY: "100%"
-    }, 2500);
+    }, 2500, function () {
+        $(this).fadeOut();
+    });
 
 
     $("#mainDiv").fadeIn();

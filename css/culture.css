@@ -5,6 +5,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
     vertical-align: middle;
     position: relative;
     overflow: visible;
@@ -23,6 +24,7 @@
     z-index: 1;
     right: 3%;
     transform: translateX(50%);
+    -webkit-transform: translateX(50%);
 }
 
 #culturalManifestationButton {
@@ -67,6 +69,7 @@
     left: 0;
     right: 0;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     max-height: 50%;
     max-width: 50%;
     text-align: justify;

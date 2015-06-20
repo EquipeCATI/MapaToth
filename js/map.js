@@ -63,8 +63,15 @@ function updateMarkers() {
         $(this).stop();
         var civilization = $(this).data("civilization");
         if (civilization.originCentury <= century && civilization.endingCentury > century) {
-            var matrix = $(this).css('transform');
+            var matrix = $(this).css("-webkit-transform") ||
+                $(this).css("-moz-transform") ||
+                $(this).css("-ms-transform") ||
+                $(this).css("-o-transform") ||
+                $(this).css("transform");
             var values = matrix.match(/-?[\d\.]+/g);
+
+
+
             if (values[0] == "0") {
                 $(this).velocity({
                     scale: 1.2
