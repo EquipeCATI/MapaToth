@@ -5,7 +5,6 @@ html {
 #mapDiv {
     display: inline-block;
     max-width: 90vw;
-    vertical-align: middle;
     margin: 0 auto;
     position: relative;
     overflow: visible;
@@ -19,6 +18,7 @@ html {
     max-width: 100%;
     width: auto;
     height: auto;
+    transform: translateY(2.5%);
 }
 
 .MapMarker {
@@ -52,6 +52,7 @@ html {
     background-position: center;
     background-repeat: repeat-x;
     background-color: transparent;
+    z-index: 1;
 }
 
 input[type=range] {
@@ -128,6 +129,7 @@ input[type=range]::-ms-thumb {
     background-size: 20% 97%;
     background-repeat: repeat-x;
     overflow: visible;
+    transform: translateY(-70%);
 }
 
 #sliderVal {
@@ -137,6 +139,9 @@ input[type=range]::-ms-thumb {
     background-size: 100% 100%;
     padding: 1%;
     display: none;
+    font-size: 75%;
+    text-align: center;
+    z-index: 1000;
 }
 
 .SliderMarker {

@@ -20,7 +20,7 @@ function addSliderMarkers() {
         var sliderSize = sliderMax - sliderMin;
 
 
-        var percentage = ((this.originYear - sliderMin) / (sliderSize)) * 80;
+        var percentage = ((this.originCentury - sliderMin) / (sliderSize)) * 80;
         if (percentage > 40) {
             percentage += 8;
             percentage += "%";
@@ -35,7 +35,7 @@ function addSliderMarkers() {
         $("#sliderDiv").append("<img id=" + this.name + "Dead class='SliderMarker' src='../Conteudo/Imagens/SliderMarker.png'>");
 
 
-        percentage = ((this.endingYear - sliderMin) / (sliderMax - sliderMin)) * 80;
+        percentage = ((this.endingCentury - sliderMin) / (sliderMax - sliderMin)) * 80;
         if (percentage > 40) {
             percentage += 8;
             percentage += "%";
@@ -57,12 +57,12 @@ function saveMap() {
 }
 
 function updateMarkers() {
-    var year = parseInt($("#slider").val());
+    var century = parseInt($("#slider").val());
 
     $(".MapMarker").each(function () {
         $(this).stop();
         var civilization = $(this).data("civilization");
-        if (civilization.originYear <= year && civilization.endingYear > year) {
+        if (civilization.originCentury <= century && civilization.endingCentury > century) {
             var matrix = $(this).css('transform');
             var values = matrix.match(/-?[\d\.]+/g);
             if (values[0] == "0") {
@@ -94,27 +94,27 @@ function snapToClosest() {
     $(".MapMarker").each(function () {
         var civilization = $(this).data("civilization");
 
-        if (civilization.originYear <= sliderValue) {
-            distance = sliderValue - civilization.originYear;
+        if (civilization.originCentury <= sliderValue) {
+            distance = sliderValue - civilization.originCentury;
         } else {
-            distance = civilization.originYear - sliderValue;
+            distance = civilization.originCentury - sliderValue;
         }
 
         if (distance < closestDistance) {
-            finalValue = civilization.originYear;
+            finalValue = civilization.originCentury;
             closestDistance = distance;
         }
 
         /*
 
-        if (civilization.endingYear <= sliderValue) {
-            distance = sliderValue - civilization.endingYear;
+        if (civilization.endingCentury <= sliderValue) {
+            distance = sliderValue - civilization.endingCentury;
         } else {
-            distance = civilization.endingYear - sliderValue;
+            distance = civilization.endingCentury - sliderValue;
         }
 
         if (distance < closestDistance) {
-            finalValue = civilization.endingYear;
+            finalValue = civilization.endingCentury;
             closestDistance = distance;
         }
         */
@@ -154,8 +154,8 @@ $(document).on("mousemove", "#slider", function (event) {
     var century = percentage * numberOfValues + parseFloat($(this).attr('min'));
 
     var div = $('#sliderVal');
-    if (Math.abs(parseInt(century)) == 0) {
-        century++;
+    if (parseInt(century) == 0) {
+        century = 1;
     }
     div.html("Século " + Math.abs(parseInt(century)));
 
@@ -198,6 +198,11 @@ function selectMarker(marker) {
 
 
 }
+
+$(window).on('resize', function () {
+    $("#header").css("width", $("#mapDiv").width() + "px");
+    $(".CultureDiv").css("width", $("#mapDiv").width() + "px");
+});
 
 $(document).on('click', '.MapMarker', function () {
     selectMarker($(this));

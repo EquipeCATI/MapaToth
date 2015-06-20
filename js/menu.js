@@ -2,8 +2,9 @@ var menuIsOpen = false;
 
 
 function hideMenu() {
+    $("#menuDiv").css("left", $("#MenuButton").offset().left + "px");
+
     $("#menuDiv").velocity({
-        translateX: "-100%",
         translateY: "-100%"
     }, 625, function () {
         menuIsOpen = false;
@@ -13,8 +14,9 @@ function hideMenu() {
 }
 
 function showMenu() {
+    $("#menuDiv").css("left", $("#MenuButton").offset().left + "px");
+
     $("#menuDiv").velocity({
-        translateX: "0%",
         translateY: "0%"
     }, 625, function () {
         menuIsOpen = true;

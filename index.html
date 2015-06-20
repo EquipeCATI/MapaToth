@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Recurso interativo Toth</title>
+    <title>Mapa Toth</title>
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/menu.css">
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/cosmogony.css">
     <link rel="stylesheet" href="css/culture.css">
     <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
 
     <script src="lib/jquery.js"></script>
@@ -35,12 +36,17 @@
     <script src="js/navigation.js"></script>
     <script src="js/sound.js"></script>
 
-
+    <link rel="icon" href="Conteudo/Imagens/Mapa.png">
 </head>
 
 <body>
     <!-- Div da barra de carregamento -->
-    <div class="progress" id="progress"></div>
+    <div id="initialDiv">
+        <p><span class="initialDropCap">M</span>apa <span class="subDropCap">T</span>oth</p>
+        <div class="progress" id="progress">
+            <img id="compass" src="Conteudo/Imagens/SliderThumb.png">
+        </div>
+    </div>
 
     <!-- TopBar invisivel -->
     <div id="header">
@@ -69,7 +75,7 @@
             <div id="mapDiv">
                 <img src="Conteudo/Imagens/Mapa.png" class="Map" />
                 <div id="sliderDiv">
-                    <input type="range" min="-70" max="19" step="0.1" name="slider" id="slider" />
+                    <input type="range" min="0" max="0" step="0.1" name="slider" id="slider" />
                 </div>
             </div>
         </div>

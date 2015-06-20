@@ -2,8 +2,8 @@ function Civilization(xmlNode) {
 
     this.name = $(xmlNode).find("name").text();
     this.mapMarker = new MapMarker($(xmlNode).find("mapMarker"));
-    this.originYear = parseInt($(xmlNode).find("originYear").text());
-    this.endingYear = parseInt($(xmlNode).find("endingYear").text());
+    this.originCentury = parseInt($(xmlNode).find("originCentury").text());
+    this.endingCentury = parseInt($(xmlNode).find("endingCentury").text());
 
 
     this.cosmogonyButton = new CivilizationButton($(xmlNode).find("menuButtons"), "cosmogonyButton");
@@ -70,5 +70,4 @@ function MapMarker(xmlNode) {
 function CosmogonyDisplay(xmlNode, civilization){
     this.animation = $(xmlNode).text();
     this.civilization = civilization;
-
 }

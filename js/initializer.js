@@ -242,10 +242,18 @@ function loadAssets() {
 }
 
 function handleComplete() {
-    $("#progress").fadeOut();
+    $("#initialDiv").css("position", "fixed");
+    $("#initialDiv").velocity({
+        translateY: "100%"
+    }, 2500);
+
+
     $("#mainDiv").fadeIn();
     $("#mainDiv *").fadeIn();
+    $("#menuDiv").fadeIn();
     initNavController();
+    $(window).trigger("resize");
+
     $("#header").fadeIn(function () {
         createjs.Sound.play("mapMusic", {
             volume: 0.7,
@@ -255,7 +263,6 @@ function handleComplete() {
 
     addCivilizations();
     updateMarkers(); //map.js
-    hideMenu();
     $("#slider").trigger("input");
 }
 
@@ -293,12 +300,41 @@ $(document).ready(function () {
     $('#menuDiv').css({
         transformOrigin: "0px 0px"
     });
+    $("#menuDiv").fadeOut(10);
 
-    //Uso da biblioteca progressBar para a criação de uma barra de carregamento em SVG
-    line = new ProgressBar.Line('#progress', {
-        color: '#FCB03C'
+
+    line = new ProgressBar.Circle('#progress', {
+        color: '#49392d',
+        strokeWidth: 3,
+        trailWidth: 1,
+        trailColor: '#99897d',
+        duration: 1500,
+        text: {
+            value: '0',
+            className: "progressText"
+        },
+        step: function (state, bar) {
+            bar.setText((bar.value() * 100).toFixed(0) + "%");
+        }
     });
+
+    $("#compass").velocity({
+        rotateZ: "-35deg"
+    }, 312, rotateCompass);
+
+
+    hideMenu();
 });
+
+function rotateCompass() {
+    $("#compass").velocity({
+        rotateZ: 35 - 35 * line.value() + "deg"
+    }, 625 - 625 * line.value(), function () {
+        $("#compass").velocity({
+            rotateZ: -35 + 35 * line.value() + "deg"
+        }, 625 - 625 * line.value(), rotateCompass);
+    });
+}
 
 function parseXML(xml) {
 
@@ -315,8 +351,19 @@ function parseXML(xml) {
 }
 
 function addCivilizations() {
+    var mostAncientCentury = civilizations[0].originCentury;
+    var mostRecentCentury = civilizations[0].endingCentury;
+
     $.each(civilizations, function () {
         //Criação do marcador de mapa
+
+        if (this.originCentury < mostAncientCentury) {
+            mostAncientCentury = this.originCentury;
+        }
+
+        if (this.endingCentury > mostRecentCentury) {
+            mostRecentCentury = this.originCentury;
+        }
 
         var markerImg = preload.getResult("marker" + this.name);
         $(markerImg).attr("alt", "Cidade " + this.name);
@@ -344,6 +391,9 @@ function addCivilizations() {
 
 
     });
+
+    $("#slider").attr("min", mostAncientCentury - 5 + "");
+    $("#slider").attr("max", mostRecentCentury + 5 + "");
 
     var children = $("#menuUl").children();
     if (children.length % 2 != 0) {

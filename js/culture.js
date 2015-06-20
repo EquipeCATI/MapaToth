@@ -34,7 +34,24 @@ function addCultureDiv(topic) {
 
     $("#civilizationCulture").append("<div id='" + topic + "Div' class='CultureDiv'></div>");
     $("#" + topic + "Div").append(button);
-    $("#" + topic + "Div").append("<p><span class='dropCap'>" + currentCivilization[topic].substr(0, 1) + "</span>" +
+    var title = "";
+
+    if (topic == "culturalManifestation") {
+        title = "Manifestações Culturais";
+    }
+
+    if (topic == "subsistenceMethod") {
+        title = "Métodos de Subsistência";
+    }
+
+    if (topic == "socialStructure") {
+        title = "Estrutura Social";
+    }
+
+    $("#" + topic + "Div").append("<p class='cultureTitle'> <span class='titleDropCap'>" + title.substr(0, 1) + "</span>" + title.substr(1, currentCivilization[topic].length) + "</p>");
+
+
+    $("#" + topic + "Div").append("<p class='cultureText'><span class='dropCap'>" + currentCivilization[topic].substr(0, 1) + "</span>" +
         currentCivilization[topic].substr(1, currentCivilization[topic].length) + "</p>");
 
 

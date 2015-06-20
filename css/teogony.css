@@ -13,7 +13,7 @@
 
 #nextButton {
     position: absolute;
-    max-width: 5%;
+    max-width: 7%;
     width: auto;
     height: auto;
     margin: auto;
@@ -26,7 +26,7 @@
 
 #previousButton {
     position: absolute;
-    max-width: 5%;
+    max-width: 7%;
     transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     width: auto;
@@ -39,7 +39,7 @@
     cursor: hand;
 }
 
-#textDiv{
+#textDiv {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     position: absolute;
@@ -55,7 +55,7 @@
     right: 7%;
 }
 
-#descriptionDiv{
+#descriptionDiv {
     height: 80%;
     width: 100%;
 }

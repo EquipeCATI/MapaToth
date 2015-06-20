@@ -3,8 +3,8 @@
 
     <Civilization>
         <name>Grega</name>
-        <originYear>-2</originYear>
-        <endingYear>5</endingYear>
+        <originCentury>-2</originCentury>
+        <endingCentury>5</endingCentury>
 
         <mapMarker>
             <top>24%</top>
@@ -85,8 +85,8 @@
 
     <Civilization>
         <name>Nórdica</name>
-        <originYear>10</originYear>
-        <endingYear>18</endingYear>
+        <originCentury>10</originCentury>
+        <endingCentury>18</endingCentury>
 
         <mapMarker>
             <top>16%</top>
@@ -168,8 +168,8 @@
 
     <Civilization>
         <name>Egípcia</name>
-        <originYear>-70</originYear>
-        <endingYear>2</endingYear>
+        <originCentury>-70</originCentury>
+        <endingCentury>2</endingCentury>
 
         <mapMarker>
             <top>37%</top>

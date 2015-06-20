@@ -1,0 +1,70 @@
+.progress {
+    height: 95vh;
+    width: 95vh;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+.progressText {
+    font-family: serif;
+    font-size: 10vh;
+}
+
+#initialDiv {
+    overflow: visible;
+    font-family: Playfair, serif;
+    color: #49392d;
+    font-size: 12vh;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../Conteudo/Imagens/BackgroundCarregamento.jpg);
+    z-index: 2000;
+}
+
+#initialDiv p {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transform: translateY(-150%);
+    padding-left: 1vw;
+    -webkit-transform: translateY(-150%);
+}
+
+.initialDropCap {
+    font-family: Playfair, serif;
+    color: #49392d;
+    display: inline;
+    font-size: 18vh;
+    margin: 0;
+    font-family: FleurCorner, cursive;
+    vertical-align: bottom;
+}
+
+.subDropCap {
+    font-family: Playfair, serif;
+    color: #49392d;
+    display: inline;
+    font-size: 16vh;
+    margin: 0;
+    font-family: FleurCorner, cursive;
+    vertical-align: bottom;
+}
+
+#compass {
+    position: fixed;
+    top: 60%;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 25vh;
+}

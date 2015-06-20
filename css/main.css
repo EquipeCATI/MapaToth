@@ -29,7 +29,6 @@
     margin: auto;
     text-align: center;
     vertical-align: middle;
-    overflow: hidden;
 }
 
 #bodyDiv {
@@ -38,6 +37,7 @@
     height: 92vh;
     bottom: 0;
     padding-bottom: 1vh;
+    z-index: 1;
 }
 
 #contentDiv {
@@ -70,20 +70,4 @@
 .Disabled {
     pointer-events: none;
     opacity: 0.5;
-}
-
-.progress {
-    vertical-align: middle;
-    background-color: grey;
-}
-
-.progress > svg {
-    background-color: grey;
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    width: 80%;
-    margin: 0 auto;
-    height: 5%;
-    display: block;
 }

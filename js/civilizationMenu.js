@@ -47,7 +47,7 @@ function transitionToCivilizationMenu(marker) {
 
         var menuBg = preload.getResult("menu" + civilizationName);
         $(menuBg).attr("id", "civilizationMenuImg");
-        $(menuBg).css("opacity", "0.8");
+        //$(menuBg).css("opacity", "0.8");
         $("#civilizationMenuDiv").append(menuBg).fadeOut(0);
 
         $("#mainDiv").fadeIn(625, function () {
@@ -68,7 +68,7 @@ function addCivilizationButtons() {
     addCivilizationButton("teogony");
     addCivilizationButton("culture");
 
-    $(".CivilizationButton").fadeTo("fast", 0.8);
+    $(".CivilizationButton").fadeIn("fast");
 }
 
 function addCivilizationButton(topic) {
@@ -103,14 +103,14 @@ $(window).on("resize", function () {
 
 //Transições para cada tela
 $(document).on("mouseover", ".CivilizationButton", function () {
-    $(this).fadeTo("fast", 1);
+    //$(this).fadeTo("fast", 1);
     $(this).velocity({
         scale: "1.05"
     }, "fast");
 });
 
 $(document).on("mouseout", ".CivilizationButton", function () {
-    $(this).fadeTo("fast", 0.8);
+    // $(this).fadeTo("fast", 0.8);
     $(this).velocity({
         scale: "1"
     }, "ease");
