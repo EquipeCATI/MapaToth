@@ -95,18 +95,18 @@
 
         <menuButtons>
             <cosmogonyButton>
-                <top>30%</top>
-                <left>20%</left>
+                <top>8%</top>
+                <left>13%</left>
             </cosmogonyButton>
 
             <teogonyButton>
-                <top>15%</top>
-                <left>35%</left>
+                <top>22%</top>
+                <left>33%</left>
             </teogonyButton>
 
             <cultureButton>
-                <top>30%</top>
-                <left>50%</left>
+                <top>13%</top>
+                <left>48%</left>
             </cultureButton>
 
         </menuButtons>
@@ -128,34 +128,34 @@
         </cosmogony>
 
         <culture>
-            <culturalManifestation>Os nórdicos eram conhecidos por seus navios, conhecido por dracares, e pela sua habilidade marítma. Eram civilizações politeístas, cultuando deuses que incentivavam habilidades de guerra e premiavam seus guerreiros. Sendo assim, os nórdicos se tornaram excelentes combatentes.
-</culturalManifestation>
+            <culturalManifestation>Os nórdicos eram conhecidos por seus navios, os dracares, e pela sua habilidade marítima. Eram civilizações politeístas, cultuando deuses que incentivavam habilidades de guerra e premiavam seus guerreiros. Dentre suas formas de manifestação cultural pode-se destacar a forma até mesmo divina como tratavam as batalhas. Haviam também as comemorações de vitória nas batalhas e em homenagem aos seus companheiros.
+            </culturalManifestation>
 
-            <subsistenceMethod>A civilização nórdica, em geral tinha como forma inicial de subsistência a agricultura. Com o aumento da população, eles procuraram outras formas de sobreviver e foi na guerra e no saque que as encontraram. Para isso desenvolveram uma excelente técnica de navegação e conquistaram vários territórios adjacentes.</subsistenceMethod>
+            <subsistenceMethod>A civilização nórdica, em geral, tinha como forma inicial de subsistência a pesca e comércio marítimo. Com o aumento da população, eles procuraram outras formas de sobreviver e foi na guerra e no saque que as encontraram. Para isso desenvolveram uma excelente técnica de navegação e conquistaram vários territórios adjacentes.</subsistenceMethod>
 
-            <socialStructure>No geral, os nórdicos tinham uma estrutura social bem simples. Cada tribo ou civilização tinha o seu líder, que normalmente era dono de terras e do exército, e por isso gozava de certo prestígio. Além disso eles escravizavam os inimigos capturados de outros territórios. Muitos grupos também tinham um rei como líder central.</socialStructure>
+            <socialStructure>Cada tribo possuia o seu rei, que normalmente era dono de terras e do exército, e por isso gozava de certo prestígio. Abaixo estavam os Jarls, que eram grandes proprietários de terra. Os Karls eram homens livres e de poucas posses, enquanto os inimigos capturados de outros territórios eram escravizados e denominados como Thralls.</socialStructure>
 
         </culture>
 
         <teogony>
             <god>
                 <godName>Odin</godName>
-                <godDescription>Rei de Valhalla, mestre das runas Rei de Valhalla, mestre das runas Rei de Valhalla, mestre das runas Rei de Valhalla, mestre das runas </godDescription>
+                <godDescription>Também conhecido como Wotan, Odin é o pai dos Deuses. Seu trono fica em Valhalla e de lá era possível ver todos os nove mundos. Odin sempre quis alcançar a sabedoria, e para isso sabia que deveria beber a água de um poço nas raízes de Yggdrasil. Porém, Mimir, a deusa decapitada e guardiã desse poço lhe pedira um olho em troca de um gole. Assim Odin adquire o seu papel de sábio entre as divindades, tendo como símbolo que a sabedoria só se encontra com algum sacrifício. Odin travava constantes batalhas contras os gigantes de gelo, utilizando sua lança mágica, Gungnir. Odin também reunia as almas dos heróis em Valhalla para formar seu exército em vista do Ragnarok.</godDescription>
             </god>
 
             <god>
                 <godName>Thor</godName>
-                <godDescription>Filho de Odin, deus dos trovões Filho de Odin, deus dos trovões Filho de Odin, deus dos trovões Filho de Odin, deus dos trovões Filho de Odin, deus dos trovões</godDescription>
+                <godDescription>Filho de Odin, Deus do Trovão. É constantemente associado a Zeus por causa disso. Thor era padroeiro dos trabalhadores, fazendeiros e camponeses, e até mesmo de escravos. Foi um dos principais inimigos da cristianização, por ser intensivamente cultuado. Entre as divindades era conhecido por ser o protetor e guardião de Asgard, sempre protegendo-a das investidas dos gigantes de gelo. Ele atravessava os céus utilizando uma biga em chamas guiadas por dois bodes. Um dos mitos sobre o deus conta que para recuperar seu martelo, o Mjollnir, do gigante Thrym, Thor se disfarça de Freya sobre o pretexto de querer casar com ele. Após toda a cerimônia, o gigante entrega o martelo para selar o casamento. Logo depois Thor o mata.</godDescription>
             </god>
 
             <god>
                 <godName>Freya</godName>
-                <godDescription>Deusa da fertilidade, amor e sexualidade. Também dos felinos. Deusa da fertilidade, amor e sexualidade. Também dos felinos Deusa da fertilidade, amor e sexualidade. Também dos felinos Deusa da fertilidade, amor e sexualidade. Também dos felinos</godDescription>
+                <godDescription>Era irmã de Frey, e juntos eram considerados os deuses da fertilidade. Era também a deusa do amor. Dizia-se que ela corria pelos céus numa carruagem puxada por gatos. Ela possui um manto mágico feito de penas de falcão que utilizava para se locomover entre os nove mundos. Era também possuidora do Brisingamen, o colar mais belo de todos, feito por quatro anões. Para consegui-lo, Freya teve que dormir com cada um deles. Loki acompanhou tudo que aconteceu e decidiu roubar o colar de Freya, e conseguiu ao se transmutar para a forma de pulga. Para recuperar o colar, Freya recorreu a Odin. Entraram então num acordo onde Freya deveria provocar uma guerra entre os dois mais poderosos chefes de Midgard.</godDescription>
             </god>
 
             <god>
                 <godName>Loki</godName>
-                <godDescription>Trapaceiro, filho adotivo de Odin, filho de um gigante Trapaceiro, filho adotivo de Odin, filho de um gigante Trapaceiro, filho adotivo de Odin, filho de um gigante Trapaceiro, filho adotivo de Odin, filho de um gigante</godDescription>
+                <godDescription>Filho adotivo de Odin, ele é conhecido como uma divindade trapaceira. Ele assume vários papéis entre as divindades nórdicas, ora como aliado, ora como aquele que impões tarefas. Loki é na verdade um gigante de gelo com poderes de metamorfose, que aparecem em vários mitos. Em um desses mitos, ele se transforma em égua e seduziu o cavalo de um gigante de gelo para atrapalhar na construção do muro de Asgard. Dessa forma ele pariu o cavalo de oito patas, Sleipnir, que pertenceria a Odin. Em várias outras ocasiões Loki utiliza seus poderes: para resgatar as maçãs da imortalidade ele se transforma em pássaro; para roubar o colar de Freya se transforma em pulga. Em uma das ocasiões, Loki é preso pelos outros deuses é só vem a ser libertado no Ragnarok.</godDescription>
             </god>
 
             <god>
@@ -223,27 +223,28 @@
         <teogony>
             <god>
                 <godName>Rá</godName>
-                <godDescription>Deus primordial do Sol. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen Lorem ipsum dolor</godDescription>
+                <godDescription>Também conhecido como Amon ou Atom, Rá era constantemente associado ao sol e atribuído o título de rei dos deuses. Rá significa oculto. Ele é considerado o principal Deus egípcio pois foi ele quem deu origem ao universo. Segundo o mito, ao tossir, ele originou dois deuses: Tefnut, deus da umidade, e Shu, deus do ar.</godDescription>
             </god>
 
             <god>
                 <godName>Osíris</godName>
-                <godDescription>Deus da unidade e mumificação. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen Lorem ipsum dolor</godDescription>
+                <godDescription>É filho de Geb e Nut e casado com Ísis. Ele é o deus responsável pelo julgamento dos mortos. A Osíris tinha sido concedido o direito de governar sobre a Terra, porém seu irmão, Seth, o destronou armando uma armadilha num banquete. Osíris foi então esquartejado em várias partes que foram espalhadas no mundo. Ísis ajudou a recompor Osíris junto com sua irmã Neftis. Os templos egípcios descobertos até agora indicam que Osíris era o deus mais cultuado no antigo império. Este deus é comumente representado na forma mumificada carregando o gancho e o chicote, como símbolo de castigar e recolher.</godDescription>
             </god>
 
             <god>
                 <godName>Ísis</godName>
-                <godDescription>Reinou a terra juntamento com Osíris. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen Lorem ipsum dolor</godDescription>
+                <godDescription>É irmã e esposa de Osíris, conhecida como Deusa Mãe e do Amor. Foi a deusa que recompôs as partes de Osíris após a traição de Seth. Segundo uma lenda, Ísis ao procurar uma das partes do marido encontra um casal de senhores, que lhe informa que existe um deus morando nas raízes de uma árvore. A árvore era a maior e mais bela de todas e só podia se tornar tão bela assim com um poder divino. Ísis vai até a árvore e encontra uma parte do marido, e como recompensa decide tornar imortal o filho do casal. O casal a impede porém, ao ver que Ísis teria que colocar a criança na fogueira para queimar suas partes mortais.</godDescription>
             </god>
+
 
             <god>
                 <godName>Hórus</godName>
-                <godDescription>Filho de osiris e Isis. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen Lorem ipsum dolor</godDescription>
+                <godDescription>Ele é filho de Osíris e Ísis, Deus da Vida e da Morte. A Hórus foi concebida a missão de tirar Seth do poder. Para isso, sua mãe Ísis o escondeu. Hórus se achou preparado para enfrentar o tio, mas foi derrotado e acabou por perder um olho. Esse olho foi substituído por um amuleto, que ficou conhecido como olho de Hórus. Esse símbolo foi posteriormente usado pelos faraós como forma de poder e conhecimento. Posteriormente, e mais preparado, Hórus voltou para o combate e derrotou e expulsou Seth para os desertos.</godDescription>
             </god>
 
             <god>
                 <godName>Seth</godName>
-                <godDescription>Deus do deserto, maligno. Lorem ipsum dolor sit amet vis das vercth tarder faradarus un pent goit las vessen Lorem ipsum dolor</godDescription>
+                <godDescription>Era o Deus das Tempestades e símbolo do mal, irmão de Osíris e marido de Neftis. A ele foi concedido o poder de governar os desertos. Sentindo inveja do irmão, Osíris, decidiu tomar-lhe o reino. Assim, preparou um sarcófago rico e ornamentado com as medidas exatas do irmão. Preparou um banquete e convidou os deuses, e disse que quem conseguisse entrar no sarcófago e fechá-lo, poderia tê-lo como presente. Osíris era o único que cabia perfeitamente, e assim que entrou no caixão, a armadilha de Seth foi ativada e espinhos atravessaram o corpo do irmão. Seth assumiu o reino da terra, até que Hórus, seu sobrinho, lhe expulsasse para os desertos.</godDescription>
             </god>
 
 
