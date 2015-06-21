@@ -3,6 +3,52 @@ var line;
 var civilizations = [];
 var cosmogonyDisplay = [];
 
+function handleComplete(event) {
+    $("#initialDiv").css("position", "fixed");
+    $("#compass").clearQueue();
+    $("#compass").stop();
+    $("#compass").velocity("stop");
+    $("#compass").velocity("stop", true);
+    $("#initialDiv").velocity({
+        translateY: "100%"
+    }, 2500, function () {
+        $(this).fadeOut();
+    });
+
+
+    $("#mainDiv").fadeIn();
+    $("#mainDiv *:not(#blackScreen)").fadeIn();
+    $("#menuDiv").fadeIn();
+    initNavController();
+    $(window).trigger("resize");
+
+    $("#header").fadeIn(function () {
+        createjs.Sound.play("mapMusic", {
+            volume: 0.7,
+            loop: -1
+        });
+    });
+
+    addCivilizations();
+    updateMarkers(); //map.js
+    $("#slider").trigger("input");
+}
+
+function handleError(event) {
+    //console.log("erro lendo o arquivo: " + event.fileName);
+}
+
+//Animação da barra de carregamento de acordo com o progress informado no evento
+function handleProgress(event) {
+    line.animate(event.progress, function () {
+        if (event.progress == 1) {
+            preloadFinished = true;
+            handleComplete();
+        }
+
+    });
+}
+
 //Uso da biblioteca PreloadJS, para um carregamento prévio de todas as mídias usadas
 function loadAssets() {
     //O manifest é uma lista de mídias que serão carregadas
@@ -22,7 +68,6 @@ function loadAssets() {
     //Configurando para que sons sejam lidos no Preload
     createjs.Sound.registerPlugins([createjs.HTMLAudioPlugin, createjs.WebAudioPlugin]);
     createjs.Sound.initializeDefaultPlugins();
-    preload.installPlugin(createjs.Sound);
 
     //Cada uma das imagens possui um path e são obtidas pelo seu id posteriormente
     //preloadjs.getResult("id")
@@ -31,13 +76,13 @@ function loadAssets() {
         src: "Sons/Mapa.mp3",
         id: "mapMusic"
     };
-    manifest.push(sound);
+    manifestAudio.push(sound);
 
     sound = {
         src: "Sons/TrocaCultura.mp3",
         id: "paperFold"
     };
-    manifest.push(sound);
+    manifestAudio.push(sound);
 
     var img = {
         src: "Imagens/SetaNavegacao.png",
@@ -123,7 +168,7 @@ function loadAssets() {
             src: "Civilizacoes/" + this.name + "/Sons/Musica.mp3",
             id: this.name
         };
-        manifest.push(sound);
+        manifestAudio.push(sound);
 
         /*
         sound = {
@@ -150,23 +195,23 @@ function loadAssets() {
 
         /*
 
-        //Textura de background da pagina inicial da civilização
-        img = {
-            src: "Civilizacoes/" + this.name + "/menuBackground.png",
-            id: "menuBackground" + this.name
-        };
+            //Textura de background da pagina inicial da civilização
+            img = {
+                src: "Civilizacoes/" + this.name + "/menuBackground.png",
+                id: "menuBackground" + this.name
+            };
 
-        manifest.push(img);
+            manifest.push(img);
 
-        //Textura de background da teogonia da civilização
-        img = {
-            src: "Civilizacoes/" + this.name + "/Teogonia/teogonyBackground.png",
-            id: "teogonyBackground" + this.name
-        };
+            //Textura de background da teogonia da civilização
+            img = {
+                src: "Civilizacoes/" + this.name + "/Teogonia/teogonyBackground.png",
+                id: "teogonyBackground" + this.name
+            };
 
-        manifest.push(img);
+            manifest.push(img);
         
-        */
+            */
 
         //Botões
         img = {
@@ -202,18 +247,6 @@ function loadAssets() {
         };
         manifest.push(img);
 
-        //Animações da cosmogonia
-
-        var currentCivi = this; // Pra não perder a civilização atual.
-        $.each(this.display, function () {
-            var swf = {
-                src: "Civilizacoes/" + currentCivi.name + "/Cosmogonia/animations/" + this.animation + ".swf",
-                id: this.animation
-            };
-            manifest.push(swf);
-        });
-
-
         //Botão de navegação
         img = {
             src: "Civilizacoes/" + this.name + "/Imagens/IconeNavegacao.png",
@@ -239,50 +272,7 @@ function loadAssets() {
     });
 
     preload.loadManifest(manifest, true, "Conteudo/");
-}
-
-function handleComplete() {
-    $("#initialDiv").css("position", "fixed");
-    $("#compass").clearQueue();
-    $("#compass").stop();
-    $("#initialDiv").velocity({
-        translateY: "100%"
-    }, 2500, function () {
-        $(this).fadeOut();
-    });
-
-
-    $("#mainDiv").fadeIn();
-    $("#mainDiv *").fadeIn();
-    $("#menuDiv").fadeIn();
-    initNavController();
-    $(window).trigger("resize");
-
-    $("#header").fadeIn(function () {
-        createjs.Sound.play("mapMusic", {
-            volume: 0.7,
-            loop: -1
-        });
-    });
-
-    addCivilizations();
-    updateMarkers(); //map.js
-    $("#slider").trigger("input");
-}
-
-function handleError() {
-    console.log("erro");
-}
-
-//Animação da barra de carregamento de acordo com o progress informado no evento
-function handleProgress(event) {
-    line.animate(event.progress, function () {
-        if (event.progress == 1) {
-            preloadFinished = true;
-            handleComplete();
-        }
-
-    });
+    createjs.Sound.registerSounds(manifestAudio, "Conteudo/");
 }
 
 $(document).ready(function () {
@@ -323,8 +313,8 @@ $(document).ready(function () {
     });
 
     $("#compass").velocity({
-        rotateZ: "-35deg"
-    }, 312, rotateCompass);
+        rotateZ: "-45deg"
+    }, 625, rotateCompass);
 
 
     hideMenu();
@@ -332,11 +322,11 @@ $(document).ready(function () {
 
 function rotateCompass() {
     $("#compass").velocity({
-        rotateZ: 35 - 35 * line.value() + "deg"
-    }, 625 - 625 * line.value(), function () {
+        rotateZ: 45 - 45 * line.value() + "deg"
+    }, 1250 - 1250 * line.value(), function () {
         $("#compass").velocity({
-            rotateZ: -35 + 35 * line.value() + "deg"
-        }, 625 - 625 * line.value(), rotateCompass);
+            rotateZ: -45 + 45 * line.value() + "deg"
+        }, 1250 - 1250 * line.value(), rotateCompass);
     });
 }
 

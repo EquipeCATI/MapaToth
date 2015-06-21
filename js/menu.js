@@ -3,7 +3,7 @@ var menuIsOpen = false;
 
 function hideMenu() {
     $("#menuDiv").css("left", $("#MenuButton").offset().left + "px");
-
+    $("#blackScreen").fadeOut();
     $("#menuDiv").velocity({
         translateY: "-100%"
     }, 625, function () {
@@ -15,7 +15,7 @@ function hideMenu() {
 
 function showMenu() {
     $("#menuDiv").css("left", $("#MenuButton").offset().left + "px");
-
+    $("#blackScreen").fadeIn();
     $("#menuDiv").velocity({
         translateY: "0%"
     }, 625, function () {
@@ -46,7 +46,7 @@ $(document).on("click", ".menuRow", function () {
 });
 
 //Clicar fora retira o menu
-$(document).on("click", "#mainDiv", function () {
+$(document).on("click", "#blackScreen", function () {
     if (menuIsOpen) {
         hideMenu();
     }

@@ -38,6 +38,9 @@
     bottom: 0;
     padding-bottom: 1vh;
     z-index: 1;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 #contentDiv {
@@ -50,6 +53,8 @@
     right: 0;
     bottom: 0;
     left: 0;
+    background-size: 100% 100%;
+    vertical-align: middle;
 }
 
 #bg {

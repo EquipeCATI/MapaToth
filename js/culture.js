@@ -10,7 +10,11 @@ function transitionToCivilizationCulture() {
 
         $("#bodyDiv").append("<div id='civilizationCulture'></div>");
 
+
         addCultureDivs();
+
+
+
 
         $("#mainDiv").fadeIn(625, function () {
             addNavIconNamed("culture");

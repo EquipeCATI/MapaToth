@@ -57,8 +57,9 @@ function transitionToCivilizationMenu(marker) {
             $("#contentDiv").css("height", "" + height);
             $("#civilizationMenuDiv").fadeIn("fast");
             addCivilizationButtons();
-
         });
+
+        $("#blackScreen").css("z-index", "1000");
     });
 }
 

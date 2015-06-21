@@ -206,11 +206,6 @@ function selectMarker(marker) {
 
 }
 
-$(window).on('resize', function () {
-    $("#header").css("width", $("#mapDiv").width() + "px");
-    $(".CultureDiv").css("width", $("#mapDiv").width() + "px");
-});
-
 $(document).on('click', '.MapMarker', function () {
     selectMarker($(this));
 });
