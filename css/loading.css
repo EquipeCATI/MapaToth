@@ -45,17 +45,6 @@
     font-size: 18vh;
     margin: 0;
     font-family: FleurCorner, cursive;
-    vertical-align: bottom;
-}
-
-.subDropCap {
-    font-family: Playfair, serif;
-    color: #49392d;
-    display: inline;
-    font-size: 16vh;
-    margin: 0;
-    font-family: FleurCorner, cursive;
-    vertical-align: bottom;
 }
 
 #compass {
