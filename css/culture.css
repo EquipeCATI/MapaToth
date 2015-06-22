@@ -95,7 +95,6 @@
     font-size: 8vh;
     margin: 0;
     font-family: FleurCorner, cursive;
-    vertical-align: bottom;
 }
 
 .dropCap {
@@ -103,8 +102,6 @@
     font-size: 18vh;
     margin: 0;
     font-family: FleurCorner, cursive;
-    vertical-align: middle;
     float: left;
-    line-height: 18vh;
-    margin-bottom: -4vh;
+    margin-bottom: -5vh;
 }

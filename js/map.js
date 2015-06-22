@@ -195,6 +195,8 @@ function selectMarker(marker) {
         scale: '4'
     }, 2500, "ease");
 
+    $('#sliderDiv').fadeOut(10);
+
     marker.velocity({
         scale: '4'
     }, 2500, "ease", function () {
