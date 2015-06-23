@@ -47,13 +47,13 @@ function transitionToCivilizationTeogony() {
         });
 
         if (currentCivilization.dropCapFont) {
-            $("#textDiv h1").css("font-family", currentCivilization.bodyFont.name);
             $(".teogonyDropCap").css("font-family", currentCivilization.dropCapFont.name);
         } else {
             $(".dropCap").css("font-family", defaultDropCapFont.name);
         }
 
         if (currentCivilization.bodyFont) {
+            $("#textDiv h1").css("font-family", currentCivilization.bodyFont.name);
             $("#descriptionDiv p").css("font-family", currentCivilization.bodyFont.name);
         } else {
             $(".cultureText").css("font-family", defaultBodyFont.name);
