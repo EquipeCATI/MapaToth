@@ -56,7 +56,7 @@ html {
     background-position: center;
     background-repeat: repeat-x;
     background-color: transparent;
-    z-index: 1;
+    z-index: 3;
 }
 
 input[type=range] {
