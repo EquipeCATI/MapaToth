@@ -90,18 +90,11 @@
     color: #49392d;
 }
 
-.titleDropCap {
-    display: inline;
-    font-size: 8vh;
-    margin: 0;
-    font-family: FleurCorner, cursive;
-}
-
 .dropCap {
     display: inline;
     font-size: 18vh;
     margin: 0;
-    font-family: FleurCorner, cursive;
+    font-family: FleurCorner;
     float: left;
-    margin-bottom: -5vh;
+    line-height: 8vh;
 }

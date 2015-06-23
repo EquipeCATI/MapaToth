@@ -13,6 +13,19 @@ function transitionToCivilizationCulture() {
 
         addCultureDivs();
 
+        if (currentCivilization.dropCapFont) {
+            $(".dropCap").css("font-family", currentCivilization.dropCapFont.name);
+        } else {
+            $(".dropCap").css("font-family", defaultDropCapFont.name);
+        }
+
+        if (currentCivilization.bodyFont) {
+            $(".cultureText").css("font-family", currentCivilization.bodyFont.name);
+            $(".cultureTitle").css("font-family", currentCivilization.bodyFont.name);
+        } else {
+            $(".cultureText").css("font-family", defaultBodyFont.name);
+            $(".cultureTitle").css("font-family", defaultBodyFont.name);
+        }
 
 
 
@@ -52,7 +65,7 @@ function addCultureDiv(topic) {
         title = "Estrutura Social";
     }
 
-    $("#" + topic + "Div").append("<p class='cultureTitle'> <span class='titleDropCap'>" + title.substr(0, 1) + "</span>" + title.substr(1, currentCivilization[topic].length) + "</p>");
+    $("#" + topic + "Div").append("<p class='cultureTitle'>" + title + "</p>");
 
 
     $("#" + topic + "Div").append("<p class='cultureText'><span class='dropCap'>" + currentCivilization[topic].substr(0, 1) + "</span>" +

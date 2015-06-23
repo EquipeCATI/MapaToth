@@ -38,11 +38,21 @@ $(document).on("click", "#MenuCloseButton", function () {
 
 //Clique em uma das opções
 $(document).on("click", ".menuRow", function () {
-    $("#MenuCloseButton").trigger("click");
-    if (currentCivilization == undefined) {
-        saveMap();
-    }
-    transitionToCivilizationMenu($(this));
+    var menuRow = this;
+    $("#menuDiv").css("left", $("#MenuButton").offset().left + "px");
+    $("#blackScreen").fadeOut();
+    $("#menuDiv").velocity({
+        translateY: "-100%"
+    }, 625, function () {
+        menuIsOpen = false;
+        $("#MenuButton").css("pointer-events", "auto");
+        $("#MenuCloseButton").css("pointer-events", "auto");
+        if (currentCivilization == undefined) {
+            saveMap();
+        }
+        transitionToCivilizationMenu($(menuRow));
+    });
+
 });
 
 //Clicar fora retira o menu

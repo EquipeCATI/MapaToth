@@ -1,7 +1,61 @@
 var preload = new createjs.LoadQueue(true);
 var line;
+var defaultDropCapFont;
+var defaultBodyFont;
 var civilizations = [];
 var cosmogonyDisplay = [];
+
+$(document).ready(function () {
+
+    //Leitura do XML
+    $.ajax({
+        type: "GET",
+        url: "Conteudo/Fontes/fontConfig.xml",
+        dataType: "xml",
+        success: parseFonts
+    });
+
+    $.ajax({
+        type: "GET",
+        url: "Conteudo/Civilizacoes/Civilizacoes.xml",
+        dataType: "xml",
+        success: parseXML
+    });
+
+    //Elementos iniciais são escondidos e só reaparecem após o carregamento
+    $("#mainDiv").fadeOut(10);
+    $("#mainDiv *").fadeOut(10);
+    $("#header").fadeOut(10);
+
+    //ponto de transformação do menu mudado para o canto esquerdo
+    $('#menuDiv').css({
+        transformOrigin: "0px 0px"
+    });
+    $("#menuDiv").fadeOut(10);
+
+
+    line = new ProgressBar.Circle('#progress', {
+        color: '#49392d',
+        strokeWidth: 3,
+        trailWidth: 1,
+        trailColor: '#99897d',
+        duration: 1500,
+        text: {
+            value: '0',
+            className: "progressText"
+        },
+        step: function (state, bar) {
+            bar.setText((bar.value() * 100).toFixed(0) + "%");
+        }
+    });
+
+    $("#compass").velocity({
+        rotateZ: "-45deg"
+    }, 625, rotateCompass);
+
+
+    hideMenu();
+});
 
 function handleComplete(event) {
     $("#initialDiv").css("position", "fixed");
@@ -275,50 +329,7 @@ function loadAssets() {
     createjs.Sound.registerSounds(manifestAudio, "Conteudo/");
 }
 
-$(document).ready(function () {
 
-    //Leitura do XML
-    $.ajax({
-        type: "GET",
-        url: "Conteudo/Civilizacoes/Civilizacoes.xml",
-        dataType: "xml",
-        success: parseXML
-    });
-
-    //Elementos iniciais são escondidos e só reaparecem após o carregamento
-    $("#mainDiv").fadeOut(10);
-    $("#mainDiv *").fadeOut(10);
-    $("#header").fadeOut(10);
-
-    //ponto de transformação do menu mudado para o canto esquerdo
-    $('#menuDiv').css({
-        transformOrigin: "0px 0px"
-    });
-    $("#menuDiv").fadeOut(10);
-
-
-    line = new ProgressBar.Circle('#progress', {
-        color: '#49392d',
-        strokeWidth: 3,
-        trailWidth: 1,
-        trailColor: '#99897d',
-        duration: 1500,
-        text: {
-            value: '0',
-            className: "progressText"
-        },
-        step: function (state, bar) {
-            bar.setText((bar.value() * 100).toFixed(0) + "%");
-        }
-    });
-
-    $("#compass").velocity({
-        rotateZ: "-45deg"
-    }, 625, rotateCompass);
-
-
-    hideMenu();
-});
 
 function rotateCompass() {
     $("#compass").velocity({
@@ -329,6 +340,27 @@ function rotateCompass() {
         }, 1250 - 1250 * line.value(), rotateCompass);
     });
 }
+
+function parseFonts(xml) {
+    defaultDropCapFont = new Font($(xml).find("dropCapFont"));
+    defaultBodyFont = new Font($(xml).find("bodyFont"));
+
+    $('head').append("<style>\
+                @font-face {\
+                    font-family: '" + defaultDropCapFont.name + "';\
+                    src: url('../Conteudo/Fontes/" + defaultDropCapFont.name + "." + defaultDropCapFont.format + "');\
+                }\
+            </style>");
+
+    $('head').append("<style>\
+                @font-face {\
+                    font-family: '" + defaultBodyFont.name + "';\
+                    src: url('../Conteudo/Fontes/" + defaultBodyFont.name + "." + defaultBodyFont.format + "');\
+                }\
+            </style>");
+
+}
+
 
 function parseXML(xml) {
 
@@ -383,6 +415,23 @@ function addCivilizations() {
         $("#menuRow" + this.name + " > p").append(this.name);
         $("#menuRow" + this.name).data("civilization", this);
 
+        if (this.dropCapFont) {
+            $('head').append("<style>\
+                @font-face {\
+                    font-family: '" + this.dropCapFont.name + "';\
+                    src: url('../Conteudo/Civilizacoes/" + this.name + "/Fontes/" + this.dropCapFont.name + "." + this.dropCapFont.format + "');\
+                }\
+            </style>");
+        }
+
+        if (this.bodyFont) {
+            $('head').append("<style>\
+                @font-face {\
+                    font-family: '" + this.bodyFont.name + "';\
+                    src: url('../Conteudo/Civilizacoes/" + this.name + "/Fontes/" + this.bodyFont.name + "." + this.bodyFont.format + "');\
+                }\
+            </style>");
+        }
 
     });
 

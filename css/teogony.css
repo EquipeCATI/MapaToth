@@ -77,10 +77,11 @@
     margin: auto;
 }
 
-#civilizationTeogony h1:first-letter {
+.teogonyDropCap {
     font-size: 12vh;
     font-family: FleurCorner;
     font-weight: normal;
+    line-height: 12vh;
 }
 
 #godImage {

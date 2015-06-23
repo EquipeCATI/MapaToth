@@ -36,7 +36,8 @@ function transitionToCivilizationTeogony() {
 
 
         $("#civilizationTeogony").append("<div id='textDiv'></div>");
-        $("#textDiv").append("<h1>" + currentCivilization.gods[currentGodIndex].name + "</h1>");
+        var godName = currentCivilization.gods[currentGodIndex].name;
+        $("#textDiv").append("<h1> <span class='teogonyDropCap'>" + godName.substr(0, 1) + "</span>" + godName.substr(1, godName.length) + "</h1>");
         $("#textDiv").append("<div id='descriptionDiv'></div>");
 
         $("#descriptionDiv").append("<p>" + currentCivilization.gods[currentGodIndex].description) + " </p>";
@@ -44,6 +45,20 @@ function transitionToCivilizationTeogony() {
         $("#descriptionDiv").mCustomScrollbar({
             theme: "dark"
         });
+
+        if (currentCivilization.dropCapFont) {
+            $("#textDiv h1").css("font-family", currentCivilization.bodyFont.name);
+            $(".teogonyDropCap").css("font-family", currentCivilization.dropCapFont.name);
+        } else {
+            $(".dropCap").css("font-family", defaultDropCapFont.name);
+        }
+
+        if (currentCivilization.bodyFont) {
+            $("#descriptionDiv p").css("font-family", currentCivilization.bodyFont.name);
+        } else {
+            $(".cultureText").css("font-family", defaultBodyFont.name);
+            $(".cultureTitle").css("font-family", defaultBodyFont.name);
+        }
 
         $("#mainDiv").fadeIn(625, function () {
             addNavIconNamed("teogony");
@@ -94,7 +109,14 @@ function changeGod(direction) {
 
             //Setando o título para o novo Deus
             $("#civilizationTeogony h1").fadeIn(625);
-            $("#textDiv").find("h1").text(currentCivilization.gods[currentGodIndex].name);
+            var godName = currentCivilization.gods[currentGodIndex].name;
+            $("#textDiv").find("h1").html("<span class='teogonyDropCap'>" + godName.substr(0, 1) + "</span>" + godName.substr(1, godName.length));
+            if (currentCivilization.dropCapFont) {
+                $("#textDiv h1").css("font-family", currentCivilization.bodyFont.name);
+                $(".teogonyDropCap").css("font-family", currentCivilization.dropCapFont.name);
+            } else {
+                $(".dropCap").css("font-family", defaultDropCapFont.name);
+            }
 
             //Setando o texto para o novo Deus
             $("#descriptionDiv").find("p").text(currentCivilization.gods[currentGodIndex].description);

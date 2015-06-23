@@ -1,0 +1,10 @@
+<fontConfiguration>
+    <dropCapFont>
+        <name>FleurCorner</name>
+        <fileFormat>ttf</fileFormat>
+    </dropCapFont>
+    <bodyFont>
+        <name>Playfair</name>
+        <fileFormat>otf</fileFormat>
+    </bodyFont>
+</fontConfiguration>
