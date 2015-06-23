@@ -23,8 +23,23 @@
     text-align: center;
     width: 100vw;
     height: 100vh;
-    background-image: url(../Conteudo/Imagens/BackgroundCarregamento.jpg);
+    /*
+    background-image: url(../Conteudo/Imagens/FundoConteudo.png);
+    background-position: center;
+    */
+    
+    background-color: transparent;
+    position: fixed;
     z-index: 2000;
+}
+
+#initializerBackground {
+    position: absolute;
+    margin: auto;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
 }
 
 #initialDiv p {
@@ -33,9 +48,9 @@
     left: 0;
     right: 0;
     text-align: center;
-    transform: translateY(-150%);
+    transform: translateY(-125%);
     padding-left: 1vw;
-    -webkit-transform: translateY(-150%);
+    -webkit-transform: translateY(-125%);
 }
 
 .initialDropCap {
@@ -44,7 +59,7 @@
     display: inline;
     font-size: 18vh;
     margin: 0;
-    font-family: FleurCorner, cursive;
+    font-family: FleurCorner;
 }
 
 #compass {

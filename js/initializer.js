@@ -23,8 +23,8 @@ $(document).ready(function () {
     });
 
     //Elementos iniciais são escondidos e só reaparecem após o carregamento
-    $("#mainDiv").fadeOut(10);
-    $("#mainDiv *").fadeOut(10);
+    //$("#mainDiv").fadeOut(10);
+    //$("#mainDiv *").fadeOut(10);
     $("#header").fadeOut(10);
 
     //ponto de transformação do menu mudado para o canto esquerdo
@@ -58,13 +58,13 @@ $(document).ready(function () {
 });
 
 function handleComplete(event) {
-    $("#initialDiv").css("position", "fixed");
     $("#compass").clearQueue();
     $("#compass").stop();
     $("#compass").velocity("stop");
     $("#compass").velocity("stop", true);
+
     $("#initialDiv").velocity({
-        translateY: "100%"
+        translateY: $("#initializerBackground").height() + "px"
     }, 2500, function () {
         $(this).fadeOut();
     });
