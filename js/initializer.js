@@ -33,21 +33,25 @@ $(document).ready(function () {
     });
     $("#menuDiv").fadeOut(10);
 
-
-    line = new ProgressBar.Circle('#progress', {
-        color: '#49392d',
-        strokeWidth: 3,
-        trailWidth: 1,
-        trailColor: '#99897d',
-        duration: 1500,
-        text: {
-            value: '0',
-            className: "progressText"
-        },
-        step: function (state, bar) {
-            bar.setText((bar.value() * 100).toFixed(0) + "%");
-        }
+    line = new ProgressBar.Line('#progress', {
+        color: '#FCB03C'
     });
+    /*
+        line = new ProgressBar.Circle('#progress', {
+            color: '#49392d',
+            strokeWidth: 3,
+            trailWidth: 1,
+            trailColor: '#99897d',
+            duration: 1500,
+            text: {
+                value: '0',
+                className: "progressText"
+            },
+            step: function (state, bar) {
+                bar.setText((bar.value() * 100).toFixed(0) + "%");
+            }
+        });
+    */
 
     $("#compass").velocity({
         rotateZ: "-45deg"

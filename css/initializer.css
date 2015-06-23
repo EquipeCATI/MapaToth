@@ -1,13 +1,28 @@
 .progress {
-    height: 95vh;
-    width: 95vh;
+    height: 10vh;
+    width: 70vw;
     position: absolute;
     margin: auto;
     left: 0;
     right: 0;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
+    border-width: 10vh;
+    -moz-border-image: url(../Conteudo/Imagens/border.png) 50 round;
+    -webkit-border-image: url(../Conteudo/Imagens/border.png) 100 stretch;
+    -o-border-image: url(../Conteudo/Imagens/border.png) 50 round;
+    border-image: url(../Conteudo/Imagens/border.png) 10vh round;
+    border-radius: 10%;
+}
+
+.progress > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: 100%;
+    border-radius: 25%;
 }
 
 .progressText {
@@ -44,13 +59,13 @@
 
 #initialDiv p {
     position: absolute;
-    top: 50%;
+    bottom: 50%;
     left: 0;
     right: 0;
     text-align: center;
-    transform: translateY(-125%);
+    transform: translateY(-100%);
     padding-left: 1vw;
-    -webkit-transform: translateY(-125%);
+    -webkit-transform: translateY(-100%);
 }
 
 .initialDropCap {
@@ -63,12 +78,10 @@
 }
 
 #compass {
-    position: fixed;
-    top: 60%;
-    transform: translateY(100%);
-    -webkit-transform: translateY(100%);
+    position: absolute;
+    top: 48.75%;
     right: 0;
     left: 0;
     margin: auto;
-    height: 25vh;
+    height: 12.5vh;
 }
