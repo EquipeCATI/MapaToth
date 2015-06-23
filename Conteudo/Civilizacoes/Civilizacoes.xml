@@ -6,10 +6,12 @@
         <originCentury>-2</originCentury>
         <endingCentury>5</endingCentury>
 
-        <dropCapFont>
-            <name>Basileus</name>
-            <fileFormat>ttf</fileFormat>
-        </dropCapFont>
+        <fonts>
+            <dropCapFont>
+                <name>Basileus</name>
+                <fileFormat>ttf</fileFormat>
+            </dropCapFont>
+        </fonts>
 
         <bodyFont>
             <name>Diogenes</name>
@@ -98,10 +100,12 @@
         <originCentury>10</originCentury>
         <endingCentury>18</endingCentury>
 
-        <dropCapFont>
-            <name>Silvus</name>
-            <fileFormat>ttf</fileFormat>
-        </dropCapFont>
+        <fonts>
+            <dropCapFont>
+                <name>Silvus</name>
+                <fileFormat>ttf</fileFormat>
+            </dropCapFont>
+        </fonts>
 
         <mapMarker>
             <top>16%</top>
@@ -185,7 +189,12 @@
         <name>Egípcia</name>
         <originCentury>-70</originCentury>
         <endingCentury>2</endingCentury>
-
+        <fonts>
+            <dropCapFont>
+                <name>Folkard</name>
+                <fileFormat>ttf</fileFormat>
+            </dropCapFont>
+        </fonts>
         <mapMarker>
             <top>37%</top>
             <left>55%</left>
@@ -247,7 +256,7 @@
             </god>
 
             <god>
-                <name>Ísis</name>
+                <name>Isis</name>
                 <description>É irmã e esposa de Osíris, conhecida como Deusa Mãe e do Amor. Foi a deusa que recompôs as partes de Osíris após a traição de Seth. Segundo uma lenda, Ísis ao procurar uma das partes do marido encontra um casal de senhores, que lhe informa que existe um deus morando nas raízes de uma árvore. A árvore era a maior e mais bela de todas e só podia se tornar tão bela assim com um poder divino. Ísis vai até a árvore e encontra uma parte do marido, e como recompensa decide tornar imortal o filho do casal. O casal a impede porém, ao ver que Ísis teria que colocar a criança na fogueira para queimar suas partes mortais.</description>
             </god>
 
