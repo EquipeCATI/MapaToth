@@ -9,7 +9,7 @@ nav {
 .NavSeparator {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 1%;
+    margin-right: 0.5vw;
     height: 50%;
     transform: translateY(50%);
     -webkit-transform: translateY(50%);
@@ -27,7 +27,7 @@ nav ul {
     margin: 0 auto;
     height: 100%;
     width: auto;
-    margin-right: 1%;
+    margin-right: 0.5vw;
     text-align: center;
     z-index: 1;
 }

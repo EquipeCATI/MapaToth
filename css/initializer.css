@@ -8,12 +8,12 @@
     top: 55%;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
-    border-width: 10vh;
-    -moz-border-image: url(../Conteudo/Imagens/border.png) 50 round;
-    -webkit-border-image: url(../Conteudo/Imagens/border.png) 100 stretch;
-    -o-border-image: url(../Conteudo/Imagens/border.png) 50 round;
-    border-image: url(../Conteudo/Imagens/border.png) 10vh round;
-    border-radius: 10%;
+    border-width: 20px;
+    -moz-border-image: url(../Conteudo/Imagens/frame_border.jpg) 20 round;
+    -webkit-border-image: url(../Conteudo/Imagens/frame_border.jpg) 20 round;
+    -o-border-image: url(../Conteudo/Imagens/frame_border.jpg) 20 round;
+    border-image: url(../Conteudo/Imagens/frame_border.jpg) 20 round;
+    border-style: solid;
 }
 
 .progress > svg {
@@ -22,12 +22,7 @@
     left: 0;
     height: 100%;
     max-width: 100%;
-    border-radius: 25%;
-}
-
-.progressText {
-    font-family: serif;
-    font-size: 10vh;
+    z-index: 0;
 }
 
 #initialDiv {
@@ -38,11 +33,9 @@
     text-align: center;
     width: 100vw;
     height: 100vh;
-    /*
     background-image: url(../Conteudo/Imagens/FundoConteudo.png);
+    background-size: 100% 100%;
     background-position: center;
-    */
-    
     background-color: transparent;
     position: fixed;
     z-index: 2000;
@@ -79,9 +72,11 @@
 
 #compass {
     position: absolute;
-    top: 48.75%;
-    right: 0;
     left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     margin: auto;
-    height: 12.5vh;
+    max-height: 90%;
+    z-index: 1;
 }

@@ -34,7 +34,7 @@ $(document).ready(function () {
     $("#menuDiv").fadeOut(10);
 
     line = new ProgressBar.Line('#progress', {
-        color: '#FCB03C'
+        color: '#49392d'
     });
     /*
         line = new ProgressBar.Circle('#progress', {
@@ -68,7 +68,7 @@ function handleComplete(event) {
     $("#compass").velocity("stop", true);
 
     $("#initialDiv").velocity({
-        translateY: $("#initializerBackground").height() + "px"
+        translateY: "100%"
     }, 2500, function () {
         $(this).fadeOut();
     });
@@ -103,7 +103,6 @@ function handleProgress(event) {
             preloadFinished = true;
             handleComplete();
         }
-
     });
 }
 
