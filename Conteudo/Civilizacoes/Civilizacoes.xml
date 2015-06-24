@@ -203,10 +203,7 @@
         <originCentury>-70</originCentury>
         <endingCentury>2</endingCentury>
         <fonts>
-            <dropCapFont>
-                <name>Folkard</name>
-                <fileFormat>ttf</fileFormat>
-            </dropCapFont>
+
         </fonts>
         <mapMarker>
             <top>37%</top>
@@ -259,6 +256,7 @@
 
         <teogony>
             <god>
+                <name>Rá</name>
                 <description>Rá também conhecido como Amon ou Atom, Rá era constantemente associado ao sol e atribuído o título de rei dos deuses. Rá significa oculto. Ele é considerado o principal Deus egípcio pois foi ele quem deu origem ao universo. Segundo o mito, ao tossir, ele originou dois deuses: Tefnut, deus da umidade, e Shu, deus do ar.</description>
             </god>
 
@@ -268,7 +266,7 @@
             </god>
 
             <god>
-                <name>Ísis</name>
+                <name>Isis</name>
                 <description>Isis é irmã e esposa de Osíris, conhecida como Deusa Mãe e do Amor. Foi a deusa que recompôs as partes de Osíris após a traição de Seth. Segundo uma lenda, Ísis ao procurar uma das partes do marido encontra um casal de senhores, que lhe informa que existe um deus morando nas raízes de uma árvore. A árvore era a maior e mais bela de todas e só podia se tornar tão bela assim com um poder divino. Ísis vai até a árvore e encontra uma parte do marido, e como recompensa decide tornar imortal o filho do casal. O casal a impede porém, ao ver que Ísis teria que colocar a criança na fogueira para queimar suas partes mortais.</description>
             </god>
 
