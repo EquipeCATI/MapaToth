@@ -37,26 +37,25 @@ function transitionToCivilizationTeogony() {
 
         $("#civilizationTeogony").append("<div id='textDiv'></div>");
         var godName = currentCivilization.gods[currentGodIndex].name;
-        $("#textDiv").append("<h1> <span class='teogonyDropCap'>" + godName.substr(0, 1) + "</span>" + godName.substr(1, godName.length) + "</h1>");
+
         $("#textDiv").append("<div id='descriptionDiv'></div>");
 
-        $("#descriptionDiv").append("<p>" + currentCivilization.gods[currentGodIndex].description) + " </p>";
+        var godDescription = currentCivilization.gods[currentGodIndex].description;
+        $("#descriptionDiv").append("<p>" + "<span class='dropCap'>" + godDescription.substr(0, 1) + "</span>" + godDescription.substr(1, godDescription.length) + " </p>");
 
         $("#descriptionDiv").mCustomScrollbar({
-            theme: "dark"
+            theme: "minimal-dark"
         });
 
         if (currentCivilization.dropCapFont) {
-            $(".teogonyDropCap").css("font-family", currentCivilization.dropCapFont.name);
+            $(".dropCap").css("font-family", currentCivilization.dropCapFont.name);
         } else {
-            $(".teogonyDropCap").css("font-family", defaultDropCapFont.name);
+            $(".dropCap").css("font-family", defaultDropCapFont.name);
         }
 
         if (currentCivilization.bodyFont) {
-            $("#textDiv h1").css("font-family", currentCivilization.bodyFont.name);
             $("#descriptionDiv p").css("font-family", currentCivilization.bodyFont.name);
         } else {
-            $("#textDiv h1").css("font-family", defaultBodyFont.name);
             $("#descriptionDiv p").css("font-family", defaultBodyFont.name);
         }
 
@@ -107,10 +106,11 @@ function changeGod(direction) {
             //Substituição do attr src para a nova imagem
             $("#godImage").attr("src", currentCivilization.gods[currentGodIndex].source);
 
+            /*
             //Setando o título para o novo Deus
             $("#civilizationTeogony h1").fadeIn(625);
             var godName = currentCivilization.gods[currentGodIndex].name;
-            $("#textDiv").find("h1").html("<span class='teogonyDropCap'>" + godName.substr(0, 1) + "</span>" + godName.substr(1, godName.length));
+            $("#textDiv").find("h1").html("<span class='dropCap'>" + godName.substr(0, 1) + "</span>" + godName.substr(1, godName.length));
 
             if (currentCivilization.dropCapFont) {
                 $(".teogonyDropCap").css("font-family", currentCivilization.dropCapFont.name);
@@ -123,9 +123,23 @@ function changeGod(direction) {
             } else {
                 $("#textDiv h1").css("font-family", defaultBodyFont.name);
             }
+            */
 
             //Setando o texto para o novo Deus
-            $("#descriptionDiv").find("p").text(currentCivilization.gods[currentGodIndex].description);
+            var godDescription = currentCivilization.gods[currentGodIndex].description;
+            $("#descriptionDiv").find("p").html("<span class='dropCap'>" + godDescription.substr(0, 1) + "</span>" + godDescription.substr(1, godDescription.length));
+
+            if (currentCivilization.dropCapFont) {
+                $(".dropCap").css("font-family", currentCivilization.dropCapFont.name);
+            } else {
+                $(".dropCap").css("font-family", defaultDropCapFont.name);
+            }
+
+            if (currentCivilization.bodyFont) {
+                $("#descriptionDiv p").css("font-family", currentCivilization.bodyFont.name);
+            } else {
+                $("#descriptionDiv p").css("font-family", defaultBodyFont.name);
+            }
 
             $("#descriptionDiv *").fadeIn(625);
 
