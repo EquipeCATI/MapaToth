@@ -120,7 +120,6 @@ $(document).on("mouseout", ".CivilizationButton", function () {
 
 
 $(document).on('click', '#cultureButton', function () {
-    $(this).fadeTo("fast", 0.8);
     $(this).velocity({
         scale: "1"
     }, "ease");
@@ -129,7 +128,6 @@ $(document).on('click', '#cultureButton', function () {
 
 $(document).on('click', '#cosmogonyButton', function () {
     //cosmogonia pendente
-    $(this).fadeTo("fast", 0.8);
     $(this).velocity({
         scale: "1"
     }, "fast");
@@ -137,7 +135,6 @@ $(document).on('click', '#cosmogonyButton', function () {
 });
 
 $(document).on('click', '#teogonyButton', function () {
-    $(this).fadeTo("fast", 0.8);
     $(this).velocity({
         scale: "1"
     }, "fast");

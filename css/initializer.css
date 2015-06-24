@@ -56,9 +56,9 @@
     left: 0;
     right: 0;
     text-align: center;
-    transform: translateY(-100%);
+    transform: translateY(-25%);
     padding-left: 1vw;
-    -webkit-transform: translateY(-100%);
+    -webkit-transform: translateY(-25%);
 }
 
 .initialDropCap {

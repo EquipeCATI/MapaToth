@@ -62,6 +62,7 @@
 .cultureText {
     padding: 1%;
     font-size: 3vh;
+    line-height: 4vh;
     overflow: auto;
     margin: auto;
     position: absolute;
@@ -76,6 +77,7 @@
     overflow: visible;
     font-family: Playfair, serif;
     color: #49392d;
+    clear: both;
 }
 
 .cultureTitle {
@@ -96,5 +98,5 @@
     margin: 0;
     font-family: FleurCorner;
     float: left;
-    line-height: 50%;
+    line-height: 10vh;
 }

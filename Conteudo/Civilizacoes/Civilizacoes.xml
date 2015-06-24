@@ -6,7 +6,17 @@
         <originCentury>-2</originCentury>
         <endingCentury>5</endingCentury>
 
+        <fonts>
+            <dropCapFont>
+                <name>Basileus</name>
+                <fileFormat>ttf</fileFormat>
+            </dropCapFont>
 
+            <bodyFont>
+                <name>Diogenes</name>
+                <fileFormat>ttf</fileFormat>
+            </bodyFont>
+        </fonts>
 
 
 
@@ -55,7 +65,7 @@
 
             <god>
                 <name>Hades</name>
-                <description>Hades é amplamente visto como terrível, cruel e violento. Ele foi um dos irmãos que ajudou Zeus a destronar Cronos, recebendo o domínio da Terra. Seu presente dos ciclopes foi um capacete que o tornava invisível. O capacete é muito semelhante ao de Siegfried da mitologia germânica. Esse capacete foi usado também por Atena e Perseu. Hades era tão temido que seu nome era proferido por meio de eufemismos, por medo de lhe causar alguma ira. Quando alguém morria, Hermes o levava para o reino de Hades. Lá devia beber da água do esquecimento do rio Lete e depois atravessava o rio Estige num barco conduzido por Caronte. Atravessava-se os portões vigiados por Cérbero, o cão de três cabeças e rabo de serpente. Após chegar a Hades e Perséfone, o morto era julgado pelos 3 juízes: Minos, Radamante e Éaco.</description>
+                <description>Hades é amplamente visto como terrível, cruel e violento. Ele foi um dos irmãos que ajudou Zeus a destronar Cronos, recebendo o domínio da Terra. Quando alguém morria, Hermes o levava para o reino de Hades. Lá devia beber da água do esquecimento do rio Lete e depois atravessava o rio Estige num barco conduzido por Caronte. Atravessava-se os portões vigiados por Cérbero, o cão de três cabeças e rabo de serpente. Após chegar a Hades e Perséfone, o morto era julgado pelos 3 juízes: Minos, Radamante e Éaco.</description>
             </god>
 
             <god>
@@ -73,15 +83,19 @@
         <cosmogony>
 
             <display>
-                <animationSWF>animation0</animationSWF>
+                <animationSWF>Caos</animationSWF>
             </display>
 
             <display>
-                <animationSWF>animation1</animationSWF>
+                <animationSWF>Primordiais</animationSWF>
             </display>
 
             <display>
-                <animationSWF>animation2</animationSWF>
+                <animationSWF>Montes</animationSWF>
+            </display>
+
+            <display>
+                <animationSWF>Uranus e Pontos</animationSWF>
             </display>
 
         </cosmogony>
@@ -97,6 +111,8 @@
                 <name>Silvus</name>
                 <fileFormat>ttf</fileFormat>
             </dropCapFont>
+
+
         </fonts>
 
         <mapMarker>
@@ -145,7 +161,7 @@
             </display>
 
             <display>
-                <animationSWF>Odin, Víli e Vé</animationSWF>
+                <animationSWF>Odin Vili e Ve</animationSWF>
             </display>
 
             <display>
@@ -202,8 +218,17 @@
         <name>Egípcia</name>
         <originCentury>-70</originCentury>
         <endingCentury>2</endingCentury>
-        <fonts>
 
+        <fonts>
+            <dropCapFont>
+                <name>Taibaijan</name>
+                <fileFormat>otf</fileFormat>
+            </dropCapFont>
+
+            <bodyFont>
+                <name>Taibaijan</name>
+                <fileFormat>otf</fileFormat>
+            </bodyFont>
         </fonts>
         <mapMarker>
             <top>37%</top>
@@ -232,15 +257,19 @@
         <cosmogony>
 
             <display>
-                <animationSWF>animation0</animationSWF>
+                <animationSWF>Nun</animationSWF>
             </display>
 
             <display>
-                <animationSWF>animation1</animationSWF>
+                <animationSWF>Atum</animationSWF>
             </display>
 
             <display>
-                <animationSWF>animation2</animationSWF>
+                <animationSWF>Shu e Tefnut</animationSWF>
+            </display>
+
+            <display>
+                <animationSWF>Geb e Nut</animationSWF>
             </display>
 
         </cosmogony>
@@ -257,7 +286,7 @@
         <teogony>
             <god>
                 <name>Rá</name>
-                <description>Rá também conhecido como Amon ou Atom, Rá era constantemente associado ao sol e atribuído o título de rei dos deuses. Rá significa oculto. Ele é considerado o principal Deus egípcio pois foi ele quem deu origem ao universo. Segundo o mito, ao tossir, ele originou dois deuses: Tefnut, deus da umidade, e Shu, deus do ar.</description>
+                <description>Rá, também conhecido como Amon ou Atom, era constantemente associado ao sol e atribuído o título de rei dos deuses. Rá significa oculto. Ele é considerado o principal Deus pois o Sol tem grande importância simbólica na cultura egípcia, significando luz, calor e cultivo.</description>
             </god>
 
             <god>

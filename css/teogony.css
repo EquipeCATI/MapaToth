@@ -61,11 +61,12 @@
 }
 
 #descriptionDiv p {
-    padding-top: 20%;
+    padding-top: 4vh;
     padding-bottom: 5%;
     color: #49392d;
     font-family: Playfair;
     font-size: 3vh;
+    line-height: 4.5vh;
     text-align: justify;
     width: 95%;
 }

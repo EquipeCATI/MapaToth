@@ -1,6 +1,10 @@
     var currentDisplayIndex = 0;
 
     function transitionToCivilizationCosmogony() {
+        currentDisplayIndex = 0;
+        cosmogonyDisplay = [];
+        cosmogonyDisplay.length = $(currentCivilization.display).length;
+
         for (var i = 0; i < $(currentCivilization.display).length; i++) {
             cosmogonyDisplay[i] = {
                 animationSource: "Conteudo/Civilizacoes/" + currentCivilization.name + "/Cosmogonia/animations/" + currentCivilization.display[i].animation + ".swf"
