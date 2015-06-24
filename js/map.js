@@ -77,7 +77,8 @@ function updateMarkers() {
                     scale: 1.2
                 }, "snap", function () {
                     $(this).velocity({
-                            scale: 1
+                            scale: 1,
+                            zIndex: 3
                         },
                         "snap");
                 });
