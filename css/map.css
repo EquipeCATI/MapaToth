@@ -11,6 +11,7 @@ html {
     top: 50%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
+    z-index: 0;
 }
 
 .Map {
@@ -36,6 +37,7 @@ html {
     left: 0%;
     cursor: pointer;
     cursor: hand;
+    z-index 5;
 }
 
 #sliderDiv {
@@ -60,7 +62,7 @@ html {
     background-position: center;
     background-repeat: repeat-x;
     background-color: transparent;
-    z-index: 2;
+    z-index: 3;
 }
 
 input[type=range] {
