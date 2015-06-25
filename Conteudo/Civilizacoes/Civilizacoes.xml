@@ -122,18 +122,18 @@
 
         <menuButtons>
             <cosmogonyButton>
-                <top>9%</top>
+                <top>11%</top>
                 <left>13%</left>
             </cosmogonyButton>
 
             <teogonyButton>
-                <top>22%</top>
-                <left>32%</left>
+                <top>13%</top>
+                <left>34%</left>
             </teogonyButton>
 
             <cultureButton>
-                <top>15%</top>
-                <left>48%</left>
+                <top>16%</top>
+                <left>51%</left>
             </cultureButton>
 
         </menuButtons>

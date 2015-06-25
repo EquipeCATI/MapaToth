@@ -9,10 +9,10 @@
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     border-width: 20px;
-    -moz-border-image: url(../Conteudo/Imagens/frame_border.jpg) 20 round;
-    -webkit-border-image: url(../Conteudo/Imagens/frame_border.jpg) 20 round;
-    -o-border-image: url(../Conteudo/Imagens/frame_border.jpg) 20 round;
-    border-image: url(../Conteudo/Imagens/frame_border.jpg) 20 round;
+    -moz-border-image: url(../Conteudo/Imagens/BarraDeCarregamento.png) 20 stretch;
+    -webkit-border-image: url(../Conteudo/Imagens/BarraDeCarregamento.png) 20 stretch;
+    -o-border-image: url(../Conteudo/Imagens/BarraDeCarregamento.png) 20 stretch;
+    border-image: url(../Conteudo/Imagens/BarraDeCarregamento.png) 20 stretch;
     border-style: solid;
 }
 
