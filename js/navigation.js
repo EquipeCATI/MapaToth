@@ -82,7 +82,11 @@ $(document).on("mouseover", ".navLi", function () {
     if ($(this).attr("id") == "mapNavLi") {
         div.html("Mapa");
     } else if ($(this).attr("id") == "mainNavItem") {
-        div.html("Civilização " + currentCivilization.name);
+        if (currentCivilization.name == "CATI") {
+            div.html("Créditos");
+        } else {
+            div.html("Civilização " + currentCivilization.name);
+        }
     } else {
         var id = $(this).attr("id");
         var topic = id.substr(0, id.length - 7);
