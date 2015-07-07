@@ -315,4 +315,17 @@
 
     </Civilization>
 
+    <Civilization>
+
+        <name>CATI</name>
+        <originCentury>20</originCentury>
+        <endingCentury>21</endingCentury>
+
+        <mapMarker>
+            <top>49%</top>
+            <left>33%</left>
+        </mapMarker>
+
+    </Civilization>
+
 </Civilizations>

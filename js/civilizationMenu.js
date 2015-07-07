@@ -48,6 +48,15 @@ function transitionToCivilizationMenu(marker) {
         var menuBg = preload.getResult("menu" + civilizationName);
         $(menuBg).attr("id", "civilizationMenuImg");
         //$(menuBg).css("opacity", "0.8");
+
+        $("#civilizationMenuDiv").append("<p>Civilização " + civilizationName + "</p>");
+
+        if (currentCivilization.bodyFont) {
+            $("#civilizationMenuDiv p").css("font-family", currentCivilization.bodyFont.name);
+        } else {
+            $("#civilizationMenuDiv p").css("font-family", defaultBodyFont.name);
+        }
+
         $("#civilizationMenuDiv").append(menuBg).fadeOut(0);
 
         $("#mainDiv").fadeIn(625, function () {
