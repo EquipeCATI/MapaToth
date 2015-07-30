@@ -409,14 +409,16 @@ function addCivilizations() {
 
         marker.data("civilization", this);
 
-        //Criação do ícone no menu
-        var mainNavImg = preload.getResult("mainNavItem" + this.name);
-        $(mainNavImg).addClass("menuIcon");
+        if (this.name != "CATI") {
+            //Criação do ícone no menu
+            var mainNavImg = preload.getResult("mainNavItem" + this.name);
+            $(mainNavImg).addClass("menuIcon");
 
-        $("#menuUl").append("<li id='menuRow" + this.name + "' class='menuRow'><p></p>");
-        $("#menuRow" + this.name + " > p").append(mainNavImg);
-        $("#menuRow" + this.name + " > p").append(this.name);
-        $("#menuRow" + this.name).data("civilization", this);
+            $("#menuUl").append("<li id='menuRow" + this.name + "' class='menuRow'><p></p>");
+            $("#menuRow" + this.name + " > p").append(mainNavImg);
+            $("#menuRow" + this.name + " > p").append(this.name);
+            $("#menuRow" + this.name).data("civilization", this);
+        }
 
         if (this.dropCapFont) {
             $('head').append("<style>\

@@ -5,11 +5,22 @@
     -webkit-transform: translateY(-50%);
     display: inline-block;
     margin: auto;
-    max-height: 80%;
+    max-height: 75%;
     height: auto;
     width: auto;
     max-width: 80%;
     vertical-align: middle;
+}
+
+#civilizationMenuDiv p{
+    position: absolute;
+    font-size: 4vh;
+    color: #49392d;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    transform: translateY(-100%);
 }
 
 #civilizationMenuImg {

@@ -21,13 +21,9 @@ function addSliderMarkers() {
 
 
         var percentage = ((this.originCentury - sliderMin) / (sliderSize)) * 80;
-        if (percentage > 40) {
-            percentage += 8;
-            percentage += "%";
-        } else {
-            percentage += 11;
-            percentage += "%";
-        }
+        percentage += 9;
+        percentage += "%";
+
         $("#" + this.name + "Born").css("left", percentage);
 
 

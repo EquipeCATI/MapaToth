@@ -48,6 +48,19 @@ function transitionToCivilizationMenu(marker) {
         var menuBg = preload.getResult("menu" + civilizationName);
         $(menuBg).attr("id", "civilizationMenuImg");
         //$(menuBg).css("opacity", "0.8");
+
+        if (civilizationName == "CATI") {
+            $("#civilizationMenuDiv").append("<p>Equipe CATI</p>");
+        } else {
+            $("#civilizationMenuDiv").append("<p>Civilização " + civilizationName + "</p>");
+        }
+
+        if (currentCivilization.bodyFont) {
+            $("#civilizationMenuDiv p").css("font-family", currentCivilization.bodyFont.name);
+        } else {
+            $("#civilizationMenuDiv p").css("font-family", defaultBodyFont.name);
+        }
+
         $("#civilizationMenuDiv").append(menuBg).fadeOut(0);
 
         $("#mainDiv").fadeIn(625, function () {
@@ -78,19 +91,21 @@ function addCivilizationButton(topic) {
 
     if (menuBg != undefined) {
         var civilizationButton = preload.getResult(topic + "Button" + currentCivilization.name);
-        $(civilizationButton).css("top", currentCivilization[topic + "Button"].topSpace);
-        $(civilizationButton).css("left", currentCivilization[topic + "Button"].leftSpace);
+        if (civilizationButton != undefined) {
+            $(civilizationButton).css("top", currentCivilization[topic + "Button"].topSpace);
+            $(civilizationButton).css("left", currentCivilization[topic + "Button"].leftSpace);
 
-        var height = (civilizationButton.naturalHeight / menuBg.naturalHeight) * 100;
-        $(civilizationButton).css("max-height", height + "%");
+            var height = (civilizationButton.naturalHeight / menuBg.naturalHeight) * 100;
+            $(civilizationButton).css("max-height", height + "%");
 
-        var width = (civilizationButton.naturalWidth / menuBg.naturalWidth) * 100;
-        $(civilizationButton).css("max-width", width + "%");
+            var width = (civilizationButton.naturalWidth / menuBg.naturalWidth) * 100;
+            $(civilizationButton).css("max-width", width + "%");
 
-        $(civilizationButton).attr("id", topic + "Button");
-        $(civilizationButton).attr("class", "CivilizationButton");
+            $(civilizationButton).attr("id", topic + "Button");
+            $(civilizationButton).attr("class", "CivilizationButton");
 
-        $(civilizationButton).hide().appendTo("#civilizationMenuDiv");
+            $(civilizationButton).hide().appendTo("#civilizationMenuDiv");
+        }
     }
 }
 
